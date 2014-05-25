@@ -42,6 +42,7 @@
         <file alias="debugwindow">res/icons/debugwindow.png</file>
     </qresource>
     <qresource prefix="/images">
+        <file alias="overview">res/images/overview.png</file>
         <file alias="about">res/images/about.png</file>
         <file alias="splash">res/images/splash.png</file>
         <file alias="splash_testnet">res/images/splash_testnet.png</file>
