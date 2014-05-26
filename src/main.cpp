@@ -35,7 +35,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2");
+uint256 hashGenesisBlock("0xba1d39b4928ab03d813d952daf65fb7797fcf538a9c1b8274f4edc8557722d13");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // UFO: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -1084,17 +1084,22 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 50 * COIN;
-
-    // Subsidy is cut in half every 840000 blocks, which will occur approximately every 4 years
-    nSubsidy >>= (nHeight / 840000); // UFO: 840k blocks in ~4 years
-
+    int64 nSubsidy = 5000 * COIN;
+    if (nHeight == 1)
+    {
+        return nSubsidy = 40000000 * COIN;
+    }
+	
+	// Subsidy is cut in half every 400000 blocks, which will occur approximately every 4 years
+    nSubsidy >>= (nHeight / 400000); // UFO Coin: 400000 approximately every 4 years
+	
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 3.5 * 24 * 60 * 60; // UFO: 3.5 days
-static const int64 nTargetSpacing = 2.5 * 60; // UFO: 2.5 minutes
-static const int64 nInterval = nTargetTimespan / nTargetSpacing;
+static int64 nTargetTimespan = 1 * 24 * 60 * 60; // 1 day
+static int64 nTargetSpacing = 90; // 1.5 minute blocks
+static int64 nInterval = nTargetTimespan / nTargetSpacing;
+static int64 nReTargetHistoryFact = 4; // look at 4 times the retarget interval into block history
 
 //
 // minimum amount of work that could possibly be required nTime after
@@ -1129,6 +1134,23 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     if (pindexLast == NULL)
         return nProofOfWorkLimit;
 
+    // From block 33479 reassess the difficulty every 40 blocks
+	// Reduce Retarget factor to 2
+    if(pindexLast->nHeight >= 33479)
+    {
+        nTargetTimespan = 60 * 60; // 1 hours
+        nTargetSpacing = 1.5 * 60; // 1.5 minutes
+        nInterval = nTargetTimespan / nTargetSpacing;
+		nReTargetHistoryFact = 2;
+    }
+	else
+	{
+		nTargetTimespan = 1 * 24 * 60 * 60; // 1 day
+		nTargetSpacing = 1.5 * 60; // 1.5 minutes
+		nInterval = nTargetTimespan / nTargetSpacing;
+		nReTargetHistoryFact = 4;
+	}
+
     // Only change once per interval
     if ((pindexLast->nHeight+1) % nInterval != 0)
     {
@@ -1152,20 +1174,28 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
         return pindexLast->nBits;
     }
 
-    // UFO: This fixes an issue where a 51% attack can change difficulty at will.
+    // Ufocoin: This fixes an issue where a 51% attack can change difficulty at will.
     // Go back the full period unless it's the first retarget after genesis. Code courtesy of Art Forz
     int blockstogoback = nInterval-1;
     if ((pindexLast->nHeight+1) != nInterval)
         blockstogoback = nInterval;
+    if (pindexLast->nHeight > COINFIX1_BLOCK) {
+        blockstogoback = nReTargetHistoryFact * nInterval;
+    }
 
-    // Go back by what we want to be 14 days worth of blocks
+    // Go back by what we want to be nReTargetHistoryFact*nInterval blocks
     const CBlockIndex* pindexFirst = pindexLast;
     for (int i = 0; pindexFirst && i < blockstogoback; i++)
         pindexFirst = pindexFirst->pprev;
     assert(pindexFirst);
 
     // Limit adjustment step
-    int64 nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
+    int64 nActualTimespan = 0;
+    if (pindexLast->nHeight > COINFIX1_BLOCK)
+        // obtain average actual timespan
+        nActualTimespan = (pindexLast->GetBlockTime() - pindexFirst->GetBlockTime())/nReTargetHistoryFact;
+    else
+        nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
     printf("  nActualTimespan = %"PRI64d"  before bounds\n", nActualTimespan);
     if (nActualTimespan < nTargetTimespan/4)
         nActualTimespan = nTargetTimespan/4;
@@ -2746,7 +2776,7 @@ bool LoadBlockIndex()
         pchMessageStart[1] = 0xc0;
         pchMessageStart[2] = 0xb8;
         pchMessageStart[3] = 0xdb;
-        hashGenesisBlock = uint256("0xf5ae71e26c74beacc88382716aced69cddf3dffff24f384e1808905e0188f68f");
+        hashGenesisBlock = uint256("0x45b4e55bddf20dfeb69ef2a35dd36f58dd45d5f4582c1a4ca1c1b78eef8f8c37");
     }
 
     //
@@ -2771,42 +2801,36 @@ bool InitBlockIndex() {
 
     // Only add the genesis block if not reindexing (in which case we reuse the one already on disk)
     if (!fReindex) {
-        // Genesis Block:
-        // CBlock(hash=12a765e31ffd4059bada, PoW=0000050c34a64b415b6b, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=97ddfbbae6, nTime=1317972665, nBits=1e0ffff0, nNonce=2084524493, vtx=1)
-        //   CTransaction(hash=97ddfbbae6, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-        //     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d0104404e592054696d65732030352f4f63742f32303131205374657665204a6f62732c204170706c65e280997320566973696f6e6172792c2044696573206174203536)
-        //     CTxOut(nValue=50.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
-        //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = "NY Times 05/Oct/2011 Steve Jobs, Apple’s Visionary, Dies at 56";
+        const char* pszTimestamp = "2 january 2014";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 50 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
+        txNew.vout[0].nValue = 0;
+        txNew.vout[0].scriptPubKey = CScript() << 0x0 << OP_CHECKSIG; // a privkey for that 'vanity' pubkey would be interesting ;)
         CBlock block;
         block.vtx.push_back(txNew);
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1317972665;
+        block.nTime    = 1388681920;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 2084524493;
+        block.nNonce   = 1671824;
 
         if (fTestNet)
         {
-            block.nTime    = 1317798646;
-            block.nNonce   = 385270584;
+            block.nTime    = 1388678813;
+            block.nNonce   = 616291;
         }
-
+        
         //// debug print
         uint256 hash = block.GetHash();
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+        assert(block.hashMerkleRoot == uint256("0x8207df3a28a5bfdcaba0c810e540123aaea8d067b745092849787169f5e77065"));
         block.print();
         assert(hash == hashGenesisBlock);
 
