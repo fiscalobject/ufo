@@ -4,6 +4,8 @@
 
 #include "net.h"
 #include "bitcoinrpc.h"
+#include "alert.h"
+#include "base58.h"
 
 using namespace json_spirit;
 using namespace std;
@@ -208,3 +210,97 @@ Value getaddednodeinfo(const Array& params, bool fHelp)
     return ret;
 }
 
+Value makekeypair(const Array& params, bool fHelp)
+{
+    if (fHelp || params.size() > 1)
+        throw runtime_error(
+            "makekeypair [prefix]\n"
+            "Make a public/private key pair.\n"
+            "[prefix] is optional preferred prefix for the public key.\n");
+
+    string strPrefix = "";
+    if (params.size() > 0)
+        strPrefix = params[0].get_str();
+
+    CKey key;
+    CPubKey pubkey;
+    int nCount = 0;
+    do
+    {
+        key.MakeNewKey(false);
+        pubkey = key.GetPubKey();
+        nCount++;
+    } while (nCount < 10000 && strPrefix != HexStr(pubkey.begin(), pubkey.end()).substr(0, strPrefix.size()));
+
+    if (strPrefix != HexStr(pubkey.begin(), pubkey.end()).substr(0, strPrefix.size()))
+        return Value::null;
+
+    Object result;
+    result.push_back(Pair("PublicKey", HexStr(pubkey.begin(), pubkey.end())));
+    result.push_back(Pair("PrivateKey", CBitcoinSecret(key).ToString()));
+    return result;
+}
+
+Value sendalert(const Array& params, bool fHelp)
+{
+    if (fHelp || params.size() < 6)
+        throw runtime_error(
+            "sendalert <message> <privatekey> <minver> <maxver> <priority> <id> [cancelupto]\n"
+            "<message> is the alert text message\n"
+            "<privatekey> is base58 hex string of alert master private key\n"
+            "<minver> is the minimum applicable internal client version\n"
+            "<maxver> is the maximum applicable internal client version\n"
+            "<priority> is integer priority number\n"
+            "<id> is the alert id\n"
+            "[cancelupto] cancels all alert id's up to this number\n"
+            "Returns true or false.");
+
+    // Prepare the alert message
+    CAlert alert;
+    alert.strStatusBar = params[0].get_str();
+    alert.nMinVer = params[2].get_int();
+    alert.nMaxVer = params[3].get_int();
+    alert.nPriority = params[4].get_int();
+    alert.nID = params[5].get_int();
+    if (params.size() > 6)
+        alert.nCancel = params[6].get_int();
+    alert.nVersion = PROTOCOL_VERSION;
+    alert.nRelayUntil = GetAdjustedTime() + 365*24*60*60;
+    alert.nExpiration = GetAdjustedTime() + 365*24*60*60;
+
+    CDataStream sMsg(SER_NETWORK, PROTOCOL_VERSION);
+    sMsg << (CUnsignedAlert)alert;
+    alert.vchMsg = vector<unsigned char>(sMsg.begin(), sMsg.end());
+
+    // Prepare master key and sign alert message
+    CBitcoinSecret vchSecret;
+    if (!vchSecret.SetString(params[1].get_str()))
+        throw runtime_error("Invalid alert master key");
+    CKey key = vchSecret.GetKey(); // if key is not correct openssl may crash
+    if (!key.Sign(Hash(alert.vchMsg.begin(), alert.vchMsg.end()), alert.vchSig))
+        throw runtime_error(
+            "Unable to sign alert, check alert master key?\n");
+
+    // Process alert
+    if(!alert.ProcessAlert())
+        throw runtime_error(
+            "Failed to process alert.\n");
+
+    // Relay alert
+    {
+        LOCK(cs_vNodes);
+        BOOST_FOREACH(CNode* pnode, vNodes)
+            alert.RelayTo(pnode);
+    }
+
+    Object result;
+    result.push_back(Pair("strStatusBar", alert.strStatusBar));
+    result.push_back(Pair("nVersion", alert.nVersion));
+    result.push_back(Pair("nMinVer", alert.nMinVer));
+    result.push_back(Pair("nMaxVer", alert.nMaxVer));
+    result.push_back(Pair("nPriority", alert.nPriority));
+    result.push_back(Pair("nID", alert.nID));
+    if (alert.nCancel > 0)
+        result.push_back(Pair("nCancel", alert.nCancel));
+    return result;
+}
