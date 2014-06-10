@@ -52,6 +52,7 @@ bool fReindex = false;
 bool fBenchmark = false;
 bool fTxIndex = false;
 unsigned int nCoinCacheSize = 5000;
+static const int nSoftFork = 168233;
 
 /** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
 int64 CTransaction::nMinTxFee = 100000;
@@ -2142,10 +2143,6 @@ bool CBlock::CheckBlock(CValidationState &state, bool fCheckPOW, bool fCheckMerk
     if (fCheckPOW && !CheckProofOfWork(GetPoWHash(), nBits))
         return state.DoS(50, error("CheckBlock() : proof of work failed"));
 
-    // Check timestamp
-    if (GetBlockTime() > GetAdjustedTime() + 2 * 60 * 60)
-        return state.Invalid(error("CheckBlock() : block timestamp too far in the future"));
-
     // First transaction must be coinbase, the rest must not be
     if (vtx.empty() || !vtx[0].IsCoinBase())
         return state.DoS(100, error("CheckBlock() : first tx is not coinbase"));
@@ -2211,7 +2208,16 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
         // Check timestamp against prev
         if (GetBlockTime() <= pindexPrev->GetMedianTimePast())
             return state.Invalid(error("AcceptBlock() : block's timestamp is too early"));
-
+        
+        // limit block in future accepted in chain to only a time window of 15 min
+        if (GetBlockTime() > GetAdjustedTime() + 15 * 60)
+            return error("AcceptBlock() : block's timestamp too far in the future");
+       
+            // Check timestamp against prev it should not be more then 15 minutes outside blockchain time
+        if (((nHeight >= nSoftFork) || fTestNet) && (GetBlockTime() <= pindexPrev->GetBlockTime() - 15 * 60) ||
+          (GetBlockTime() > GetAdjustedTime() + 2 * 60 * 60))
+            return error("AcceptBlock() : block's timestamp is too early compare to last block");
+        
         // Check that all transactions are finalized
         BOOST_FOREACH(const CTransaction& tx, vtx)
             if (!tx.IsFinal(nHeight, GetBlockTime()))
