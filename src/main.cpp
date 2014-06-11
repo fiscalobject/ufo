@@ -52,7 +52,8 @@ bool fReindex = false;
 bool fBenchmark = false;
 bool fTxIndex = false;
 unsigned int nCoinCacheSize = 5000;
-static const int nSoftFork = 168233;
+static const int nHardForkOne = 33479;
+static const int nHardForkTwo = 160997;
 
 /** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
 int64 CTransaction::nMinTxFee = 100000;
@@ -1099,7 +1100,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 }
 
 static int64 nTargetTimespan = 1 * 24 * 60 * 60; // 1 day
-static int64 nTargetSpacing = 90; // 1.5 minute blocks
+static int64 nTargetSpacing = 1.5 * 60; // 1.5 minute blocks
 static int64 nInterval = nTargetTimespan / nTargetSpacing;
 static int64 nReTargetHistoryFact = 4; // look at 4 times the retarget interval into block history
 
@@ -1128,30 +1129,72 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
     return bnResult.GetCompact();
 }
 
-unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
+unsigned int static NiteGravityWell(const CBlockIndex* pindexLast, const CBlockHeader *pblock, uint64 TargetBlocksSpacingSeconds, uint64 PastBlocksMin, uint64 PastBlocksMax) {
+    /* current difficulty formula, megacoin - kimoto gravity well */
+    const CBlockIndex *BlockLastSolved = pindexLast;
+    const CBlockIndex *BlockReading = pindexLast;
+    const CBlockHeader *BlockCreating = pblock;
+    BlockCreating = BlockCreating;
+    uint64 PastBlocksMass = 0;
+    int64 PastRateActualSeconds = 0;
+    int64 PastRateTargetSeconds = 0;
+    double PastRateAdjustmentRatio = double(1);
+    CBigNum PastDifficultyAverage;
+    CBigNum PastDifficultyAveragePrev;
+    double EventHorizonDeviation;
+    double EventHorizonDeviationFast;
+    double EventHorizonDeviationSlow;
+        
+    if (BlockLastSolved == NULL || BlockLastSolved->nHeight == 0 || (uint64)BlockLastSolved->nHeight < PastBlocksMin) { return bnProofOfWorkLimit.GetCompact(); }
+        int64 LatestBlockTime = BlockLastSolved->GetBlockTime();
+        for (unsigned int i = 1; BlockReading && BlockReading->nHeight > 0; i++) {
+                if (PastBlocksMax > 0 && i > PastBlocksMax) { break; }
+                PastBlocksMass++;
+                
+                if (i == 1) { PastDifficultyAverage.SetCompact(BlockReading->nBits); }
+                else { PastDifficultyAverage = ((CBigNum().SetCompact(BlockReading->nBits) - PastDifficultyAveragePrev) / i) + PastDifficultyAveragePrev; }
+                PastDifficultyAveragePrev = PastDifficultyAverage;
+                
+                if (LatestBlockTime < BlockReading->GetBlockTime()) {
+                    LatestBlockTime = BlockReading->GetBlockTime();
+                }
+                PastRateActualSeconds = LatestBlockTime - BlockReading->GetBlockTime();
+                PastRateTargetSeconds = TargetBlocksSpacingSeconds * PastBlocksMass;
+                PastRateAdjustmentRatio = double(1);
+
+                if (PastRateActualSeconds < 1) { PastRateActualSeconds = 5; }
+
+                if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
+                PastRateAdjustmentRatio = double(PastRateTargetSeconds) / double(PastRateActualSeconds);
+                }
+                EventHorizonDeviation = 1 + (0.7084 * pow((double(PastBlocksMass)/double(28.2)), -1.228));
+                EventHorizonDeviationFast = EventHorizonDeviation;
+                EventHorizonDeviationSlow = 1 / EventHorizonDeviation;
+                
+                if (PastBlocksMass >= PastBlocksMin) {
+                        if ((PastRateAdjustmentRatio <= EventHorizonDeviationSlow) || (PastRateAdjustmentRatio >= EventHorizonDeviationFast)) { assert(BlockReading); break; }
+                }
+                if (BlockReading->pprev == NULL) { assert(BlockReading); break; }
+                BlockReading = BlockReading->pprev;
+        }
+        
+        CBigNum bnNew(PastDifficultyAverage);
+        if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
+                bnNew *= PastRateActualSeconds;
+                bnNew /= PastRateTargetSeconds;
+        }
+    if (bnNew > bnProofOfWorkLimit) { bnNew = bnProofOfWorkLimit; }
+        
+    return bnNew.GetCompact();
+}
+
+unsigned int static GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
     unsigned int nProofOfWorkLimit = bnProofOfWorkLimit.GetCompact();
 
     // Genesis block
     if (pindexLast == NULL)
         return nProofOfWorkLimit;
-
-    // From block 33479 reassess the difficulty every 40 blocks
-	// Reduce Retarget factor to 2
-    if(pindexLast->nHeight >= 33479)
-    {
-        nTargetTimespan = 60 * 60; // 1 hours
-        nTargetSpacing = 1.5 * 60; // 1.5 minutes
-        nInterval = nTargetTimespan / nTargetSpacing;
-		nReTargetHistoryFact = 2;
-    }
-	else
-	{
-		nTargetTimespan = 1 * 24 * 60 * 60; // 1 day
-		nTargetSpacing = 1.5 * 60; // 1.5 minutes
-		nInterval = nTargetTimespan / nTargetSpacing;
-		nReTargetHistoryFact = 4;
-	}
 
     // Only change once per interval
     if ((pindexLast->nHeight+1) % nInterval != 0)
@@ -1221,6 +1264,45 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
 
     return bnNew.GetCompact();
 }
+
+unsigned int static GetNextWorkRequired_V2(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
+{
+    static const int64 BlocksTargetSpacing = nTargetSpacing;
+    static const unsigned int TimeDaySeconds = nTargetTimespan;
+    int64 PastSecondsMin = TimeDaySeconds * 0.025;
+    int64 PastSecondsMax = TimeDaySeconds * 7;
+    uint64 PastBlocksMin = PastSecondsMin / BlocksTargetSpacing;
+    uint64 PastBlocksMax = PastSecondsMax / BlocksTargetSpacing;
+
+    return NiteGravityWell(pindexLast, pblock, BlocksTargetSpacing, PastBlocksMin, PastBlocksMax);
+}
+
+unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
+{
+    // From block 33479 reassess the difficulty every 40 blocks
+    // Reduce Retarget factor to 2
+    if(pindexLast->nHeight >= nHardForkOne)
+    {
+        nTargetTimespan = 60 * 60; // 1 hour
+        nInterval = nTargetTimespan / nTargetSpacing;
+        nReTargetHistoryFact = 2;
+    }
+
+    int DiffMode = 1;
+    if (fTestNet && (pindexLast->nHeight >= 10)) {
+        DiffMode = 2;
+    } else {
+        if (pindexLast->nHeight >= nHardForkTwo) {
+            DiffMode = 2;
+        }
+    }
+        
+    if (DiffMode == 1) {
+        return GetNextWorkRequired_V1(pindexLast, pblock);
+    }
+    return GetNextWorkRequired_V2(pindexLast, pblock);
+}
+
 
 bool CheckProofOfWork(uint256 hash, unsigned int nBits)
 {
@@ -2213,9 +2295,9 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
         if (GetBlockTime() > GetAdjustedTime() + 15 * 60)
             return error("AcceptBlock() : block's timestamp too far in the future");
        
-            // Check timestamp against prev it should not be more then 15 minutes outside blockchain time
-        if (((nHeight >= nSoftFork) || fTestNet) && (GetBlockTime() <= pindexPrev->GetBlockTime() - 15 * 60) ||
-          (GetBlockTime() > GetAdjustedTime() + 2 * 60 * 60))
+            // Check timestamp against prev it should not be too far outside blockchain time
+        if (((nHeight >= nHardForkTwo) || fTestNet) && (GetBlockTime() <= pindexPrev->GetBlockTime() - 15 * 60) || // New 15 min rule
+          (GetBlockTime() > GetAdjustedTime() + 2 * 60 * 60)) // Old 2 hour rule
             return error("AcceptBlock() : block's timestamp is too early compare to last block");
         
         // Check that all transactions are finalized
