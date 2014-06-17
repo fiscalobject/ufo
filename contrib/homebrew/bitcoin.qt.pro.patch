@@ -1,7 +1,7 @@
-diff --git a/bitcoin-qt.pro b/bitcoin-qt.pro
+diff --git a/ufo-project-qt.pro b/ufo-project-qt.pro
 index d938c07..e1dd4ec 100644
---- a/bitcoin-qt.pro
-+++ b/bitcoin-qt.pro
+--- a/ufo-project-qt.pro
++++ b/ufo-project-qt.pro
 @@ -353,7 +353,7 @@
  }
  
