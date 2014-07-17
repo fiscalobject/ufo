@@ -1167,7 +1167,11 @@ unsigned int static NiteGravityWell(const CBlockIndex* pindexLast, const CBlockH
                 if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
                 PastRateAdjustmentRatio = double(PastRateTargetSeconds) / double(PastRateActualSeconds);
                 }
-                EventHorizonDeviation = 1 + (0.7084 * pow((double(PastBlocksMass)/double(28.2)), -1.228));
+				if (pindexLast->nHeight + 1 >= 171900) {
+				    EventHorizonDeviation = 1 + (0.7084 * pow((double(PastBlocksMass)/double(144)), -1.228));
+				} else {
+					EventHorizonDeviation = 1 + (0.7084 * pow((double(PastBlocksMass)/double(28.2)), -1.228));
+				}
                 EventHorizonDeviationFast = EventHorizonDeviation;
                 EventHorizonDeviationSlow = 1 / EventHorizonDeviation;
                 
@@ -1270,6 +1274,9 @@ unsigned int static GetNextWorkRequired_V2(const CBlockIndex* pindexLast, const 
     static const int64 BlocksTargetSpacing = nTargetSpacing;
     static const unsigned int TimeDaySeconds = nTargetTimespan;
     int64 PastSecondsMin = TimeDaySeconds * 0.025;
+	if(pindexLast->nHeight + 1 >= 171900) {
+		PastSecondsMin = TimeDaySeconds * 0.15;
+    }
     int64 PastSecondsMax = TimeDaySeconds * 7;
     uint64 PastBlocksMin = PastSecondsMin / BlocksTargetSpacing;
     uint64 PastBlocksMax = PastSecondsMax / BlocksTargetSpacing;
