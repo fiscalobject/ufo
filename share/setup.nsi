@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 0.8.7.0
+!define VERSION 0.8.7.1
 !define COMPANY "UFO Coin Project"
 !define URL http://ufocoin.co
 
@@ -60,8 +60,6 @@ Section -Main SEC0000
     SetOverwrite on
     File ufo-qt.exe
     File /oname=COPYING.txt ..\COPYING
-    SetOutPath $INSTDIR\daemon
-    File ufod.exe
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd
