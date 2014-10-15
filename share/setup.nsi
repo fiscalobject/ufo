@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 0.8.7.1
+!define VERSION 0.8.8.0
 !define COMPANY "UFO Coin Project"
 !define URL http://ufocoin.co
 
@@ -104,7 +104,6 @@ done${UNSECTION_ID}:
 Section /o -un.Main UNSEC0000
     Delete /REBOOTOK $INSTDIR\ufo-qt.exe
     Delete /REBOOTOK $INSTDIR\COPYING.txt
-    RMDir /r /REBOOTOK $INSTDIR\daemon
     DeleteRegValue HKCU "${REGKEY}\Components" Main
 SectionEnd
 
