@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 0.8.8.0
+!define VERSION 0.8.8.1
 !define COMPANY "UFO Coin Project"
 !define URL http://ufocoin.co
 
