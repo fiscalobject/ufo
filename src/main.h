@@ -25,10 +25,10 @@ class CNode;
 
 /* Maturity threshold for PoW base transactions, in blocks (confirmations) */
 extern int nBaseMaturity;
-static const int BASE_MATURITY = 100;
-static const int BASE_MATURITY_TESTNET = 100;
+static const int BASE_MATURITY = 15;
+static const int BASE_MATURITY_TESTNET = 15;
 /* Offset for the above to allow safe network propagation, in blocks (confirmations) */
-static const int BASE_MATURITY_OFFSET = 1;
+static const int BASE_MATURITY_OFFSET = 15;
 /* Maturity threshold for regular transactions, in blocks (confirmations) */
 static const int TX_MATURITY = 6;
 
