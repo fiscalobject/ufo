@@ -1,7 +1,7 @@
 src/*.exe
-src/litecoin
-src/litecoind
-src/test_litecoin
+src/ufo
+src/ufod
+src/test_ufo
 .*.swp
 *.*~*
 *.bak
@@ -9,17 +9,23 @@ src/test_litecoin
 *.orig
 *.o
 *.patch
-.litecoin
+.ufo
 
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-litecoin-qt
-Litecoin-Qt.app
+Makefile.Release
+Makefile.Debug
+object_script.ufo-qt.Release
+object_script.ufo-qt.Debug
+ufo-qt_plugin_import.cpp
+
+UFO-qt
+UFO-Qt.app
 
 # Unit-tests
 Makefile.test
-litecoin-qt_test
+ufo-qt_test
 
 # Resources cpp
 qrc_*.cpp
