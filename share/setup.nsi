@@ -13,12 +13,13 @@ SetCompressor /SOLID lzma
 !define MUI_ICON "pixmaps\bitcoin.ico"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_FINISHPAGE_NOAUTOCLOSE
+!define MUI_HEADERIMAGE_BITMAP "pixmaps\nsis-header.bmp"
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "UFO Coin"
 !define MUI_FINISHPAGE_RUN $INSTDIR\ufo-qt.exe
+!define MUI_FINISHPAGE_RUN_TEXT "Launch UFO coin"
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
@@ -35,6 +36,10 @@ Var StartMenuGroup
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_UNPAGE_CONFIRM
 !insertmacro MUI_UNPAGE_INSTFILES
+!insertmacro MUI_PAGE_FINISH
+
+# Installer languages
+!insertmacro MUI_LANGUAGE English
 
 # Installer attributes
 OutFile ufo-setup-${VERSION}.exe
@@ -58,7 +63,7 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File ufo-qt.exe
+    File ..\release\UFO-qt.exe
     File /oname=COPYING.txt ..\COPYING
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
