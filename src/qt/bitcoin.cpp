@@ -222,6 +222,9 @@ int main(int argc, char *argv[])
     SplashScreen splash(QPixmap(), 0);
     if (GetBoolArg("-splash", true) && !GetBoolArg("-min"))
     {
+        QFont* font = new QFont("Nasalization Rg");
+        font->setPixelSize(14);
+        splash.setFont(*font);
         splash.show();
         splash.setAutoFillBackground(true);
         splashref = &splash;
