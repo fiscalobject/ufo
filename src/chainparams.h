@@ -57,6 +57,7 @@ public:
     const vector<unsigned char>& AlertKey() const { return vAlertPubKey; }
     const std::string CheckpointKey() const { return checkpointPubKey;}
     const int CoinFix() const { return nCoinFix; }
+    const int SoftForkOne() const { return nSoftForkOne; }
     const int ForkOne() const { return nHardForkOne; }
     const int ForkTwo() const { return nHardForkTwo; }
     const int ForkThree() const { return nHardForkThree; }
@@ -81,6 +82,7 @@ protected:
     vector<unsigned char> vAlertPubKey;
     std::string checkpointPubKey
     int nCoinFix;
+    int nSoftForkOne;
     int nHardForkOne;
     int nHardForkTwo;
     int nHardForkThree;
