@@ -2622,8 +2622,8 @@ Address: %4
         <translation>Вкажіть робочий каталог</translation>
     </message>
     <message>
-        <source>Listen for connections on &lt;port&gt; (default: 8333 or testnet: 18333)</source>
-        <translation>Чекати на з'єднання на &lt;port&gt; (типово: 8333 або тестова мережа: 18333)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 9887 or testnet: 19887)</source>
+        <translation>Чекати на з'єднання на &lt;port&gt; (типово: 9887 або тестова мережа: 19887)</translation>
     </message>
     <message>
         <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
@@ -2650,8 +2650,8 @@ Address: %4
         <translation>Сталася помилка при спробі відкрити порт RPC %u для прослуховування в мережі IPv4: %s</translation>
     </message>
     <message>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 8332 or testnet: 18332)</source>
-        <translation>Прослуховувати &lt;port&gt; для JSON-RPC-з'єднань (типово: 8332 або тестова мережа: 18332)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 9888 or testnet: 19888)</source>
+        <translation>Прослуховувати &lt;port&gt; для JSON-RPC-з'єднань (типово: 9888 або тестова мережа: 19888)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
@@ -2834,8 +2834,8 @@ rpcpassword=%s
         <translation>Підключитись через SOCKS-проксі</translation>
     </message>
     <message>
-        <source>Connect to JSON-RPC on &lt;port&gt; (default: 8332 or testnet: 18332)</source>
-        <translation>Підключитися через JSON-RPC на &lt;port&gt; (типово: 8332 або testnet: 18332)</translation>
+        <source>Connect to JSON-RPC on &lt;port&gt; (default: 9888 or testnet: 19888)</source>
+        <translation>Підключитися через JSON-RPC на &lt;port&gt; (типово: 9888 або testnet: 19888)</translation>
     </message>
     <message>
         <source>Connection options:</source>

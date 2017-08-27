@@ -1524,8 +1524,8 @@ Address: %4
         <translation>Pilinan ing data directory</translation>
     </message>
     <message>
-        <source>Listen for connections on &lt;port&gt; (default: 8333 or testnet: 18333)</source>
-        <translation>Makiramdam king koneksion king &lt;port&gt;(default: 8333 o testnet: 18333)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 9887 or testnet: 19887)</source>
+        <translation>Makiramdam king koneksion king &lt;port&gt;(default: 9887 o testnet: 19887)</translation>
     </message>
     <message>
         <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>

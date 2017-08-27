@@ -990,8 +990,8 @@ Address: %4
         <translation>Вызначыць каталог даных</translation>
     </message>
     <message>
-        <source>Listen for connections on &lt;port&gt; (default: 8333 or testnet: 18333)</source>
-        <translation>Слухаць злучэнні на &lt;port&gt; (зыходна: 8333 ці testnet: 18333)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 9887 or testnet: 19887)</source>
+        <translation>Слухаць злучэнні на &lt;port&gt; (зыходна: 9887 ці testnet: 19887)</translation>
     </message>
     <message>
         <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>

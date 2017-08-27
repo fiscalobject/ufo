@@ -2477,8 +2477,8 @@ Address: %4
         <translation>Ορισμός φακέλου δεδομένων</translation>
     </message>
     <message>
-        <source>Listen for connections on &lt;port&gt; (default: 8333 or testnet: 18333)</source>
-        <translation>Εισερχόμενες συνδέσεις στη θύρα &lt;port&gt; (προεπιλογή: 8333 ή στο testnet: 18333)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 9887 or testnet: 19887)</source>
+        <translation>Εισερχόμενες συνδέσεις στη θύρα &lt;port&gt; (προεπιλογή: 9887 ή στο testnet: 19887)</translation>
     </message>
     <message>
         <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
@@ -2505,8 +2505,8 @@ Address: %4
         <translation>Ένα σφάλμα συνέβη καθώς προετοιμαζόταν η πόρτα RPC %u για αναμονή IPv4: %s</translation>
     </message>
     <message>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 8332 or testnet: 18332)</source>
-        <translation>Εισερχόμενες συνδέσεις JSON-RPC στη θύρα &lt;port&gt; (προεπιλογή: 8332 or testnet: 18332)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 9888 or testnet: 19888)</source>
+        <translation>Εισερχόμενες συνδέσεις JSON-RPC στη θύρα &lt;port&gt; (προεπιλογή: 9888 or testnet: 19888)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
