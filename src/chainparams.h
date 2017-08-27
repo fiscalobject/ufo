@@ -55,6 +55,12 @@ public:
     const uint256& HashGenesisBlock() const { return hashGenesisBlock; }
     const MessageStartChars& MessageStart() const { return pchMessageStart; }
     const vector<unsigned char>& AlertKey() const { return vAlertPubKey; }
+    const std::string CheckpointKey() const { return checkpointPubKey;}
+    const int CoinFix() const { return nCoinFix; }
+    const int ForkOne() const { return nHardForkOne; }
+    const int ForkTwo() const { return nHardForkTwo; }
+    const int ForkThree() const { return nHardForkThree; }
+    const unsigned int NeoScryptSwitch() const { return nNeoScryptSwitch;}
     int GetDefaultPort() const { return nDefaultPort; }
     const CBigNum& ProofOfWorkLimit() const { return bnProofOfWorkLimit; }
     int SubsidyHalvingInterval() const { return nSubsidyHalvingInterval; }
@@ -73,6 +79,12 @@ protected:
     MessageStartChars pchMessageStart;
     // Raw pub key bytes for the broadcast alert signing key.
     vector<unsigned char> vAlertPubKey;
+    std::string checkpointPubKey
+    int nCoinFix;
+    int nHardForkOne;
+    int nHardForkTwo;
+    int nHardForkThree;
+    unsigned int nNeoScryptSwitch;
     int nDefaultPort;
     int nRPCPort;
     CBigNum bnProofOfWorkLimit;
