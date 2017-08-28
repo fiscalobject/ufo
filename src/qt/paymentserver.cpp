@@ -47,10 +47,10 @@
 using namespace boost;
 
 const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BITCOIN_IPC_PREFIX("bitcoin:");
-const char* BITCOIN_REQUEST_MIMETYPE = "application/bitcoin-paymentrequest";
-const char* BITCOIN_PAYMENTACK_MIMETYPE = "application/bitcoin-paymentack";
-const char* BITCOIN_PAYMENTACK_CONTENTTYPE = "application/bitcoin-payment";
+const QString BITCOIN_IPC_PREFIX("ufo:");
+const char* BITCOIN_REQUEST_MIMETYPE = "application/ufo-paymentrequest";
+const char* BITCOIN_PAYMENTACK_MIMETYPE = "application/ufo-paymentack";
+const char* BITCOIN_PAYMENTACK_CONTENTTYPE = "application/ufo-payment";
 
 X509_STORE* PaymentServer::certStore = NULL;
 void PaymentServer::freeCertStore()
@@ -290,7 +290,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
         if (!uriServer->listen(name)) {
             // constructor is called early in init, so don't use "emit message()" here
             QMessageBox::critical(0, tr("Payment request error"),
-                tr("Cannot start bitcoin: click-to-pay handler"));
+                tr("Cannot start ufo: click-to-pay handler"));
         }
         else {
             connect(uriServer, SIGNAL(newConnection()), this, SLOT(handleURIConnection()));
