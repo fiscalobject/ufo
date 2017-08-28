@@ -1258,6 +1258,7 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend,
 
                 int64_t nTotalValue = nValue + nFeeRet;
                 double dPriority = 0;
+                unsigned int nBytesPenalty = 0;
                 // vouts to the payees
                 BOOST_FOREACH (const PAIRTYPE(CScript, int64_t)& s, vecSend)
                 {
@@ -1266,6 +1267,10 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend,
                     {
                         strFailReason = _("Transaction amount too small");
                         return false;
+                    }
+                    if (txout.nValue < DUST_THRESHOLD)
+                    {
+                        nBytesPenalty += 1000;
                     }
                     wtxNew.vout.push_back(txout);
                 }
@@ -1337,7 +1342,7 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend,
 
                     // Never create dust outputs; if we would, just
                     // add the dust to the fee.
-                    if (newTxOut.IsDust(CTransaction::nMinRelayTxFee))
+                    if (newTxOut.nValue < DUST_THRESHOLD)
                     {
                         nFeeRet += nChange;
                         reservekey.ReturnKey();
@@ -1375,8 +1380,8 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend,
                 dPriority = wtxNew.ComputePriority(dPriority, nBytes);
 
                 // Check that enough fee is included
-                int64_t nPayFee = nTransactionFee * (1 + (int64_t)nBytes / 1000);
-                bool fAllowFree = AllowFree(dPriority);
+                int64_t nPayFee = nTransactionFee * (1 + (int64_t)(nBytes + nBytesPenalty) / 1000);
+                bool fAllowFree = !nBytesPenalty && AllowFree(dPriority);
                 int64_t nMinFee = GetMinFee(wtxNew, nBytes, fAllowFree, GMF_SEND);
                 if (nFeeRet < max(nPayFee, nMinFee))
                 {

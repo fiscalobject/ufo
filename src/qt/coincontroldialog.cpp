@@ -441,6 +441,7 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
     qint64 nPayAmount = 0;
     bool fLowOutput = false;
     bool fDust = false;
+    unsigned int nBytesPenalty = 0;
     CTransaction txDummy;
     foreach(const qint64 &amount, CoinControlDialog::payAmounts)
     {
@@ -450,6 +451,12 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
         {
             if (amount < CENT)
                 fLowOutput = true;
+
+            if (amount < DUST_THRESHOLD)
+            {
+                fDust = true;
+                nBytesPenalty += 1000;
+            }
 
             CTxOut txout(amount, (CScript)vector<unsigned char>(24, 0));
             txDummy.vout.push_back(txout);
@@ -525,10 +532,12 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
         sPriorityLabel = CoinControlDialog::getPriorityLabel(dPriority);
 
         // Fee
-        int64_t nFee = nTransactionFee * (1 + (int64_t)nBytes / 1000);
+        int64_t nFee = nTransactionFee * (1 + (int64_t)(nBytes + nBytesPenalty) / 1000);
 
         // Min Fee
-        int64_t nMinFee = GetMinFee(txDummy, nBytes, AllowFree(dPriority), GMF_SEND);
+        bool fAllowFree = false;
+        fAllowFree = !nBytesPenalty && AllowFree(dPriority);
+        int64_t nMinFee = GetMinFee(txDummy, nBytes, fAllowFree, GMF_SEND);
 
         nPayFee = max(nFee, nMinFee);
 
@@ -552,14 +561,10 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
             }
 
             // Never create dust outputs; if we would, just add the dust to the fee.
-            if (nChange > 0 && nChange < CENT)
+            if (nChange > 0 && nChange < DUST_THRESHOLD)
             {
-                CTxOut txout(nChange, (CScript)vector<unsigned char>(24, 0));
-                if (txout.IsDust(CTransaction::nMinRelayTxFee))
-                {
-                    nPayFee += nChange;
-                    nChange = 0;
-                }
+                nPayFee += nChange;
+                nChange = 0;
             }
 
             if (nChange == 0)
