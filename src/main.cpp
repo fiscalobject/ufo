@@ -1231,6 +1231,7 @@ int64_t GetBlockValue(int nHeight, int64_t nFees)
 static const int64_t nTargetTimespan = 24 * 60 * 60; // One day
 static const int64_t nTargetSpacing = 90;
 static const int64_t nInterval = nTargetTimespan / nTargetSpacing;
+static int64 nReTargetHistoryFact = 4;
 
 //
 // minimum amount of work that could possibly be required nTime after
@@ -1293,6 +1294,8 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     int blockstogoback = nInterval - 1;
     if ((pindexLast->nHeight + 1) != nInterval)
         blockstogoback = nInterval;
+    if (pindexLast->nHeight > Params().CoinFix())
+        blockstogoback = nReTargetHistoryFact * nInterval;
 
     // Go back by what we want to be 14 days worth of blocks
     const CBlockIndex* pindexFirst = pindexLast;
@@ -1301,7 +1304,11 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     assert(pindexFirst);
 
     // Limit adjustment step
-    int64_t nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
+    int64_t nActualTimespan = 0;
+    if (pindexLast->nHeight > Params().CoinFix())
+        nActualTimespan = (pindexLast->GetBlockTime() - pindexFirst->GetBlockTime()) / nReTargetHistoryFact;
+    else
+        nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
     LogPrintf("  nActualTimespan = %d  before bounds\n", nActualTimespan);
     if (nActualTimespan < nTargetTimespan/4)
         nActualTimespan = nTargetTimespan/4;
