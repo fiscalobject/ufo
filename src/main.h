@@ -174,6 +174,8 @@ bool GetTransaction(const uint256 &hash, CTransaction &tx, uint256 &hashBlock, b
 bool ActivateBestChain(CValidationState &state);
 int64_t GetBlockValue(int nHeight, int64_t nFees);
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock);
+unsigned int GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockHeader *pblock);
+unsigned int GetNextWorkRequired_V2(const CBlockIndex* pindexLast);
 
 void UpdateTime(CBlockHeader& block, const CBlockIndex* pindexPrev);
 

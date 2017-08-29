@@ -1228,10 +1228,10 @@ int64_t GetBlockValue(int nHeight, int64_t nFees)
     return nSubsidy + nFees;
 }
 
-static const int64_t nTargetTimespan = 24 * 60 * 60; // One day
+static int64_t nTargetTimespan = 24 * 60 * 60; // One day
 static const int64_t nTargetSpacing = 90;
-static const int64_t nInterval = nTargetTimespan / nTargetSpacing;
-static int64 nReTargetHistoryFact = 4;
+static int64_t nInterval = nTargetTimespan / nTargetSpacing;
+static int64_t nReTargetHistoryFact = 4;
 
 //
 // minimum amount of work that could possibly be required nTime after
@@ -1261,18 +1261,30 @@ unsigned int ComputeMinWork(unsigned int nBase, int64_t nTime)
 
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
-    unsigned int nProofOfWorkLimit = Params().ProofOfWorkLimit().GetCompact();
-
-    // Genesis block
-    if (pindexLast == NULL)
-        return nProofOfWorkLimit;
-
     if(pindexLast->nHeight >= Params().ForkOne())
     {
         nTargetTimespan = 60 * 60; // 1 hours
         nInterval = nTargetTimespan / nTargetSpacing;
 		nReTargetHistoryFact = 2;
     }
+
+    int DiffMode = 1;
+    if (pindexLast->nHeight >= Params().ForkTwo())
+        DiffMode = 2;
+
+    if (DiffMode == 1) 
+        return GetNextWorkRequired_V1(pindexLast, pblock);
+
+    return GetNextWorkRequired_V2(pindexLast);
+}
+
+unsigned int GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
+{
+    unsigned int nProofOfWorkLimit = Params().ProofOfWorkLimit().GetCompact();
+
+    // Genesis block
+    if (pindexLast == NULL)
+        return nProofOfWorkLimit;
 
     // Only change once per interval
     if ((pindexLast->nHeight+1) % nInterval != 0)
@@ -1336,6 +1348,90 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     LogPrintf("nTargetTimespan = %d    nActualTimespan = %d\n", nTargetTimespan, nActualTimespan);
     LogPrintf("Before: %08x  %s\n", pindexLast->nBits, CBigNum().SetCompact(pindexLast->nBits).getuint256().ToString());
     LogPrintf("After:  %08x  %s\n", bnNew.GetCompact(), bnNew.getuint256().ToString());
+
+    return bnNew.GetCompact();
+}
+
+unsigned int GetNextWorkRequired_V2(const CBlockIndex* pindexLast)
+{
+    static const int64_t TargetBlocksSpacingSeconds = nTargetSpacing;
+    static const unsigned int TimeDaySeconds = nTargetTimespan;
+    int64_t PastSecondsMin = TimeDaySeconds * 0.025;
+    int64_t PastSecondsMax = TimeDaySeconds * 7;
+    uint64_t PastBlocksMin = PastSecondsMin / TargetBlocksSpacingSeconds;
+    uint64_t PastBlocksMax = PastSecondsMax / TargetBlocksSpacingSeconds;
+    const CBlockIndex *BlockLastSolved = pindexLast;
+    const CBlockIndex *BlockReading = pindexLast;
+    uint64_t PastBlocksMass = 0;
+    int64_t PastRateActualSeconds = 0;
+    int64_t PastRateTargetSeconds = 0;
+    double PastRateAdjustmentRatio = double(1);
+    CBigNum PastDifficultyAverage;
+    CBigNum PastDifficultyAveragePrev;
+    double EventHorizonDeviation;
+    double EventHorizonDeviationFast;
+    double EventHorizonDeviationSlow;
+        
+    if (BlockLastSolved == NULL || BlockLastSolved->nHeight == 0 || (uint64_t)BlockLastSolved->nHeight < PastBlocksMin)
+        return Params().ProofOfWorkLimit().GetCompact();
+
+    int64_t LatestBlockTime = BlockLastSolved->GetBlockTime();
+    for (unsigned int i = 1; BlockReading && BlockReading->nHeight > 0; i++)
+    {
+        if (PastBlocksMax > 0 && i > PastBlocksMax)
+            break;
+
+        PastBlocksMass++;
+
+        if (i == 1)
+            PastDifficultyAverage.SetCompact(BlockReading->nBits);
+        else
+            PastDifficultyAverage = ((CBigNum().SetCompact(BlockReading->nBits) - PastDifficultyAveragePrev) / i) + PastDifficultyAveragePrev; 
+
+        PastDifficultyAveragePrev = PastDifficultyAverage;
+
+        if (LatestBlockTime < BlockReading->GetBlockTime())
+            LatestBlockTime = BlockReading->GetBlockTime();
+
+        PastRateActualSeconds = LatestBlockTime - BlockReading->GetBlockTime();
+        PastRateTargetSeconds = TargetBlocksSpacingSeconds * PastBlocksMass;
+        PastRateAdjustmentRatio = double(1);
+
+        if (PastRateActualSeconds < 1)
+            PastRateActualSeconds = 5;
+
+        if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0)
+            PastRateAdjustmentRatio = double(PastRateTargetSeconds) / double(PastRateActualSeconds);
+
+        EventHorizonDeviation = 1 + (0.7084 * pow((double(PastBlocksMass) / double(144)), -1.228));
+        EventHorizonDeviationFast = EventHorizonDeviation;
+        EventHorizonDeviationSlow = 1 / EventHorizonDeviation;
+
+        if (PastBlocksMass >= PastBlocksMin)
+        {
+            if ((PastRateAdjustmentRatio <= EventHorizonDeviationSlow) || (PastRateAdjustmentRatio >= EventHorizonDeviationFast))
+            {
+                assert(BlockReading);
+                break;
+            }
+        }
+        if (BlockReading->pprev == NULL)
+        {
+            assert(BlockReading);
+            break;
+        }
+        BlockReading = BlockReading->pprev;
+    }
+
+    CBigNum bnNew(PastDifficultyAverage);
+    if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0)
+    {
+        bnNew *= PastRateActualSeconds;
+        bnNew /= PastRateTargetSeconds;
+    }
+
+    if (bnNew > Params().ProofOfWorkLimit())
+        bnNew = Params().ProofOfWorkLimit();
 
     return bnNew.GetCompact();
 }
