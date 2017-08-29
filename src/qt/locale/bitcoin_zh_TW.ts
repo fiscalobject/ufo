@@ -2,12 +2,12 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>About Bitcoin Core</source>
-        <translation>關於位元幣核心</translation>
+        <source>About UFO Core</source>
+        <translation>關於飛碟幣核心</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Bitcoin Core&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;位元幣核心&lt;/b&gt; 版本</translation>
+        <source>&lt;b&gt;UFO Core&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;飛碟幣核心&lt;/b&gt; 版本</translation>
     </message>
     <message>
         <source>
@@ -17,7 +17,7 @@ Distributed under the MIT/X11 software license, see the accompanying file COPYIN
 
 This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
         <translation>
-位元幣，原名是 Bitcoin, 又叫做比特幣。
+飛碟幣，原名是 UFO, 又叫做比特幣。
 
 這是一套實驗性的軟體。
 
@@ -30,8 +30,8 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>版權</translation>
     </message>
     <message>
-        <source>The Bitcoin Core developers</source>
-        <translation>位元幣核心開發人員</translation>
+        <source>The UFO Core developers</source>
+        <translation>飛碟幣核心開發人員</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
@@ -105,12 +105,12 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>收款位址</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>這些是你要付款過去的位元幣位址。在付錢之前，務必要檢查金額和收款位址是否正確。</translation>
+        <source>These are your UFO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>這些是你要付款過去的飛碟幣位址。在付錢之前，務必要檢查金額和收款位址是否正確。</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>這些是你用來收款的位元幣位址。建議在每次交易時，都使用一個新的收款位址。</translation>
+        <source>These are your UFO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>這些是你用來收款的飛碟幣位址。建議在每次交易時，都使用一個新的收款位址。</translation>
     </message>
     <message>
         <source>Copy &amp;Label</source>
@@ -207,8 +207,8 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>確認錢包加密</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation>警告: 如果把錢包加密後又忘記密碼，你就會從此&lt;b&gt;失去其中所有的位元幣了&lt;/b&gt;！</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR UFOS&lt;/b&gt;!</source>
+        <translation>警告: 如果把錢包加密後又忘記密碼，你就會從此&lt;b&gt;失去其中所有的飛碟幣了&lt;/b&gt;！</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -227,8 +227,8 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>錢包已加密</translation>
     </message>
     <message>
-        <source>Bitcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
-        <translation>位元幣軟體現在要關閉，好完成加密程序。請注意，加密錢包不能完全防止入侵你的電腦的惡意程式偷取位元幣。</translation>
+        <source>UFO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your UFOs from being stolen by malware infecting your computer.</source>
+        <translation>飛碟幣軟體現在要關閉，好完成加密程序。請注意，加密錢包不能完全防止入侵你的電腦的惡意程式偷取飛碟幣。</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
@@ -298,8 +298,8 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>結束應用程式</translation>
     </message>
     <message>
-        <source>Show information about Bitcoin</source>
-        <translation>顯示位元幣軟體相關資訊</translation>
+        <source>Show information about UFO</source>
+        <translation>顯示飛碟幣軟體相關資訊</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -346,12 +346,12 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>正在為磁碟裡的區塊重建索引...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
-        <translation>付錢給一個位元幣位址</translation>
+        <source>Send coins to a UFO address</source>
+        <translation>付錢給一個飛碟幣位址</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bitcoin</source>
-        <translation>修改位元幣軟體的設定選項</translation>
+        <source>Modify configuration options for UFO</source>
+        <translation>修改飛碟幣軟體的設定選項</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -374,8 +374,8 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>驗證訊息...</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>位元幣</translation>
+        <source>UFO</source>
+        <translation>飛碟幣</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -402,12 +402,12 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>把錢包中的密鑰加密</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>用位元幣位址簽署訊息來證明位址是你的</translation>
+        <source>Sign messages with your UFO addresses to prove you own them</source>
+        <translation>用飛碟幣位址簽署訊息來證明位址是你的</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>驗證訊息是用來確定訊息是用指定的位元幣位址簽署的</translation>
+        <source>Verify messages to ensure they were signed with specified UFO addresses</source>
+        <translation>驗證訊息是用來確定訊息是用指定的飛碟幣位址簽署的</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -430,16 +430,16 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>[testnet]</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>位元幣核心</translation>
+        <source>UFO Core</source>
+        <translation>飛碟幣核心</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation>要求付款(產生 QR Code 和位元幣付款協議的 URI)</translation>
+        <source>Request payments (generates QR codes and ufo: URIs)</source>
+        <translation>要求付款(產生 QR Code 和飛碟幣付款協議的 URI)</translation>
     </message>
     <message>
-        <source>&amp;About Bitcoin Core</source>
-        <translation>關於位元幣核心</translation>
+        <source>&amp;About UFO Core</source>
+        <translation>關於飛碟幣核心</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -450,24 +450,24 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>顯示已使用過的收款位址和標記的清單</translation>
     </message>
     <message>
-        <source>Open a bitcoin: URI or payment request</source>
-        <translation>開啓 bitcoin 協議的 URI 或付款要求</translation>
+        <source>Open a ufo: URI or payment request</source>
+        <translation>開啓 UFO 協議的 URI 或付款要求</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>命令列選項</translation>
     </message>
     <message>
-        <source>Show the Bitcoin Core help message to get a list with possible Bitcoin command-line options</source>
-        <translation>顯示位元幣核心的說明訊息，來取得可用命令列選項的列表</translation>
+        <source>Show the UFO Core help message to get a list with possible UFO command-line options</source>
+        <translation>顯示飛碟幣核心的說明訊息，來取得可用命令列選項的列表</translation>
     </message>
     <message>
-        <source>Bitcoin client</source>
-        <translation>位元幣客戶端軟體</translation>
+        <source>UFO client</source>
+        <translation>飛碟幣客戶端軟體</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoin network</source>
-        <translation><numerusform>%n 個運作中的位元幣網路連線</numerusform></translation>
+        <source>%n active connection(s) to UFO network</source>
+        <translation><numerusform>%n 個運作中的飛碟幣網路連線</numerusform></translation>
     </message>
     <message>
         <source>No block source available...</source>
@@ -562,8 +562,8 @@ Address: %4
         <translation>錢包&lt;b&gt;已加密&lt;/b&gt;並且&lt;b&gt;上鎖中&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Bitcoin can no longer continue safely and will quit.</source>
-        <translation>發生了致命的錯誤。位元幣軟體沒辦法再繼續安全執行，只好結束。</translation>
+        <source>A fatal error occurred. UFO can no longer continue safely and will quit.</source>
+        <translation>發生了致命的錯誤。飛碟幣軟體沒辦法再繼續安全執行，只好結束。</translation>
     </message>
 </context>
 <context>
@@ -847,8 +847,8 @@ Address: %4
         <translation>輸入的位址 %1 在位址簿中已經有了。</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bitcoin address.</source>
-        <translation>輸入的位址 %1 並不是有效的位元幣位址。</translation>
+        <source>The entered address "%1" is not a valid UFO address.</source>
+        <translation>輸入的位址 %1 並不是有效的飛碟幣位址。</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -885,12 +885,12 @@ Address: %4
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Bitcoin Core - Command-line options</source>
-        <translation>位元幣核心 - 命令列選項</translation>
+        <source>UFO Core - Command-line options</source>
+        <translation>飛碟幣核心 - 命令列選項</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>位元幣核心</translation>
+        <source>UFO Core</source>
+        <translation>飛碟幣核心</translation>
     </message>
     <message>
         <source>version</source>
@@ -936,16 +936,16 @@ Address: %4
         <translation>歡迎</translation>
     </message>
     <message>
-        <source>Welcome to Bitcoin Core.</source>
-        <translation>歡迎使用位元幣核心</translation>
+        <source>Welcome to UFO Core.</source>
+        <translation>歡迎使用飛碟幣核心</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bitcoin Core will store its data.</source>
-        <translation>因為這是程式第一次啓動，你可以選擇位元幣核心儲存資料的地方。</translation>
+        <source>As this is the first time the program is launched, you can choose where UFO Core will store its data.</source>
+        <translation>因為這是程式第一次啓動，你可以選擇飛碟幣核心儲存資料的地方。</translation>
     </message>
     <message>
-        <source>Bitcoin Core will download and store a copy of the Bitcoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>位元幣核心會下載並儲存一份位元幣區塊鏈的拷貝。至少有 %1GB 的資料會儲存到這個目錄中，並且還會持續增長。另外錢包資料也會儲存在這個目錄。</translation>
+        <source>UFO Core will download and store a copy of the UFO block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>飛碟幣核心會下載並儲存一份飛碟幣區塊鏈的拷貝。至少有 %1GB 的資料會儲存到這個目錄中，並且還會持續增長。另外錢包資料也會儲存在這個目錄。</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -956,8 +956,8 @@ Address: %4
         <translation>使用自定的資料目錄:</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>位元幣</translation>
+        <source>UFO</source>
+        <translation>飛碟幣</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" can not be created.</source>
@@ -1018,12 +1018,12 @@ Address: %4
         <translation>付交易手續費</translation>
     </message>
     <message>
-        <source>Automatically start Bitcoin after logging in to the system.</source>
-        <translation>在登入系統後自動啓動位元幣軟體。</translation>
+        <source>Automatically start UFO after logging in to the system.</source>
+        <translation>在登入系統後自動啓動飛碟幣軟體。</translation>
     </message>
     <message>
-        <source>&amp;Start Bitcoin on system login</source>
-        <translation>系統登入時啟動位元幣</translation>
+        <source>&amp;Start UFO on system login</source>
+        <translation>系統登入時啟動飛碟幣</translation>
     </message>
     <message>
         <source>Size of &amp;database cache</source>
@@ -1038,8 +1038,8 @@ Address: %4
         <translation>指令碼驗證執行緒數目</translation>
     </message>
     <message>
-        <source>Connect to the Bitcoin network through a SOCKS proxy.</source>
-        <translation>透過 SOCKS 代理伺服器來連線到位元幣網路。</translation>
+        <source>Connect to the UFO network through a SOCKS proxy.</source>
+        <translation>透過 SOCKS 代理伺服器來連線到飛碟幣網路。</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS proxy (default proxy):</source>
@@ -1098,8 +1098,8 @@ Address: %4
         <translation>可以花還沒確認的零錢</translation>
     </message>
     <message>
-        <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>自動在路由器上開放位元幣的客戶端通訊埠。只有在你的路由器支援且開啓「通用即插即用」協定(UPnP)時才有作用。</translation>
+        <source>Automatically open the UFO client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>自動在路由器上開放飛碟幣的客戶端通訊埠。只有在你的路由器支援且開啓「通用即插即用」協定(UPnP)時才有作用。</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1154,8 +1154,8 @@ Address: %4
         <translation>使用界面語言:</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Bitcoin.</source>
-        <translation>可以在這裡設定使用者介面的語言。這個設定在重啓位元幣軟體後才會生效。</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting UFO.</source>
+        <translation>可以在這裡設定使用者介面的語言。這個設定在重啓飛碟幣軟體後才會生效。</translation>
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
@@ -1166,8 +1166,8 @@ Address: %4
         <translation>選擇操作界面和付款時，預設顯示金額的細分單位。</translation>
     </message>
     <message>
-        <source>Whether to show Bitcoin addresses in the transaction list or not.</source>
-        <translation>是否要在交易列表中顯示位元幣位址。</translation>
+        <source>Whether to show UFO addresses in the transaction list or not.</source>
+        <translation>是否要在交易列表中顯示飛碟幣位址。</translation>
     </message>
     <message>
         <source>&amp;Display addresses in transaction list</source>
@@ -1221,8 +1221,8 @@ Address: %4
         <translation>表單</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>顯示的資訊可能是過期的。跟位元幣網路的連線建立後，你的錢包會自動和網路同步，但是這個步驟還沒完成。</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the UFO network after a connection is established, but this process has not completed yet.</source>
+        <translation>顯示的資訊可能是過期的。跟飛碟幣網路的連線建立後，你的錢包會自動和網路同步，但是這個步驟還沒完成。</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -1276,8 +1276,8 @@ Address: %4
         <translation>URI 處理</translation>
     </message>
     <message>
-        <source>URI can not be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
-        <translation>沒辦法解析 URI 位址！可能是因為位元幣位址無效，或是 URI 參數格式錯誤。</translation>
+        <source>URI can not be parsed! This can be caused by an invalid UFO address or malformed URI parameters.</source>
+        <translation>沒辦法解析 URI 位址！可能是因為飛碟幣位址無效，或是 URI 參數格式錯誤。</translation>
     </message>
     <message>
         <source>Requested payment amount of %1 is too small (considered dust).</source>
@@ -1288,8 +1288,8 @@ Address: %4
         <translation>要求付款時發生錯誤</translation>
     </message>
     <message>
-        <source>Cannot start bitcoin: click-to-pay handler</source>
-        <translation>沒辦法啟動 bitcoin 協議的按就付處理器</translation>
+        <source>Cannot start ufo: click-to-pay handler</source>
+        <translation>沒辦法啟動 UFO 協議的按就付處理器</translation>
     </message>
     <message>
         <source>Net manager warning</source>
@@ -1343,8 +1343,8 @@ Address: %4
 <context>
     <name>QObject</name>
     <message>
-        <source>Bitcoin</source>
-        <translation>位元幣</translation>
+        <source>UFO</source>
+        <translation>飛碟幣</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" does not exist.</source>
@@ -1359,12 +1359,12 @@ Address: %4
         <translation>錯誤: -regtest 和 -testnet 的使用組合無效。</translation>
     </message>
     <message>
-        <source>Bitcoin Core didn't yet exit safely...</source>
-        <translation>位元幣核心還沒有安全地結束...</translation>
+        <source>UFO Core didn't yet exit safely...</source>
+        <translation>飛碟幣核心還沒有安全地結束...</translation>
     </message>
     <message>
-        <source>Enter a Bitcoin address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>請輸入位元幣位址(像是 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>Enter a UFO address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
+        <translation>請輸入飛碟幣位址(像是 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
     </message>
 </context>
 <context>
@@ -1485,16 +1485,16 @@ Address: %4
         <translation>除錯紀錄檔</translation>
     </message>
     <message>
-        <source>Open the Bitcoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>從目前的資料目錄下開啓位元幣軟體的除錯紀錄檔。當紀錄檔很大時，可能會花好幾秒的時間。</translation>
+        <source>Open the UFO debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>從目前的資料目錄下開啓飛碟幣軟體的除錯紀錄檔。當紀錄檔很大時，可能會花好幾秒的時間。</translation>
     </message>
     <message>
         <source>Clear console</source>
         <translation>清主控台</translation>
     </message>
     <message>
-        <source>Welcome to the Bitcoin RPC console.</source>
-        <translation>歡迎使用位元幣 RPC 主控台。</translation>
+        <source>Welcome to the UFO RPC console.</source>
+        <translation>歡迎使用飛碟幣 RPC 主控台。</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
@@ -1556,8 +1556,8 @@ Address: %4
         <translation>重複使用現有的收款位址(不建議)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
-        <translation>附加在付款要求中的訊息，可以不填，打開要求內容時會顯示。注意: 這個訊息不會隨著付款送到位元幣網路上。</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the UFO network.</source>
+        <translation>附加在付款要求中的訊息，可以不填，打開要求內容時會顯示。注意: 這個訊息不會隨著付款送到飛碟幣網路上。</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1869,8 +1869,8 @@ Address: %4
         <translation>交易被拒絕了！有時候會發生這種錯誤，是因為你錢包中的一些錢已經被花掉了。比如說你複製了錢包檔 wallet.dat, 然後用複製的錢包花掉了錢，你現在所用的原來的錢包中，卻沒有那筆錢已經花掉的紀錄。</translation>
     </message>
     <message>
-        <source>Warning: Invalid Bitcoin address</source>
-        <translation>警告: 位元幣位址無效</translation>
+        <source>Warning: Invalid UFO address</source>
+        <translation>警告: 飛碟幣位址無效</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1956,8 +1956,8 @@ Address: %4
         <translation>請輸入這個位址的標記，來把它加進去已使用過位址的清單。</translation>
     </message>
     <message>
-        <source>A message that was attached to the bitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
-        <translation>附加在位元幣付款協議 URI 中的訊息，會和交易內容一起存起來，給你自己做參考。注意: 這個訊息不會送到位元幣網路上。</translation>
+        <source>A message that was attached to the ufo: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the UFO network.</source>
+        <translation>附加在飛碟幣付款協議 URI 中的訊息，會和交易內容一起存起來，給你自己做參考。注意: 這個訊息不會送到飛碟幣網路上。</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -1975,8 +1975,8 @@ Address: %4
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Bitcoin Core is shutting down...</source>
-        <translation>位元幣核心正在關閉中...</translation>
+        <source>UFO Core is shutting down...</source>
+        <translation>飛碟幣核心正在關閉中...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -2030,8 +2030,8 @@ Address: %4
         <translation>複製目前的簽章到系統剪貼簿</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bitcoin address</source>
-        <translation>簽署這個訊息來證明這個位元幣位址是你的</translation>
+        <source>Sign the message to prove you own this UFO address</source>
+        <translation>簽署這個訊息來證明這個飛碟幣位址是你的</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2058,8 +2058,8 @@ Address: %4
         <translation>簽署這個訊息的位址(像是 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
-        <translation>驗證這個訊息來確定是用指定的位元幣位址簽署的</translation>
+        <source>Verify the message to ensure it was signed with the specified UFO address</source>
+        <translation>驗證這個訊息來確定是用指定的飛碟幣位址簽署的</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -2070,8 +2070,8 @@ Address: %4
         <translation>重設所有訊息驗證欄位</translation>
     </message>
     <message>
-        <source>Enter a Bitcoin address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>請輸入位元幣位址(像是 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>Enter a UFO address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
+        <translation>請輸入飛碟幣位址(像是 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
     </message>
     <message>
         <source>Click "Sign Message" to generate signature</source>
@@ -2129,12 +2129,12 @@ Address: %4
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>位元幣核心</translation>
+        <source>UFO Core</source>
+        <translation>飛碟幣核心</translation>
     </message>
     <message>
-        <source>The Bitcoin Core developers</source>
-        <translation>位元幣核心開發人員</translation>
+        <source>The UFO Core developers</source>
+        <translation>飛碟幣核心開發人員</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -2612,12 +2612,12 @@ Address: %4
         <translation>選項:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>指定設定檔(預設值: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: ufocoin.conf)</source>
+        <translation>指定設定檔(預設值: ufocoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>指定行程識別碼(PID)檔(預設值:  bitcoind.pid)</translation>
+        <source>Specify pid file (default: ufod.pid)</source>
+        <translation>指定行程識別碼(PID)檔(預設值:  ufod.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>
@@ -2661,8 +2661,8 @@ Address: %4
 </translation>
     </message>
     <message>
-        <source>Bitcoin Core RPC client version</source>
-        <translation>位元幣核心 RPC 客戶端軟體版本</translation>
+        <source>UFO Core RPC client version</source>
+        <translation>飛碟幣核心 RPC 客戶端軟體版本</translation>
     </message>
     <message>
         <source>Run in the background as a daemon and accept commands</source>
@@ -2680,25 +2680,25 @@ Address: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=bitcoinrpc
+rpcuser=uforpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s "Bitcoin Alert" admin@foo.com
+for example: alertnotify=echo %%s | mail -s "UFO Alert" admin@foo.com
 </source>
         <translation>%s, 你必須要在以下設定檔中設定 RPC 密碼(rpcpassword):
 %s
 建議你使用以下隨機產生的密碼:
-rpcuser=bitcoinrpc
+rpcuser=uforpc
 rpcpassword=%s
 (你不用記住這個密碼)
 使用者名稱(rpcuser)和密碼(rpcpassword)不可以相同！
 如果還沒有這個設定檔，請在造出來的時候，設定檔案權限成「只有主人才能讀取」。
 也建議你設定警示通知，發生問題時你才會被通知到；
 比如說設定成:
-alertnotify=echo %%s | mail -s "Bitcoin Alert" admin@foo.com</translation>
+alertnotify=echo %%s | mail -s "UFO Alert" admin@foo.com</translation>
     </message>
     <message>
         <source>Acceptable ciphers (default: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</source>
@@ -2762,15 +2762,15 @@ alertnotify=echo %%s | mail -s "Bitcoin Alert" admin@foo.com</translation>
     </message>
     <message>
         <source>Set the processor limit for when generation is on (-1 = unlimited, default: -1)</source>
-        <translation>當生產位元幣打開時，設定處理器使用數目限制 (-1 表示不限制，預設值: -1)</translation>
+        <translation>當生產飛碟幣打開時，設定處理器使用數目限制 (-1 表示不限制，預設值: -1)</translation>
     </message>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
         <translation>這是個還沒發表的測試版本 - 使用請自負風險 - 請不要用來開採或商業應用</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. Bitcoin Core is probably already running.</source>
-        <translation>沒辦法繫結在這台電腦上的 %s 。位元幣核心可能已經在執行了。</translation>
+        <source>Unable to bind to %s on this computer. UFO Core is probably already running.</source>
+        <translation>沒辦法繫結在這台電腦上的 %s 。飛碟幣核心可能已經在執行了。</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: -proxy)</source>
@@ -2781,12 +2781,12 @@ alertnotify=echo %%s | mail -s "Bitcoin Alert" admin@foo.com</translation>
         <translation>警告: -paytxfee 設定了很高的金額！這可是你交易付款所要付的手續費。</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Bitcoin will not work properly.</source>
-        <translation>警告: 請檢查電腦日期和時間是否正確！位元幣軟體沒辦法在時鐘不準的情況下正常運作。</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong UFO will not work properly.</source>
+        <translation>警告: 請檢查電腦日期和時間是否正確！飛碟幣軟體沒辦法在時鐘不準的情況下正常運作。</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
-        <translation>警告: 位元幣網路對於區塊鏈結的決定目前有分歧！看來有些礦工會有問題。</translation>
+        <translation>警告: 飛碟幣網路對於區塊鏈結的決定目前有分歧！看來有些礦工會有問題。</translation>
     </message>
     <message>
         <source>Warning: We do not appear to fully agree with our peers! You may need to upgrade, or other nodes may need to upgrade.</source>
@@ -2817,8 +2817,8 @@ alertnotify=echo %%s | mail -s "Bitcoin Alert" admin@foo.com</translation>
         <translation>嘗試從壞掉的錢包檔 wallet.dat 復原密鑰</translation>
     </message>
     <message>
-        <source>Bitcoin Core Daemon</source>
-        <translation>位元幣核心護靈</translation>
+        <source>UFO Core Daemon</source>
+        <translation>飛碟幣核心護靈</translation>
     </message>
     <message>
         <source>Block creation options:</source>
@@ -2958,7 +2958,7 @@ alertnotify=echo %%s | mail -s "Bitcoin Alert" admin@foo.com</translation>
     </message>
     <message>
         <source>Generate coins (default: 0)</source>
-        <translation>生產位元幣(預設值: 0)</translation>
+        <translation>生產飛碟幣(預設值: 0)</translation>
     </message>
     <message>
         <source>How many blocks to check at startup (default: 288, 0 = all)</source>
@@ -3025,8 +3025,8 @@ alertnotify=echo %%s | mail -s "Bitcoin Alert" admin@foo.com</translation>
         <translation>這是設計用來給回歸測試工具和應用程式開發用的。</translation>
     </message>
     <message>
-        <source>Usage (deprecated, use bitcoin-cli):</source>
-        <translation>用法(已過時，請改用 bitcoin-cli):</translation>
+        <source>Usage (deprecated, use UFO-cli):</source>
+        <translation>用法(已過時，請改用 UFO-cli):</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
@@ -3061,8 +3061,8 @@ alertnotify=echo %%s | mail -s "Bitcoin Alert" admin@foo.com</translation>
         <translation>從其它來源的 blk000??.dat 檔匯入區塊</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Bitcoin Core is probably already running.</source>
-        <translation>沒辦法鎖定資料目錄 %s。位元幣核心可能已經在執行了。</translation>
+        <source>Cannot obtain a lock on data directory %s. UFO Core is probably already running.</source>
+        <translation>沒辦法鎖定資料目錄 %s。飛碟幣核心可能已經在執行了。</translation>
     </message>
     <message>
         <source>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</source>
@@ -3125,8 +3125,8 @@ alertnotify=echo %%s | mail -s "Bitcoin Alert" admin@foo.com</translation>
         <translation>啟動時輸出區塊樹 (預設值: 0)</translation>
     </message>
     <message>
-        <source>RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
-        <translation>RPC SSL 選項: (SSL 設定程序請見 Bitcoin Wiki)</translation>
+        <source>RPC SSL options: (see the UFO Wiki for SSL setup instructions)</source>
+        <translation>RPC SSL 選項: (SSL 設定程序請見 UFO Wiki)</translation>
     </message>
     <message>
         <source>RPC server options:</source>
@@ -3145,12 +3145,12 @@ alertnotify=echo %%s | mail -s "Bitcoin Alert" admin@foo.com</translation>
         <translation>啟用定期將變動寫入錢包檔的執行緒 (預設值: 1)</translation>
     </message>
     <message>
-        <source>SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
-        <translation>SSL 選項: (SSL 設定程序請見 Bitcoin Wiki)</translation>
+        <source>SSL options: (see the UFO Wiki for SSL setup instructions)</source>
+        <translation>SSL 選項: (SSL 設定程序請見 UFO Wiki)</translation>
     </message>
     <message>
-        <source>Send command to Bitcoin Core</source>
-        <translation>傳送指令給位元幣核心</translation>
+        <source>Send command to UFO Core</source>
+        <translation>傳送指令給飛碟幣核心</translation>
     </message>
     <message>
         <source>Send trace/debug info to console instead of debug.log file</source>
@@ -3185,8 +3185,8 @@ alertnotify=echo %%s | mail -s "Bitcoin Alert" admin@foo.com</translation>
         <translation>指定連線在幾毫秒後逾時(預設值: 5000)</translation>
     </message>
     <message>
-        <source>Start Bitcoin Core Daemon</source>
-        <translation>啟動位元幣核心護靈</translation>
+        <source>Start UFO Core Daemon</source>
+        <translation>啟動飛碟幣核心護靈</translation>
     </message>
     <message>
         <source>System error: </source>
@@ -3301,12 +3301,12 @@ alertnotify=echo %%s | mail -s "Bitcoin Alert" admin@foo.com</translation>
         <translation>載入檔案 wallet.dat 時發生錯誤: 錢包損毀了</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Bitcoin</source>
-        <translation>載入 wallet.dat 檔案時發生錯誤: 這個錢包需要新版的位元幣軟體</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of UFO</source>
+        <translation>載入 wallet.dat 檔案時發生錯誤: 這個錢包需要新版的飛碟幣軟體</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart Bitcoin to complete</source>
-        <translation>錢包需要重寫: 請重新啓動位元幣軟體來完成</translation>
+        <source>Wallet needed to be rewritten: restart UFO to complete</source>
+        <translation>錢包需要重寫: 請重新啓動飛碟幣軟體來完成</translation>
     </message>
     <message>
         <source>Error loading wallet.dat</source>

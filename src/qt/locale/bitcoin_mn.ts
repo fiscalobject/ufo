@@ -107,8 +107,8 @@
         <translation>Түрүйвч цоожлогдлоо</translation>
     </message>
     <message>
-        <source>Bitcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
-        <translation>Цоожлолтын процесыг дуусгахын тулд Биткойн одоо хаагдана. Ѳѳрийн түрүйвчийг цоожлох нь таны биткойнуудыг компьютерийн вирус хулгайлахаас бүрэн сэргийлж чадахгүй гэдгийг санаарай.</translation>
+        <source>UFO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your UFOs from being stolen by malware infecting your computer.</source>
+        <translation>Цоожлолтын процесыг дуусгахын тулд UFO одоо хаагдана. Ѳѳрийн түрүйвчийг цоожлох нь таны биткойнуудыг компьютерийн вирус хулгайлахаас бүрэн сэргийлж чадахгүй гэдгийг санаарай.</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
@@ -170,8 +170,8 @@
         <translation>Програмаас Гарах</translation>
     </message>
     <message>
-        <source>Show information about Bitcoin</source>
-        <translation>Биткойны мэдээллийг харуулах</translation>
+        <source>Show information about UFO</source>
+        <translation>UFOы мэдээллийг харуулах</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -206,8 +206,8 @@
         <translation>Оношилгоо ба засварын консолыг онгойлго</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Биткойн</translation>
+        <source>UFO</source>
+        <translation>UFO</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -230,12 +230,12 @@
         <translation>&amp;Тусламж</translation>
     </message>
     <message>
-        <source>Bitcoin client</source>
-        <translation>Биткойн клиент</translation>
+        <source>UFO client</source>
+        <translation>UFO клиент</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoin network</source>
-        <translation><numerusform>Биткойны сүлжээрүү %n идэвхитэй холболт байна </numerusform><numerusform>Биткойны сүлжээрүү %n идэвхитэй холболтууд байна </numerusform></translation>
+        <source>%n active connection(s) to UFO network</source>
+        <translation><numerusform>UFOы сүлжээрүү %n идэвхитэй холболт байна </numerusform><numerusform>UFOы сүлжээрүү %n идэвхитэй холболтууд байна </numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n hour(s)</source>
@@ -399,8 +399,8 @@ Address: %4
 <context>
     <name>Intro</name>
     <message>
-        <source>Bitcoin</source>
-        <translation>Биткойн</translation>
+        <source>UFO</source>
+        <translation>UFO</translation>
     </message>
     <message>
         <source>Error</source>
@@ -421,8 +421,8 @@ Address: %4
         <translation>МБ</translation>
     </message>
     <message>
-        <source>Connect to the Bitcoin network through a SOCKS proxy.</source>
-        <translation>Биткойны сүлжээрүү SOCKS проксигоор холбогдох.</translation>
+        <source>Connect to the UFO network through a SOCKS proxy.</source>
+        <translation>UFOы сүлжээрүү SOCKS проксигоор холбогдох.</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
@@ -462,8 +462,8 @@ Address: %4
 <context>
     <name>QObject</name>
     <message>
-        <source>Bitcoin</source>
-        <translation>Биткойн</translation>
+        <source>UFO</source>
+        <translation>UFO</translation>
     </message>
     </context>
 <context>
@@ -692,8 +692,8 @@ Address: %4
         <translation>Гүйлгээний тѳлбѳр %1-ийг тооцхоор нийт дүн нь таны балансаас хэтрээд байна.</translation>
     </message>
     <message>
-        <source>Warning: Invalid Bitcoin address</source>
-        <translation>Анхаар:Буруу Биткойны хаяг байна</translation>
+        <source>Warning: Invalid UFO address</source>
+        <translation>Анхаар:Буруу UFOы хаяг байна</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -738,8 +738,8 @@ Address: %4
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Bitcoin Core is shutting down...</source>
-        <translation>Биткойны цѳм хаагдаж байна...</translation>
+        <source>UFO Core is shutting down...</source>
+        <translation>UFOы цѳм хаагдаж байна...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -1095,8 +1095,8 @@ Address: %4
         <translation>wallet.dat-ыг ачааллахад алдаа гарлаа: Түрүйвч эвдэрсэн байна</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Bitcoin</source>
-        <translation>wallet.dat-ыг ачааллахад алдаа гарлаа: Түрүйвч Биткойны шинэ хувилбарыг шаардаж байна</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of UFO</source>
+        <translation>wallet.dat-ыг ачааллахад алдаа гарлаа: Түрүйвч UFOы шинэ хувилбарыг шаардаж байна</translation>
     </message>
     <message>
         <source>Error loading wallet.dat</source>
