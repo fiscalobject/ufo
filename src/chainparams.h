@@ -80,7 +80,7 @@ protected:
     MessageStartChars pchMessageStart;
     // Raw pub key bytes for the broadcast alert signing key.
     vector<unsigned char> vAlertPubKey;
-    std::string checkpointPubKey
+    std::string checkpointPubKey;
     int nCoinFix;
     int nHardForkOne;
     int nHardForkTwo;
