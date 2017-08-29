@@ -36,7 +36,6 @@ public:
         vAlertPubKey = ParseHex("04b48eaf546f46221b6b3ee0806f7652763ab5e9774125636ef539f144e98d176e02274600ed6b605cfcc199aba8f7d2228d2cc6b9b28d6fa244b74f7540c22c2a");
         checkpointPubKey = "044318157bd82b6e17926c8804eecf73140f416c34ccc2237c56614d081dce88a98293b40891d801d16a2899defe7869706d7ec55118ef8f06c683cfdc6b6a8c58";
         nCoinFix = 15000;
-        nSoftForkOne = 168233;
         nHardForkOne = 33479;
         nHardForkTwo = 160997;
         nHardForkThree = 266000;
