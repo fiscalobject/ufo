@@ -2295,7 +2295,7 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
 
         /* Don't accept blocks with bogus nVersion numbers after this point */
         if((nHeight >= nHardForkThree) || (fTestNet && (nHeight >= nTestnetFork))) {
-            if(nVersion != 2)
+            if(nVersion < 2)
                 return(state.DoS(100, error("AcceptBlock() : incorrect block version")));
         }
  
@@ -2332,8 +2332,8 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
         // Reject block.nVersion=1 blocks when 95% (75% on testnet) of the network has upgraded:
         if (nVersion < 2)
         {
-            if ((!fTestNet && CBlockIndex::IsSuperMajority(2, pindexPrev, 950, 1000)) ||
-                (fTestNet && CBlockIndex::IsSuperMajority(2, pindexPrev, 75, 100)))
+            if ((!fTestNet && CBlockIndex::IsSuperMajority(2, pindexPrev, 950, 1000) && nTime > nSwitchV2) ||
+                (fTestNet && CBlockIndex::IsSuperMajority(2, pindexPrev, 75, 100) && nTime > nTestnetSwitchV2))
             {
                 return state.Invalid(error("AcceptBlock() : rejected nVersion=1 block"));
             }
@@ -2342,8 +2342,8 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
         if (nVersion >= 2)
         {
             // if 750 of the last 1,000 blocks are version 2 or greater (51/100 if testnet):
-            if ((!fTestNet && CBlockIndex::IsSuperMajority(2, pindexPrev, 750, 1000)) ||
-                (fTestNet && CBlockIndex::IsSuperMajority(2, pindexPrev, 51, 100)))
+            if ((!fTestNet && CBlockIndex::IsSuperMajority(2, pindexPrev, 750, 1000) && nTime > nSwitchV2) ||
+                (fTestNet && CBlockIndex::IsSuperMajority(2, pindexPrev, 51, 100) && nTime > nTestnetSwitchV2))
             {
                 CScript expect = CScript() << nHeight;
                 if (vtx[0].vin[0].scriptSig.size() < expect.size() ||
