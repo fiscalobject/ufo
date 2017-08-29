@@ -2419,14 +2419,14 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CDiskBlockPos* dbp)
                                  REJECT_INVALID, "time-too-old");
                                  
         // Limit block in future accepted in chain to only a time window of 15 min
-        if (GetBlockTime() > GetAdjustedTime() + 15 * 60)
+        if (block.GetBlockTime() > GetAdjustedTime() + 15 * 60)
             return state.Invalid(error("AcceptBlock() : block's timestamp too far in the future"),
                                  REJECT_INVALID, "time-too-far-ahead");
                                  
         // Check timestamp against prev it should not be more then 15 minutes outside blockchain time
-        if ((nHeight >= Params().ForkTwo()) && (GetBlockTime() <= pindexPrev->GetBlockTime() - 15 * 60) ||
-            (GetBlockTime() > GetAdjustedTime() + 2 * 60 * 60))
-            return return state.Invalid(error("AcceptBlock() : block's timestamp is too early compare to last block"),
+        if ((nHeight >= Params().ForkTwo()) && (block.GetBlockTime() <= pindexPrev->GetBlockTime() - 15 * 60) ||
+            (block.GetBlockTime() > GetAdjustedTime() + 2 * 60 * 60))
+            return state.Invalid(error("AcceptBlock() : block's timestamp is too early compare to last block"),
                                  REJECT_INVALID, "time-too-far-ahead");
 
         // Check that all transactions are finalized
