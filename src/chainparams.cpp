@@ -38,6 +38,7 @@ public:
         nCoinFix = 15000;
         nHardForkOne = 33479;
         nHardForkTwo = 160997;
+        nHardForkTwoA = 171900;
         nHardForkThree = 266000;
         nNeoScryptSwitch = 1414195200;
         nDefaultPort = 9887;

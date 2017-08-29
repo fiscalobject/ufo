@@ -59,6 +59,7 @@ public:
     const int CoinFix() const { return nCoinFix; }
     const int ForkOne() const { return nHardForkOne; }
     const int ForkTwo() const { return nHardForkTwo; }
+    const int ForkTwoA() const { return nHardForkTwoA; }
     const int ForkThree() const { return nHardForkThree; }
     const unsigned int NeoScryptSwitch() const { return nNeoScryptSwitch;}
     int GetDefaultPort() const { return nDefaultPort; }
@@ -83,6 +84,7 @@ protected:
     int nCoinFix;
     int nHardForkOne;
     int nHardForkTwo;
+    int nHardForkTwoA;
     int nHardForkThree;
     unsigned int nNeoScryptSwitch;
     int nDefaultPort;
