@@ -1357,6 +1357,8 @@ unsigned int GetNextWorkRequired_V2(const CBlockIndex* pindexLast)
     static const int64_t TargetBlocksSpacingSeconds = nTargetSpacing;
     static const unsigned int TimeDaySeconds = nTargetTimespan;
     int64_t PastSecondsMin = TimeDaySeconds * 0.025;
+    if(pindexLast->nHeight + 1 >= Params().ForkTwoA())
+		PastSecondsMin = TimeDaySeconds * 0.15;
     int64_t PastSecondsMax = TimeDaySeconds * 7;
     uint64_t PastBlocksMin = PastSecondsMin / TargetBlocksSpacingSeconds;
     uint64_t PastBlocksMax = PastSecondsMax / TargetBlocksSpacingSeconds;
@@ -1403,7 +1405,11 @@ unsigned int GetNextWorkRequired_V2(const CBlockIndex* pindexLast)
         if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0)
             PastRateAdjustmentRatio = double(PastRateTargetSeconds) / double(PastRateActualSeconds);
 
-        EventHorizonDeviation = 1 + (0.7084 * pow((double(PastBlocksMass) / double(144)), -1.228));
+        if(pindexLast->nHeight + 1 >= Params().ForkTwoA())
+            EventHorizonDeviation = 1 + (0.7084 * pow((double(PastBlocksMass) / double(144)), -1.228));
+        else
+            EventHorizonDeviation = 1 + (0.7084 * pow((double(PastBlocksMass) / double(28.2)), -1.228));
+
         EventHorizonDeviationFast = EventHorizonDeviation;
         EventHorizonDeviationSlow = 1 / EventHorizonDeviation;
 
