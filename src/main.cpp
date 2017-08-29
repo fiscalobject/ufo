@@ -1267,6 +1267,13 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     if (pindexLast == NULL)
         return nProofOfWorkLimit;
 
+    if(pindexLast->nHeight >= Params().ForkOne())
+    {
+        nTargetTimespan = 60 * 60; // 1 hours
+        nInterval = nTargetTimespan / nTargetSpacing;
+		nReTargetHistoryFact = 2;
+    }
+
     // Only change once per interval
     if ((pindexLast->nHeight+1) % nInterval != 0)
     {
