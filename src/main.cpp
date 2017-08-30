@@ -799,7 +799,7 @@ bool CTxMemPool::accept(CValidationState &state, CTransaction &tx, bool fCheckIn
 
         // Check against previous transactions
         // This is done last to help prevent CPU exhaustion denial-of-service attacks.
-        if (!tx.CheckInputs(state, view, true, SCRIPT_VERIFY_P2SH | SCRIPT_VERIFY_STRICTENC))
+        if (!tx.CheckInputs(state, view, true, SCRIPT_VERIFY_P2SH | SCRIPT_VERIFY_STRICTENC | SCRIPT_VERIFY_DERSIG))
         {
             return error("CTxMemPool::accept() : ConnectInputs failed %s", hash.ToString().c_str());
         }
@@ -1797,6 +1797,12 @@ bool CBlock::ConnectBlock(CValidationState &state, CBlockIndex* pindex, CCoinsVi
     unsigned int flags = SCRIPT_VERIFY_NOCACHE |
                          (fStrictPayToScriptHash ? SCRIPT_VERIFY_P2SH : SCRIPT_VERIFY_NONE);
 
+    if (nVersion >= 3 &&
+        ((!fTestNet && CBlockIndex::IsSuperMajority(3, pindex->pprev, 750, 1000)) ||
+            (fTestNet && CBlockIndex::IsSuperMajority(3, pindex->pprev, 51, 100)))) {
+        flags |= SCRIPT_VERIFY_DERSIG;
+    }
+
     CBlockUndo blockundo;
 
     CCheckQueueControl<CScriptCheck> control(fScriptChecks && nScriptCheckThreads ? &scriptcheckqueue : NULL);
@@ -2336,6 +2342,15 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
                 (fTestNet && CBlockIndex::IsSuperMajority(2, pindexPrev, 75, 100) && nTime > nTestnetSwitchV2))
             {
                 return state.Invalid(error("AcceptBlock() : rejected nVersion=1 block"));
+            }
+        }
+        // Reject block.nVersion=2 blocks when 95% (75% on testnet) of the network has upgraded:
+        if (nVersion < 3)
+        {
+            if ((!fTestNet && CBlockIndex::IsSuperMajority(3, pindexPrev, 950, 1000)) ||
+                (fTestNet && CBlockIndex::IsSuperMajority(3, pindexPrev, 75, 100)))
+            {
+                return state.Invalid(error("AcceptBlock() : rejected nVersion=2 block"));
             }
         }
         // Enforce block.nVersion=2 rule that the coinbase starts with serialized block height
