@@ -329,6 +329,9 @@ void BitcoinApplication::createWindow(bool isaTestNet)
 void BitcoinApplication::createSplashScreen(bool isaTestNet)
 {
     SplashScreen *splash = new SplashScreen(QPixmap(), 0, isaTestNet);
+    QFont* font = new QFont("Nasalization Rg");
+    font->setPixelSize(14);
+    splash->setFont(*font);
     splash->setAttribute(Qt::WA_DeleteOnClose);
     splash->show();
     connect(this, SIGNAL(splashFinished(QWidget*)), splash, SLOT(slotFinish(QWidget*)));
