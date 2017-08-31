@@ -49,6 +49,7 @@ BITCOIN_CORE_H = \
   main.h \
   miner.h \
   mruset.h \
+  neoscrypt.h \
   netbase.h \
   net.h \
   noui.h \
@@ -58,7 +59,6 @@ BITCOIN_CORE_H = \
   rpcserver.h \
   script.h \
   serialize.h \
-  scrypt.h \
   sync.h \
   threadsafety.h \
   tinyformat.h \
@@ -128,11 +128,12 @@ libbitcoin_common_a_SOURCES = \
   core.cpp \
   hash.cpp \
   key.cpp \
+  neoscrypt.c \
+  neoscrypt_asm.S \
   netbase.cpp \
   protocol.cpp \
   rpcprotocol.cpp \
   script.cpp \
-  scrypt.cpp \
   sync.cpp \
   util.cpp \
   version.cpp \

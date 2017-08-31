@@ -1153,10 +1153,6 @@ bool ReadBlockFromDisk(CBlock& block, const CDiskBlockPos& pos)
         return error("%s : Deserialize or I/O error - %s", __func__, e.what());
     }
 
-    // Check the header
-    if (!CheckProofOfWork(block.GetPoWHash(), block.nBits))
-        return error("ReadBlockFromDisk : Errors in block header");
-
     return true;
 }
 
@@ -1261,7 +1257,9 @@ unsigned int ComputeMinWork(unsigned int nBase, int64_t nTime)
 
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
-    if(pindexLast->nHeight >= Params().ForkOne())
+    int nHeight = pindexLast->nHeight + 1;
+
+    if (pindexLast->nHeight >= Params().ForkOne())
     {
         nTargetTimespan = 60 * 60; // 1 hours
         nInterval = nTargetTimespan / nTargetSpacing;
@@ -1271,6 +1269,21 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     int DiffMode = 1;
     if (pindexLast->nHeight >= Params().ForkTwo())
         DiffMode = 2;
+
+    /* NeoScrypt hard fork */
+    if (nHeight >= Params().ForkThree())
+    {
+        if (!fNeoScrypt)
+            fNeoScrypt = true;
+
+        // Difficulty reset after the switch
+        if(nHeight == Params().ForkThree())
+            return Params().ProofOfWorkLimit().GetCompact();
+
+        // Use normal difficulty adjust following fork for 10 blocks
+        if (nHeight <= Params().ForkThree() + 10)
+            DiffMode = 1;
+    }
 
     if (DiffMode == 1) 
         return GetNextWorkRequired_V1(pindexLast, pblock);
@@ -2510,6 +2523,17 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CDiskBlockPos* dbp)
         pindexPrev = (*mi).second;
         nHeight = pindexPrev->nHeight+1;
 
+        /* Don't accept v1 blocks after this point */
+        if (block.nTime > Params().NeoScryptSwitch()) {
+            CScript expect = CScript() << nHeight;
+            if(!std::equal(expect.begin(), expect.end(), block.vtx[0].vin[0].scriptSig.begin()))
+                return(state.DoS(100, error("AcceptBlock() : incorrect block height in coin base")));
+        }
+
+        /* Don't accept blocks with bogus nVersion numbers after this point */
+        if (nHeight >= Params().ForkThree() && block.nVersion < 2)
+                return(state.DoS(100, error("AcceptBlock() : incorrect block version")));
+
         // Check proof of work
         if (block.nBits != GetNextWorkRequired(pindexPrev, &block))
             return state.DoS(100, error("AcceptBlock() : incorrect proof of work"),
@@ -2550,8 +2574,8 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CDiskBlockPos* dbp)
         // Reject block.nVersion=1 blocks when 95% (75% on testnet) of the network has upgraded:
         if (block.nVersion < 2)
         {
-            if ((!TestNet() && CBlockIndex::IsSuperMajority(2, pindexPrev, 950, 1000)) ||
-                (TestNet() && CBlockIndex::IsSuperMajority(2, pindexPrev, 75, 100)))
+            if ((!TestNet() && CBlockIndex::IsSuperMajority(2, pindexPrev, 950, 1000) && block.nTime > Params().NeoScryptSwitch()) ||
+                (TestNet() && CBlockIndex::IsSuperMajority(2, pindexPrev, 75, 100) && block.nTime > Params().NeoScryptSwitch()))
             {
                 return state.Invalid(error("AcceptBlock() : rejected nVersion=1 block"),
                                      REJECT_OBSOLETE, "bad-version");
@@ -2571,8 +2595,8 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CDiskBlockPos* dbp)
         if (block.nVersion >= 2)
         {
             // if 750 of the last 1,000 blocks are version 2 or greater (51/100 if testnet):
-            if ((!TestNet() && CBlockIndex::IsSuperMajority(2, pindexPrev, 750, 1000)) ||
-                (TestNet() && CBlockIndex::IsSuperMajority(2, pindexPrev, 51, 100)))
+            if ((!TestNet() && CBlockIndex::IsSuperMajority(2, pindexPrev, 750, 1000) && block.nTime > Params().NeoScryptSwitch()) ||
+                (TestNet() && CBlockIndex::IsSuperMajority(2, pindexPrev, 51, 100) && block.nTime > Params().NeoScryptSwitch()))
             {
                 CScript expect = CScript() << nHeight;
                 if (block.vtx[0].vin[0].scriptSig.size() < expect.size() ||
