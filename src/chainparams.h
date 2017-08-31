@@ -62,6 +62,7 @@ public:
     const int ForkTwoA() const { return nHardForkTwoA; }
     const int ForkThree() const { return nHardForkThree; }
     const unsigned int NeoScryptSwitch() const { return nNeoScryptSwitch;}
+    const unsigned int NeoScryptFork() const { return nNeoScryptFork;}
     int GetDefaultPort() const { return nDefaultPort; }
     const CBigNum& ProofOfWorkLimit() const { return bnProofOfWorkLimit; }
     int SubsidyHalvingInterval() const { return nSubsidyHalvingInterval; }
@@ -87,6 +88,7 @@ protected:
     int nHardForkTwoA;
     int nHardForkThree;
     unsigned int nNeoScryptSwitch;
+    unsigned int nNeoScryptFork;
     int nDefaultPort;
     int nRPCPort;
     CBigNum bnProofOfWorkLimit;

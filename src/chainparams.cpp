@@ -41,6 +41,7 @@ public:
         nHardForkTwoA = 171900;
         nHardForkThree = 266000;
         nNeoScryptSwitch = 1414195200;
+        nNeoScryptFork = 1414446393;
         nDefaultPort = 9887;
         nRPCPort = 9888;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
