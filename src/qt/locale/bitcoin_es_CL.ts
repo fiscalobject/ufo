@@ -717,8 +717,8 @@ Dirección: %4</translation>
         <translation>UFO</translation>
     </message>
     <message>
-        <source>Enter a UFO address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>Introduce una dirección UFO (ej. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>Enter a UFO address (e.g. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</source>
+        <translation>Introduce una dirección UFO (ej. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</translation>
     </message>
 </context>
 <context>
@@ -942,8 +942,8 @@ Dirección: %4</translation>
         <translation>&amp;Pagar a:</translation>
     </message>
     <message>
-        <source>The address to send the payment to (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>La dirección donde enviar el pago (ej. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>The address to send the payment to (e.g. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</source>
+        <translation>La dirección donde enviar el pago (ej. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to your address book</source>
@@ -980,8 +980,8 @@ Dirección: %4</translation>
         <translation>&amp;Firmar Mensaje</translation>
     </message>
     <message>
-        <source>The address to sign the message with (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>Introduce una dirección UFO (ej. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>The address to sign the message with (e.g. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</source>
+        <translation>Introduce una dirección UFO (ej. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1020,16 +1020,16 @@ Dirección: %4</translation>
         <translation>&amp;Firmar Mensaje</translation>
     </message>
     <message>
-        <source>The address the message was signed with (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>Introduce una dirección UFO (ej. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>The address the message was signed with (e.g. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</source>
+        <translation>Introduce una dirección UFO (ej. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
         <translation>&amp;Firmar Mensaje</translation>
     </message>
     <message>
-        <source>Enter a UFO address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>Introduce una dirección UFO (ej. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>Enter a UFO address (e.g. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</source>
+        <translation>Introduce una dirección UFO (ej. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</translation>
     </message>
     <message>
         <source>Click "Sign Message" to generate signature</source>

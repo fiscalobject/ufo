@@ -1285,8 +1285,8 @@ Alamat: %4
         <translation>Inti UFO belum keluar dengan sempurna...</translation>
     </message>
     <message>
-        <source>Enter a UFO address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>Masukkan alamat UFO (cth. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>Enter a UFO address (e.g. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</source>
+        <translation>Masukkan alamat UFO (cth. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</translation>
     </message>
 </context>
 <context>
@@ -1814,8 +1814,8 @@ Alamat: %4
         <translation>Kirim &amp;Ke:</translation>
     </message>
     <message>
-        <source>The address to send the payment to (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>Alamat pembayaran (cth. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>The address to send the payment to (e.g. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</source>
+        <translation>Alamat pembayaran (cth. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to your address book</source>
@@ -1896,8 +1896,8 @@ Alamat: %4
         <translation>&amp;Tandakan Pesan</translation>
     </message>
     <message>
-        <source>The address to sign the message with (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>Alamat yang akan ditandai pesan (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>The address to sign the message with (e.g. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</source>
+        <translation>Alamat yang akan ditandai pesan (e.g. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1952,8 +1952,8 @@ Alamat: %4
         <translation>Hapus semua bidang verifikasi pesan</translation>
     </message>
     <message>
-        <source>Enter a UFO address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>Masukkan alamat UFO (cth. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>Enter a UFO address (e.g. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</source>
+        <translation>Masukkan alamat UFO (cth. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</translation>
     </message>
     <message>
         <source>Click "Sign Message" to generate signature</source>

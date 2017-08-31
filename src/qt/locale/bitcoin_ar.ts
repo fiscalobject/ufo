@@ -858,8 +858,8 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>بت كوين</translation>
     </message>
     <message>
-        <source>Enter a UFO address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>إدخال عنوانUFO (مثال :1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>Enter a UFO address (e.g. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</source>
+        <translation>إدخال عنوانUFO (مثال :Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</translation>
     </message>
 </context>
 <context>
@@ -1269,8 +1269,8 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>تحقق &amp;الرسالة</translation>
     </message>
     <message>
-        <source>Enter a UFO address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>إدخال عنوانUFO (مثال :1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>Enter a UFO address (e.g. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</source>
+        <translation>إدخال عنوانUFO (مثال :Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</translation>
     </message>
     <message>
         <source>Click "Sign Message" to generate signature</source>

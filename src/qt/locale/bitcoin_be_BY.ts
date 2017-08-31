@@ -533,8 +533,8 @@ Address: %4
 <context>
     <name>QObject</name>
     <message>
-        <source>Enter a UFO address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>Увядзіце UFO-адрас (ўзор 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>Enter a UFO address (e.g. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</source>
+        <translation>Увядзіце UFO-адрас (ўзор Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</translation>
     </message>
 </context>
 <context>
@@ -680,8 +680,8 @@ Address: %4
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Enter a UFO address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>Увядзіце UFO-адрас (ўзор 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>Enter a UFO address (e.g. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</source>
+        <translation>Увядзіце UFO-адрас (ўзор Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</translation>
     </message>
     </context>
 <context>

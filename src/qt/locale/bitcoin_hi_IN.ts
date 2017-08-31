@@ -427,8 +427,8 @@ Address: %4
         <translation>बीटकोइन</translation>
     </message>
     <message>
-        <source>Enter a UFO address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>UFO एड्रेस लिखें (उदाहरण: 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>Enter a UFO address (e.g. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</source>
+        <translation>UFO एड्रेस लिखें (उदाहरण: Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</translation>
     </message>
 </context>
 <context>
@@ -587,8 +587,8 @@ Address: %4
         <translation>हस्ताक्षर</translation>
     </message>
     <message>
-        <source>Enter a UFO address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>UFO एड्रेस लिखें (उदाहरण: 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>Enter a UFO address (e.g. Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</source>
+        <translation>UFO एड्रेस लिखें (उदाहरण: Bybvm6vc9ibg17BHVDkb5Fxy7BsaEXyhSo)</translation>
     </message>
     </context>
 <context>
