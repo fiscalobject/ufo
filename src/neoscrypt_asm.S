@@ -9093,7 +9093,7 @@ _cpu_vec_exts:
 	orl	$0x00001000, %ebp
 .cpu_vec_st1:
 /* Some original Cyrix processors report nonsense in %ecx of
- * the CPUID standard function 1, however they don't support even SSE */
+ * the CPUID standard function 1, however they do not support even SSE */
 	movl	$1, %eax
 	cpuid
 /* SSE (bit 25 of %edx); implies MMX+ and MMX */
