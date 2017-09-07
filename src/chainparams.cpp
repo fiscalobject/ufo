@@ -124,7 +124,8 @@ public:
         nHardForkOne = 200;
         nHardForkTwo = 300;
         nHardForkThree = 400;
-        nNeoScryptSwitch = 1504094400;
+        nNeoScryptSwitch = 1506816000;
+        nNeoScryptFork = 1506816000;
         nDefaultPort = 19887;
         nRPCPort = 19888;
         strDataDir = "testnet3";
