@@ -270,6 +270,10 @@ static const CRPCCommand vRPCCommands[] =
     { "makekeypair",            &makekeypair,            true,     	false,		false },
     { "sendalert",              &sendalert,              true,      false,		false },
 
+    /* Checkpointing */
+    { "getcheckpoint",          &getcheckpoint,          true,      false,		false },
+    { "sendcheckpoint",         &sendcheckpoint,         true,      false,		false },
+
 #ifdef ENABLE_WALLET
     /* Wallet */
     { "addmultisigaddress",     &addmultisigaddress,     false,     false,      true },

@@ -18,6 +18,7 @@
 #include "rpcserver.h"
 #include "txdb.h"
 #include "ui_interface.h"
+#include "checkpointsync.h"
 #include "util.h"
 #ifdef ENABLE_WALLET
 #include "db.h"
@@ -608,6 +609,12 @@ bool AppInit2(boost::thread_group& threadGroup)
             CTransaction::nMinRelayTxFee = n;
         else
             return InitError(strprintf(_("Invalid amount for -minrelaytxfee=<amount>: '%s'"), mapArgs["-minrelaytxfee"]));
+    }
+
+    if (mapArgs.count("-checkpointkey")) // ppcoin: checkpoint master priv key
+    {
+        if (!SetCheckpointPrivKey(GetArg("-checkpointkey", "")))
+            return InitError(_("Unable to sign checkpoint, wrong checkpointkey?"));
     }
 
 #ifdef ENABLE_WALLET

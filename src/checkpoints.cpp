@@ -154,4 +154,14 @@ namespace Checkpoints
         }
         return NULL;
     }
+    
+	uint256 GetLatestHardenedCheckpoint()
+    {
+        const MapCheckpoints& checkpoints = *Checkpoints().mapCheckpoints;
+
+        if (checkpoints.empty())
+            return Params().HashGenesisBlock();
+
+        return (checkpoints.rbegin()->second);
+    }
 }

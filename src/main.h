@@ -87,11 +87,17 @@ static const unsigned char REJECT_DUST = 0x41;
 static const unsigned char REJECT_INSUFFICIENTFEE = 0x42;
 static const unsigned char REJECT_CHECKPOINT = 0x43;
 
+struct COrphanBlock {
+    uint256 hashBlock;
+    uint256 hashPrev;
+    vector<unsigned char> vchBlock;
+};
 
 extern CScript COINBASE_FLAGS;
 extern CCriticalSection cs_main;
 extern CTxMemPool mempool;
 extern std::map<uint256, CBlockIndex*> mapBlockIndex;
+extern std::map<uint256, COrphanBlock*> mapOrphanBlocks;
 extern uint64_t nLastBlockTx;
 extern uint64_t nLastBlockSize;
 extern const std::string strMessageMagic;
@@ -172,6 +178,8 @@ std::string GetWarnings(std::string strFor);
 bool GetTransaction(const uint256 &hash, CTransaction &tx, uint256 &hashBlock, bool fAllowSlow = false);
 /** Find the best known block, and make it the tip of the block chain */
 bool ActivateBestChain(CValidationState &state);
+/** Connect/disconnect blocks until pindexNew is the new tip of the active block chain */
+bool SetBestChain(CValidationState &state, CBlockIndex* pindexNew);
 int64_t GetBlockValue(int nHeight, int64_t nFees);
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock);
 unsigned int GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockHeader *pblock);
