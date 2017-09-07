@@ -30,6 +30,8 @@ SplashScreen::SplashScreen(const QPixmap &pixmap, Qt::WindowFlags f, bool isTest
     int line2 = 18;
     int line3 = 36;
 
+    float fontFactor            = 1.0;
+
     // define text to place
     QString titleText       = tr("STRONG ENCRYPTION  FAST TRANSACTIONS");
     QString algoText        = QString("NEOSCRYPT");
@@ -49,7 +51,13 @@ SplashScreen::SplashScreen(const QPixmap &pixmap, Qt::WindowFlags f, bool isTest
 
     QString font            = "Nasalization Rg";
     QPainter pixPaint(&newPixmap);
-    pixPaint.setFont(QFont(font, 14));
+    pixPaint.setFont(QFont(font, 14*fontFactor));
+    QFontMetrics fm = pixPaint.fontMetrics();
+    int titleTextWidth  = fm.width(titleText);
+    if(titleTextWidth > 450) {
+        fontFactor = 0.80;
+        pixPaint.setFont(QFont(font, 14*fontFactor));
+    }
 
     if (isTestNet) {
         pixPaint.setPen(QColor(255,26,26));
@@ -62,10 +70,10 @@ SplashScreen::SplashScreen(const QPixmap &pixmap, Qt::WindowFlags f, bool isTest
 
     pixPaint.setPen(QColor(255,255,255));
 
-    pixPaint.setFont(QFont(font, 13));
+    pixPaint.setFont(QFont(font, 13*fontFactor));
     pixPaint.drawText(40,46,titleText);
 
-    pixPaint.setFont(QFont(font, 10));
+    pixPaint.setFont(QFont(font, 10*fontFactor));
     pixPaint.drawText(paddingLeftCol2,paddingTopCol2+line3,versionText);
     pixPaint.drawText(paddingLeftCol2,paddingTopCol2+line1,copyrightText1);
     pixPaint.drawText(paddingLeftCol2,paddingTopCol2+line2,copyrightText2);
