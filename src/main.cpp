@@ -2684,8 +2684,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CDiskBlockPos* dbp)
                                  REJECT_INVALID, "time-too-far-ahead");
                                  
         // Check timestamp against prev it should not be more then 15 minutes outside blockchain time
-        if ((nHeight >= Params().ForkTwo()) && (block.GetBlockTime() <= pindexPrev->GetBlockTime() - 15 * 60) ||
-            (block.GetBlockTime() > GetAdjustedTime() + 2 * 60 * 60))
+        if (nHeight >= Params().ForkTwo() && block.GetBlockTime() <= pindexPrev->GetBlockTime() - 15 * 60)
             return state.Invalid(error("AcceptBlock() : block's timestamp is too early compare to last block"),
                                  REJECT_INVALID, "time-too-far-ahead");
 
