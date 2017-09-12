@@ -54,8 +54,12 @@ SplashScreen::SplashScreen(const QPixmap &pixmap, Qt::WindowFlags f, bool isTest
     pixPaint.setFont(QFont(font, 14*fontFactor));
     QFontMetrics fm = pixPaint.fontMetrics();
     int titleTextWidth  = fm.width(titleText);
+    LogPrintf("%s: titleText width: %d", __func__, titleTextWidth);
     if(titleTextWidth > 450) {
         fontFactor = 0.80;
+        pixPaint.setFont(QFont(font, 14*fontFactor));
+    } else if (titleTextWidth <= 301) {
+        fontFactor = 1.4;
         pixPaint.setFont(QFont(font, 14*fontFactor));
     }
 
