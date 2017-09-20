@@ -56,13 +56,13 @@ public:
     const MessageStartChars& MessageStart() const { return pchMessageStart; }
     const vector<unsigned char>& AlertKey() const { return vAlertPubKey; }
     const std::string CheckpointKey() const { return checkpointPubKey;}
-    const int CoinFix() const { return nCoinFix; }
-    const int ForkOne() const { return nHardForkOne; }
-    const int ForkTwo() const { return nHardForkTwo; }
-    const int ForkTwoA() const { return nHardForkTwoA; }
-    const int ForkThree() const { return nHardForkThree; }
-    const unsigned int NeoScryptSwitch() const { return nNeoScryptSwitch;}
-    const unsigned int NeoScryptFork() const { return nNeoScryptFork;}
+    int CoinFix() const { return nCoinFix; }
+    int ForkOne() const { return nHardForkOne; }
+    int ForkTwo() const { return nHardForkTwo; }
+    int ForkTwoA() const { return nHardForkTwoA; }
+    int ForkThree() const { return nHardForkThree; }
+    unsigned int NeoScryptSwitch() const { return nNeoScryptSwitch;}
+    unsigned int NeoScryptFork() const { return nNeoScryptFork;}
     int GetDefaultPort() const { return nDefaultPort; }
     const CBigNum& ProofOfWorkLimit() const { return bnProofOfWorkLimit; }
     int SubsidyHalvingInterval() const { return nSubsidyHalvingInterval; }
