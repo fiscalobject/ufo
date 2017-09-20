@@ -2364,7 +2364,6 @@ bool SetBestChain(CValidationState &state, CBlockIndex* pindexNew)
     }
 
     // Flush changes to global coin state
-    int nModified = view.GetCacheSize();
     bool ret;
     ret = view.Flush();
     assert(ret);
