@@ -108,6 +108,12 @@ AC_ARG_ENABLE([glibc-back-compat],
   [use_glibc_compat=$enableval],
   [use_glibc_compat=no])
 
+AC_ARG_ENABLE([sse2],
+  [AC_HELP_STRING([--enable-sse2],
+  [enable SSE2 optimizations (defaults is yes)])],
+  [use_sse2=${enableval}],
+  [use_sse2=yes])
+
 AC_ARG_WITH([protoc-bindir],[AS_HELP_STRING([--with-protoc-bindir=BIN_DIR],[specify protoc bin path])], [protoc_bin_path=$withval], [])
 
 
@@ -304,6 +310,11 @@ if test x$use_lcov == xyes; then
   LCOV="$LCOV --gcov-tool=$GCOV"
   AX_CHECK_COMPILE_FLAG([--coverage],[CXXFLAGS="$CXXFLAGS --coverage"],
     [AC_MSG_ERROR("lcov testing requested but --coverage flag does not work")])
+fi
+
+if test "$use_sse2" = "yes"; then
+    AX_CHECK_COMPILE_FLAG([-msse2],[CFLAGS="$CFLAGS -msse2" && CXXFLAGS="$CXXFLAGS -msse2"])
+    AC_DEFINE([USE_SSE2],[1],[Define if SSE2 support should be compiled in])
 fi
 
 dnl Require little endian
@@ -684,6 +695,7 @@ AM_CONDITIONAL([BUILD_DARWIN], [test x$BUILD_OS = xdarwin])
 AM_CONDITIONAL([TARGET_WINDOWS], [test x$TARGET_OS = xwindows])
 AM_CONDITIONAL([ENABLE_WALLET],[test x$enable_wallet == xyes])
 AM_CONDITIONAL([USE_QRCODE], [test x$use_qr = xyes])
+AM_CONDITIONAL([USE_SSE2], [test x$use_sse2 = xyes])
 AM_CONDITIONAL([USE_LCOV],[test x$use_lcov == xyes])
 AM_CONDITIONAL([USE_COMPARISON_TOOL],[test x$use_comparison_tool != xno])
 AM_CONDITIONAL([USE_COMPARISON_TOOL_REORG_TESTS],[test x$use_comparison_tool_reorg_test != xno])
@@ -705,6 +717,7 @@ AC_SUBST(COPYRIGHT_YEAR, _COPYRIGHT_YEAR)
 
 AC_SUBST(USE_UPNP)
 AC_SUBST(USE_QRCODE)
+AC_SUBST(USE_SSE2)
 AC_SUBST(INCLUDES)
 AC_SUBST(BOOST_LIBS)
 AC_SUBST(TESTDEFS)
