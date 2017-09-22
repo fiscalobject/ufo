@@ -317,6 +317,8 @@ if test "$use_sse2" = "yes"; then
     AC_DEFINE([USE_SSE2],[1],[Define if SSE2 support should be compiled in])
 fi
 
+AC_DEFINE([ASM],[1],[Assembly code support])
+
 dnl Require little endian
 AC_C_BIGENDIAN([AC_MSG_ERROR("Big Endian not supported")])
 
