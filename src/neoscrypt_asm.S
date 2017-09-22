@@ -24,6 +24,10 @@
  * SUCH DAMAGE.
  */
 
+#if defined(HAVE_CONFIG_H)
+#include "bitcoin-config.h"
+#endif
+
 #if defined(ASM) && defined(__x86_64__)
 
 /* MOVQ_FIX addresses incorrect behaviour of old GNU assembler when transferring
