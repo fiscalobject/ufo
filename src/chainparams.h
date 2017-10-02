@@ -44,6 +44,14 @@ public:
     const uint256& HashGenesisBlock() const { return hashGenesisBlock; }
     const MessageStartChars& MessageStart() const { return pchMessageStart; }
     const std::vector<unsigned char>& AlertKey() const { return vAlertPubKey; }
+    const std::string CheckpointKey() const { return checkpointPubKey;}
+    int CoinFix() const { return nCoinFix; }
+    int ForkOne() const { return nHardForkOne; }
+    int ForkTwo() const { return nHardForkTwo; }
+    int ForkTwoA() const { return nHardForkTwoA; }
+    int ForkThree() const { return nHardForkThree; }
+    unsigned int NeoScryptSwitch() const { return nNeoScryptSwitch;}
+    unsigned int NeoScryptFork() const { return nNeoScryptFork;}
     int GetDefaultPort() const { return nDefaultPort; }
     const uint256& ProofOfWorkLimit() const { return bnProofOfWorkLimit; }
     int SubsidyHalvingInterval() const { return nSubsidyHalvingInterval; }
@@ -87,6 +95,14 @@ protected:
     MessageStartChars pchMessageStart;
     //! Raw pub key bytes for the broadcast alert signing key.
     std::vector<unsigned char> vAlertPubKey;
+    std::string checkpointPubKey;
+    int nCoinFix;
+    int nHardForkOne;
+    int nHardForkTwo;
+    int nHardForkTwoA;
+    int nHardForkThree;
+    unsigned int nNeoScryptSwitch;
+    unsigned int nNeoScryptFork;
     int nDefaultPort;
     uint256 bnProofOfWorkLimit;
     int nSubsidyHalvingInterval;
