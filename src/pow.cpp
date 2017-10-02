@@ -13,6 +13,7 @@
 
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
+    int64_t nReTargetHistoryFact = 4;
     unsigned int nProofOfWorkLimit = Params().ProofOfWorkLimit().GetCompact();
 
     // Genesis block
@@ -44,6 +45,8 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     int blockstogoback = Params().Interval()-1;
     if ((pindexLast->nHeight+1) != Params().Interval())
         blockstogoback = Params().Interval();
+    if (pindexLast->nHeight > Params().CoinFix())
+        blockstogoback = nReTargetHistoryFact * Params().Interval();
 
     // Go back by what we want to be 14 days worth of blocks
     const CBlockIndex* pindexFirst = pindexLast;
@@ -52,7 +55,11 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     assert(pindexFirst);
 
     // Limit adjustment step
-    int64_t nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
+    int64_t nActualTimespan = 0;
+    if (pindexLast->nHeight > Params().CoinFix())
+        nActualTimespan = (pindexLast->GetBlockTime() - pindexFirst->GetBlockTime()) / nReTargetHistoryFact;
+    else
+        nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
     LogPrintf("  nActualTimespan = %d  before bounds\n", nActualTimespan);
     if (nActualTimespan < Params().TargetTimespan()/4)
         nActualTimespan = Params().TargetTimespan()/4;
