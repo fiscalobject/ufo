@@ -159,8 +159,8 @@
         <translation>Barra de herramientas</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoin network</source>
-        <translation><numerusform>%n conexión activa a la red Bitcoin </numerusform><numerusform>%n conexiones activas a la red Bitcoin</numerusform></translation>
+        <source>%n active connection(s) to UFO network</source>
+        <translation><numerusform>%n conexión activa a la red UFO </numerusform><numerusform>%n conexiones activas a la red UFO</numerusform></translation>
     </message>
     <message>
         <source>Up to date</source>

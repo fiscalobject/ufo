@@ -159,8 +159,8 @@
         <translation>แถบเครื่องมือ</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoin network</source>
-        <translation><numerusform>%n ที่ใช้งานการเชื่อมต่อกับเครือข่าย Bitcoin</numerusform></translation>
+        <source>%n active connection(s) to UFO network</source>
+        <translation><numerusform>%n ที่ใช้งานการเชื่อมต่อกับเครือข่าย UFO</numerusform></translation>
     </message>
     <message>
         <source>Up to date</source>

@@ -66,11 +66,11 @@
         <translation>正在接收地址</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your UFO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>这是您用来付款的比特币地址。在付款前，请总是核实付款金额和收款地址。</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your UFO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>这些都是您的比特币地址，可用于收款。建议对每笔交易都使用一个新的地址。</translation>
     </message>
     <message>
@@ -188,7 +188,7 @@
         <translation>请输入新的钱包密码. &lt;br/&gt;密码须包含&lt;b&gt;10个以上字符&lt;/b&gt;,或&lt;b&gt;8个以上单词&lt;/b&gt;.</translation>
     </message>
     <message>
-        <source>Bitcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
+        <source>UFO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
         <translation>比特币客户端将关闭软件以完成加密过程。请您谨记：钱包加密并不是万能的，电脑中毒等原因仍可能导致您的比特币意外丢失。</translation>
     </message>
     <message>
@@ -295,7 +295,7 @@
         <translation>打开 &amp;URI...</translation>
     </message>
     <message>
-        <source>Bitcoin Core client</source>
+        <source>UFO Core client</source>
         <translation>比特币核心钱包</translation>
     </message>
     <message>
@@ -307,11 +307,11 @@
         <translation>正在为数据块建立索引...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
+        <source>Send coins to a UFO address</source>
         <translation>向一个比特币地址发送比特币</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bitcoin</source>
+        <source>Modify configuration options for UFO</source>
         <translation>设置选项</translation>
     </message>
     <message>
@@ -335,7 +335,7 @@
         <translation>验证消息(&amp;V)...</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
+        <source>UFO</source>
         <translation>比特币</translation>
     </message>
     <message>
@@ -351,7 +351,7 @@
         <translation>接收(&amp;R)</translation>
     </message>
     <message>
-        <source>Show information about Bitcoin Core</source>
+        <source>Show information about UFO Core</source>
         <translation>显示有关比特币核心钱包信息</translation>
     </message>
     <message>
@@ -367,11 +367,11 @@
         <translation>对钱包中的私钥加密</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <source>Sign messages with your UFO addresses to prove you own them</source>
         <translation>用比特币地址关联的私钥为消息签名，以证明您拥有这个比特币地址</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <source>Verify messages to ensure they were signed with specified UFO addresses</source>
         <translation>校验消息，确保该消息是由指定的比特币地址所有者签名的</translation>
     </message>
     <message>
@@ -391,15 +391,15 @@
         <translation>分页工具栏</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>比特币核心</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation>请求支付（生成二维码和 bitcoin: URI）</translation>
+        <source>Request payments (generates QR codes and ufo: URIs)</source>
+        <translation>请求支付（生成二维码和 ufo: URI）</translation>
     </message>
     <message>
-        <source>&amp;About Bitcoin Core</source>
+        <source>&amp;About UFO Core</source>
         <translation>关于比特币核心(&amp;A)</translation>
     </message>
     <message>
@@ -411,7 +411,7 @@
         <translation>显示用过的接收地址和标签的列表</translation>
     </message>
     <message>
-        <source>Open a bitcoin: URI or payment request</source>
+        <source>Open a ufo: URI or payment request</source>
         <translation>打开一个比特币：URI 或支付请求</translation>
     </message>
     <message>
@@ -419,11 +419,11 @@
         <translation>命令行选项(&amp;C)</translation>
     </message>
     <message>
-        <source>Show the Bitcoin Core help message to get a list with possible Bitcoin command-line options</source>
+        <source>Show the UFO Core help message to get a list with possible UFO command-line options</source>
         <translation>显示比特币核心 程序帮助信息，获取可用的命令行选项 </translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoin network</source>
+        <source>%n active connection(s) to UFO network</source>
         <translation><numerusform>%n 个到比特币网络的活动连接</numerusform></translation>
     </message>
     <message>
@@ -788,7 +788,7 @@ Address: %4
         <translation>输入的地址“%1”已经存在于地址簿中。</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bitcoin address.</source>
+        <source>The entered address "%1" is not a valid UFO address.</source>
         <translation>您输入的“%1”不是有效的比特币地址。</translation>
     </message>
     <message>
@@ -826,7 +826,7 @@ Address: %4
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>比特币核心</translation>
     </message>
     <message>
@@ -838,7 +838,7 @@ Address: %4
         <translation>(%1 位)</translation>
     </message>
     <message>
-        <source>About Bitcoin Core</source>
+        <source>About UFO Core</source>
         <translation>关于比特币核心</translation>
     </message>
     <message>
@@ -886,15 +886,15 @@ Address: %4
         <translation>欢迎</translation>
     </message>
     <message>
-        <source>Welcome to Bitcoin Core.</source>
+        <source>Welcome to UFO Core.</source>
         <translation>欢迎使用 比特币核心 程序。</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bitcoin Core will store its data.</source>
+        <source>As this is the first time the program is launched, you can choose where UFO Core will store its data.</source>
         <translation>由于这是第一次运行 比特币核心 程序，您可以选择数据存储目录。</translation>
     </message>
     <message>
-        <source>Bitcoin Core will download and store a copy of the Bitcoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>UFO Core will download and store a copy of the UFO block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation>比特币核心 程序会下载储存一份数据块链(blockchain)。至少需要 %1 GB的存储空间，随着时间推移会需要更多的存储空间。钱包文件也储存在该目录。</translation>
     </message>
     <message>
@@ -906,7 +906,7 @@ Address: %4
         <translation>使用自定义的数据目录：</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>比特币核心</translation>
     </message>
     <message>
@@ -960,11 +960,11 @@ Address: %4
         <translation>主要(&amp;M)</translation>
     </message>
     <message>
-        <source>Automatically start Bitcoin after logging in to the system.</source>
+        <source>Automatically start UFO after logging in to the system.</source>
         <translation>登录系统后自动开启比特币客户端</translation>
     </message>
     <message>
-        <source>&amp;Start Bitcoin on system login</source>
+        <source>&amp;Start UFO on system login</source>
         <translation>系统启动时运行(&amp;S)</translation>
     </message>
     <message>
@@ -1040,7 +1040,7 @@ Address: %4
         <translation>使用未经确认的零钱(&amp;S)</translation>
     </message>
     <message>
-        <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the UFO client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>自动在路由器中打开比特币端口。只有当您的路由器开启了 UPnP 选项时此功能才有效。</translation>
     </message>
     <message>
@@ -1048,7 +1048,7 @@ Address: %4
         <translation>使用 &amp;UPnP 映射端口</translation>
     </message>
     <message>
-        <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
+        <source>Connect to the UFO network through a SOCKS5 proxy.</source>
         <translation>通过 SOCKS5 代理连接比特币网络。</translation>
     </message>
     <message>
@@ -1096,7 +1096,7 @@ Address: %4
         <translation>用户界面语言(&amp;L)：</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Bitcoin.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting UFO.</source>
         <translation>在这里设置用户界面的语言。设置将在客户端重启后生效。</translation>
     </message>
     <message>
@@ -1155,7 +1155,7 @@ Address: %4
         <translation>表单</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the UFO network after a connection is established, but this process has not completed yet.</source>
         <translation>现在显示的消息可能是过期的. 在连接上比特币网络节点后，您的钱包将自动与网络同步，但是这个过程还没有完成。</translation>
     </message>
     <message>
@@ -1262,7 +1262,7 @@ Address: %4
         <translation>支付请求出错</translation>
     </message>
     <message>
-        <source>Cannot start bitcoin: click-to-pay handler</source>
+        <source>Cannot start ufo: click-to-pay handler</source>
         <translation>暂时无法启动比特币：点击支付功能</translation>
     </message>
     <message>
@@ -1270,7 +1270,7 @@ Address: %4
         <translation>付款请求URI链接非法: %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid UFO address or malformed URI parameters.</source>
         <translation>URI无法解析！原因可能是比特币地址不正确，或者URI参数错误。</translation>
     </message>
     <message>
@@ -1340,7 +1340,7 @@ Address: %4
         <translation>金额</translation>
     </message>
     <message>
-        <source>Enter a Bitcoin address (e.g. %1)</source>
+        <source>Enter a UFO address (e.g. %1)</source>
         <translation>请输入一个比特币地址 (例如 %1)</translation>
     </message>
     <message>
@@ -1566,7 +1566,7 @@ Address: %4
         <translation>调试日志文件</translation>
     </message>
     <message>
-        <source>Open the Bitcoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the UFO debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation>打开当前目录中的调试日志文件。日志文件大的话可能要等上几秒钟。</translation>
     </message>
     <message>
@@ -1574,7 +1574,7 @@ Address: %4
         <translation>清空控制台</translation>
     </message>
     <message>
-        <source>Welcome to the Bitcoin RPC console.</source>
+        <source>Welcome to the UFO RPC console.</source>
         <translation>欢迎来到 RPC 控制台。</translation>
     </message>
     <message>
@@ -1649,7 +1649,7 @@ Address: %4
         <translation>重用现有的接收地址（不推荐）</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the UFO network.</source>
         <translation>可在付款请求上备注一条信息，在打开付款请求时可以看到。注意：该消息不是通过比特币网络传送。</translation>
     </message>
     <message>
@@ -2042,7 +2042,7 @@ Address: %4
         <translation>预计%1 个数据块后确认。</translation>
     </message>
     <message>
-        <source>Warning: Invalid Bitcoin address</source>
+        <source>Warning: Invalid UFO address</source>
         <translation>警告：无效的比特币地址</translation>
     </message>
     <message>
@@ -2093,7 +2093,7 @@ Address: %4
         <translation>这是笔正常的支付。</translation>
     </message>
     <message>
-        <source>The Bitcoin address to send the payment to</source>
+        <source>The UFO address to send the payment to</source>
         <translation>付款目的地址</translation>
     </message>
     <message>
@@ -2125,8 +2125,8 @@ Address: %4
         <translation>请为此地址输入一个标签以将它加入用过的地址列表</translation>
     </message>
     <message>
-        <source>A message that was attached to the bitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
-        <translation>bitcoin:URI 附带的备注信息，将会和交易一起存储，备查。 注意：该消息不会通过比特币网络传输。</translation>
+        <source>A message that was attached to the ufo: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the UFO network.</source>
+        <translation>ufo:URI 附带的备注信息，将会和交易一起存储，备查。 注意：该消息不会通过比特币网络传输。</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -2144,7 +2144,7 @@ Address: %4
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Bitcoin Core is shutting down...</source>
+        <source>UFO Core is shutting down...</source>
         <translation>比特币核心正在关机...</translation>
     </message>
     <message>
@@ -2167,7 +2167,7 @@ Address: %4
         <translation>您可以用你的地址对消息进行签名，以证明您是该地址的所有人。注意不要对模棱两可的消息签名，以免遭受钓鱼式攻击。请确保消息内容准确的表达了您的真实意愿。</translation>
     </message>
     <message>
-        <source>The Bitcoin address to sign the message with</source>
+        <source>The UFO address to sign the message with</source>
         <translation>用来对消息签名的地址 </translation>
     </message>
     <message>
@@ -2199,7 +2199,7 @@ Address: %4
         <translation>复制当前签名至剪切板</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bitcoin address</source>
+        <source>Sign the message to prove you own this UFO address</source>
         <translation>签名消息，证明这个地址属于您。</translation>
     </message>
     <message>
@@ -2223,11 +2223,11 @@ Address: %4
         <translation>在下面输入签名地址，消息（请确保换行符、空格符、制表符等等一个不漏）和签名以验证消息。请确保签名信息准确，提防中间人攻击。</translation>
     </message>
     <message>
-        <source>The Bitcoin address the message was signed with</source>
+        <source>The UFO address the message was signed with</source>
         <translation>消息使用的签名地址</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
+        <source>Verify the message to ensure it was signed with the specified UFO address</source>
         <translation>验证消息，确保消息是由指定的比特币地址签名过的。</translation>
     </message>
     <message>
@@ -2294,12 +2294,12 @@ Address: %4
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>比特币核心</translation>
     </message>
     <message>
-        <source>The Bitcoin Core developers</source>
-        <translation>Bitcoin Core 的开发者</translation>
+        <source>The UFO Core developers</source>
+        <translation>UFO Core 的开发者</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -2854,7 +2854,7 @@ Address: %4
         <translation>这是测试用的预发布版本 - 请谨慎使用 - 不要用来挖矿，或者在正式商用环境下使用</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. Bitcoin Core is probably already running.</source>
+        <source>Unable to bind to %s on this computer. UFO Core is probably already running.</source>
         <translation>无法 %s的绑定到电脑上，比特币核心钱包可能已经在运行。</translation>
     </message>
     <message>
@@ -3038,7 +3038,7 @@ Address: %4
         <translation>绑定到指定地址监听 JSON-RPC连接。 IPv6使用[主机]:端口 格式。该选项可多次指定 (默认: 绑定到所有接口) </translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Bitcoin Core is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. UFO Core is probably already running.</source>
         <translation>无法获取数据目录的 %s. 比特币核心钱包可能已经在运行.</translation>
     </message>
     <message>
@@ -3062,12 +3062,12 @@ Address: %4
         <translation>当收到相关提醒或者我们看到一个长分叉时执行命令（%s 将替换为消息）</translation>
     </message>
     <message>
-        <source>Fees (in BTC/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>交易费(BTC/kb)比这更小的交易在转发时将被视为零费交易 (默认: %s) </translation>
+        <source>Fees (in UFO/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>交易费(UFO/kb)比这更小的交易在转发时将被视为零费交易 (默认: %s) </translation>
     </message>
     <message>
-        <source>Fees (in BTC/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>交易费(BTC/kb)比这更小的交易在生成交易时将被视为零费交易 (默认: %s) </translation>
+        <source>Fees (in UFO/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>交易费(UFO/kb)比这更小的交易在生成交易时将被视为零费交易 (默认: %s) </translation>
     </message>
     <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
@@ -3115,7 +3115,7 @@ rpcpassword=%s
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s "Bitcoin Alert" admin@foo.com
+for example: alertnotify=echo %%s | mail -s "UFO Alert" admin@foo.com
 </source>
         <translation>要使用 bitcoind 或者 bitcoin-qt 中的 -server 选项，您必须在配置文件中设置一个密码：
 %s
@@ -3126,7 +3126,7 @@ rpcpassword=%s
 用户名和密码不能相同。
 如果该文件不存在，创建一个文件并设置权限为仅创建者可读。
 此外，还建议您设置 alertnotify 以便您能注意到问题：
-例如 alertnotify=echo %%s | mail -s "Bitcoin Alert" admin@foo.com
+例如 alertnotify=echo %%s | mail -s "UFO Alert" admin@foo.com
 </translation>
     </message>
     <message>
@@ -3134,7 +3134,7 @@ rpcpassword=%s
         <translation>警告：-maxtxfee 设置的太高了！每进行一笔交易时您都要花费这么多费用。</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Bitcoin Core will not work properly.</source>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong UFO Core will not work properly.</source>
         <translation>警告：请检查电脑的日期时间设置是否正确！时间错误可能会导致比特币客户端运行异常。</translation>
     </message>
     <message>
@@ -3154,15 +3154,15 @@ rpcpassword=%s
         <translation>通过 SOCKS5 代理连接</translation>
     </message>
     <message>
-        <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
-        <translation>版权所有 (C) 2009-%i Bitcoin Core 开发者</translation>
+        <source>Copyright (C) 2009-%i The UFO Core Developers</source>
+        <translation>版权所有 (C) 2009-%i UFO Core 开发者</translation>
     </message>
     <message>
         <source>Could not parse -rpcbind value %s as network address</source>
         <translation>无法解析 -rpcbind 的值 %s 为网络地址</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Bitcoin Core</source>
+        <source>Error loading wallet.dat: Wallet requires newer version of UFO Core</source>
         <translation>加载wallet.dat错误：需要新版的比特币核心钱包</translation>
     </message>
     <message>
@@ -3178,16 +3178,16 @@ rpcpassword=%s
         <translation>错误：发现了不支持的参数 -tor，请使用 -onion。</translation>
     </message>
     <message>
-        <source>Fee (in BTC/kB) to add to transactions you send (default: %s)</source>
-        <translation>为付款交易添加交易费 (BTC/kb) (默认: %s) </translation>
+        <source>Fee (in UFO/kB) to add to transactions you send (default: %s)</source>
+        <translation>为付款交易添加交易费 (UFO/kb) (默认: %s) </translation>
     </message>
     <message>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. Bitcoin Core is shutting down.</source>
-        <translation>初始化完整性检查失败。Bitcoin Core 即将关闭。</translation>
+        <source>Initialization sanity check failed. UFO Core is shutting down.</source>
+        <translation>初始化完整性检查失败。UFO Core 即将关闭。</translation>
     </message>
     <message>
         <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s'</source>
@@ -3218,7 +3218,7 @@ rpcpassword=%s
         <translation>节点中继选项:</translation>
     </message>
     <message>
-        <source>RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
+        <source>RPC SSL options: (see the UFO Wiki for SSL setup instructions)</source>
         <translation>RPC SSL选项：(见有关比特币设置用于SSL说明的维基百科)</translation>
     </message>
     <message>
@@ -3294,7 +3294,7 @@ rpcpassword=%s
         <translation>JSON-RPC 连接用户名</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart Bitcoin Core to complete</source>
+        <source>Wallet needed to be rewritten: restart UFO Core to complete</source>
         <translation>钱包需要被改写：重新启动核心钱包来完成</translation>
     </message>
     <message>

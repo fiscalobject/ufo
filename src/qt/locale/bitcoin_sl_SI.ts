@@ -66,12 +66,12 @@
         <translation>Prejemni naslovi</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Tukaj so vaši Bitcoin naslovi za pošiljanje plačil. Vedno preverite znesek in prejemnikov naslov pred pošiljanjem kovancev.</translation>
+        <source>These are your UFO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Tukaj so vaši UFO naslovi za pošiljanje plačil. Vedno preverite znesek in prejemnikov naslov pred pošiljanjem kovancev.</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Tukaj so vaši Bitcoin naslovi za prejemanje plačil. Priporočljivo je uporabiti nov naslov za vsako novo plačilo.</translation>
+        <source>These are your UFO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Tukaj so vaši UFO naslovi za prejemanje plačil. Priporočljivo je uporabiti nov naslov za vsako novo plačilo.</translation>
     </message>
     <message>
         <source>Copy &amp;Label</source>
@@ -184,7 +184,7 @@
         <translation>Vnesite novo geslo. Prosimo, da uporabite geslo sestavljeno iz &lt;b&gt;deset ali več&lt;/b&gt; naključnih znakov, ali &lt;b&gt;osem ali več&lt;/b&gt; besed.</translation>
     </message>
     <message>
-        <source>Bitcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
+        <source>UFO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
         <translation>Program se bo zaprl, da dokonča proces šifriranja. Zapomnite si, da šifriranje ne more popolnoma zaščititi vašo denarnico pred krajami in zlonamernimi programi, ki bi lahko bili nameščeni na vašem računalniku.</translation>
     </message>
     <message>
@@ -291,8 +291,8 @@
         <translation>Odpri &amp;URI ...</translation>
     </message>
     <message>
-        <source>Bitcoin Core client</source>
-        <translation>Odjemalec Bitcoin Core</translation>
+        <source>UFO Core client</source>
+        <translation>Odjemalec UFO Core</translation>
     </message>
     <message>
         <source>Importing blocks from disk...</source>
@@ -303,11 +303,11 @@
         <translation>Poustvarjam kazalo blokov na disku ...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
-        <translation>Pošlji kovance na Bitcoin naslov</translation>
+        <source>Send coins to a UFO address</source>
+        <translation>Pošlji kovance na UFO naslov</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bitcoin</source>
+        <source>Modify configuration options for UFO</source>
         <translation>Urejanje nastavitev programa</translation>
     </message>
     <message>
@@ -327,8 +327,8 @@
         <translation>Odpri razhroščevalno in diagnostično konzolo</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>UFO</source>
+        <translation>UFO</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -343,7 +343,7 @@
         <translation>&amp;Sprejmi</translation>
     </message>
     <message>
-        <source>Show information about Bitcoin Core</source>
+        <source>Show information about UFO Core</source>
         <translation>Pokaži informacije o programu</translation>
     </message>
     <message>
@@ -359,11 +359,11 @@
         <translation>Šifiraj zasebne ključe v denarnici</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <source>Sign messages with your UFO addresses to prove you own them</source>
         <translation>Podpišite sporočilo za dokaz, da ste lastnik naslova</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <source>Verify messages to ensure they were signed with specified UFO addresses</source>
         <translation>Preverite, da je sporočilo bilo podpisano z danim naslovom</translation>
     </message>
     <message>
@@ -383,15 +383,15 @@
         <translation>Orodna vrstica zavihkov</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>UFO Core</source>
+        <translation>UFO Core</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation>Ustvarjanje zahtevka za plačilo (izdelava QR kode in bitcoin: URI naslova)</translation>
+        <source>Request payments (generates QR codes and ufo: URIs)</source>
+        <translation>Ustvarjanje zahtevka za plačilo (izdelava QR kode in ufo: URI naslova)</translation>
     </message>
     <message>
-        <source>&amp;About Bitcoin Core</source>
+        <source>&amp;About UFO Core</source>
         <translation>&amp;O programu</translation>
     </message>
     <message>
@@ -403,19 +403,19 @@
         <translation>Prikaži seznam uporabljenih sprejemnih naslovov in oznak</translation>
     </message>
     <message>
-        <source>Open a bitcoin: URI or payment request</source>
-        <translation>Odpri Bitcoin: URI ali zahteva o plačilu</translation>
+        <source>Open a ufo: URI or payment request</source>
+        <translation>Odpri ufo: URI ali zahteva o plačilu</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>Opcije &amp;ukazne vrstice</translation>
     </message>
     <message>
-        <source>Show the Bitcoin Core help message to get a list with possible Bitcoin command-line options</source>
+        <source>Show the UFO Core help message to get a list with possible UFO command-line options</source>
         <translation>Prikaže seznam vseh opcij pri zagonu programa in kratek opis</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoin network</source>
+        <source>%n active connection(s) to UFO network</source>
         <translation><numerusform>%n aktivna povezava v bitcoin omrežje</numerusform><numerusform>%n aktivni povezavi v bitcoin omrežje</numerusform><numerusform>%n aktivnih povezav v bitcoin omrežje</numerusform><numerusform>%n aktivnih povezav v bitcoin omrežje</numerusform></translation>
     </message>
     <message>
@@ -768,8 +768,8 @@ Naslov: %4
         <translation>Vnešeni naslov "%1" je že v imeniku.</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bitcoin address.</source>
-        <translation>Vnešeni naslov "%1" ni veljaven Bitcoin naslov.</translation>
+        <source>The entered address "%1" is not a valid UFO address.</source>
+        <translation>Vnešeni naslov "%1" ni veljaven UFO naslov.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -806,8 +806,8 @@ Naslov: %4
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>UFO Core</source>
+        <translation>UFO Core</translation>
     </message>
     <message>
         <source>version</source>
@@ -818,8 +818,8 @@ Naslov: %4
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Bitcoin Core</source>
-        <translation>O programu Bitcoin Core</translation>
+        <source>About UFO Core</source>
+        <translation>O programu UFO Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -865,15 +865,15 @@ Naslov: %4
         <translation>Dobrodošli</translation>
     </message>
     <message>
-        <source>Welcome to Bitcoin Core.</source>
-        <translation>Dobrodošli v Bitcoin Core.</translation>
+        <source>Welcome to UFO Core.</source>
+        <translation>Dobrodošli v UFO Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bitcoin Core will store its data.</source>
-        <translation>To je prvi zagonom programa, zato izberite kje bo program Bitcoin Core shranjeval podatke.</translation>
+        <source>As this is the first time the program is launched, you can choose where UFO Core will store its data.</source>
+        <translation>To je prvi zagonom programa, zato izberite kje bo program UFO Core shranjeval podatke.</translation>
     </message>
     <message>
-        <source>Bitcoin Core will download and store a copy of the Bitcoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>UFO Core will download and store a copy of the UFO block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation>Program bo prenesel in shranil kopijo bitcoin verige blokov. V izbrano mapo bo shranjenih vsaj %1 GB podatkov, ta količina bo sčasoma še naraščala. Denarnica bo prav tako shranjena v to mapo.</translation>
     </message>
     <message>
@@ -885,8 +885,8 @@ Naslov: %4
         <translation>Uporabi to mapo za shranjevanje podatkov:</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>UFO Core</source>
+        <translation>UFO Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -935,11 +935,11 @@ Naslov: %4
         <translation>&amp;Glavno</translation>
     </message>
     <message>
-        <source>Automatically start Bitcoin after logging in to the system.</source>
+        <source>Automatically start UFO after logging in to the system.</source>
         <translation>Samodejen zagon programa po prijavi v sistem.</translation>
     </message>
     <message>
-        <source>&amp;Start Bitcoin on system login</source>
+        <source>&amp;Start UFO on system login</source>
         <translation>&amp;Zaženi program ob prijavi v sistem</translation>
     </message>
     <message>
@@ -1015,7 +1015,7 @@ Naslov: %4
         <translation>&amp;Trošenje nepotrjenega vračila</translation>
     </message>
     <message>
-        <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the UFO client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>Program samodejno odpre ustrezna vrata na usmerjevalniku. To deluje samo, če vaš usmerjevalnik podpira in ima omogočen UPnP.</translation>
     </message>
     <message>
@@ -1023,7 +1023,7 @@ Naslov: %4
         <translation>Naslavljanje vrat z uporabo &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
+        <source>Connect to the UFO network through a SOCKS5 proxy.</source>
         <translation>Povezava v omrežje s pomočjo SOCKS5 posrednika.</translation>
     </message>
     <message>
@@ -1071,7 +1071,7 @@ Naslov: %4
         <translation>&amp;Jezik uporabniškega vmesnika:</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Bitcoin.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting UFO.</source>
         <translation>Tukaj je mogoče nastaviti jezik uporabniškega vmesnika. Ta nastavitev bo prikazana šele, ko boste znova zagnali program.</translation>
     </message>
     <message>
@@ -1126,7 +1126,7 @@ Naslov: %4
         <translation>Oblika</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the UFO network after a connection is established, but this process has not completed yet.</source>
         <translation>Prikazani podatki so lahko zastareli. Vaša denarnica se po vzpostavitvi povezave z omrežjem samodejno sinhronizira, ampak ta proces še ni zaključen.</translation>
     </message>
     <message>
@@ -1225,16 +1225,16 @@ Naslov: %4
         <translation>Napaka pri zahtevi plačila</translation>
     </message>
     <message>
-        <source>Cannot start bitcoin: click-to-pay handler</source>
-        <translation>Ni mogoče zagnati upravitelja plačil na klik tipa bitcoin:.</translation>
+        <source>Cannot start ufo: click-to-pay handler</source>
+        <translation>Ni mogoče zagnati upravitelja plačil na klik tipa ufo:.</translation>
     </message>
     <message>
         <source>Payment request fetch URL is invalid: %1</source>
         <translation>Naslov URL za pridobitev zahtevka za plačilo ni veljaven: %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
-        <translation>Naslov URL je neprepoznaven! Razlog je lahko neveljaven naslov Bitcoin ali  napačni parametri v URI.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid UFO address or malformed URI parameters.</source>
+        <translation>Naslov URL je neprepoznaven! Razlog je lahko neveljaven naslov UFO ali  napačni parametri v URI.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1299,8 +1299,8 @@ Naslov: %4
         <translation>Količina</translation>
     </message>
     <message>
-        <source>Enter a Bitcoin address (e.g. %1)</source>
-        <translation>Vnesite naslov Bitcoin (npr. %1):</translation>
+        <source>Enter a UFO address (e.g. %1)</source>
+        <translation>Vnesite naslov UFO (npr. %1):</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1521,8 +1521,8 @@ Naslov: %4
         <translation>Počisti konzolo</translation>
     </message>
     <message>
-        <source>Welcome to the Bitcoin RPC console.</source>
-        <translation>Dobrodošli  na Bitcoin RPC konzoli.</translation>
+        <source>Welcome to the UFO RPC console.</source>
+        <translation>Dobrodošli  na UFO RPC konzoli.</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
@@ -1596,8 +1596,8 @@ Naslov: %4
         <translation>P&amp;onovno uporabite obstoječ naslov za prejemanje. (Ni priporočeno.)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
-        <translation>Neobvezno sporočilo kot priponka zahtevku za plačilo, ki bo prikazano, ko bo zahtevek odprt. Opomba: Opravljeno plačilo.prek omrežja Bitcoin tega sporočila ne bo vsebovalo.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the UFO network.</source>
+        <translation>Neobvezno sporočilo kot priponka zahtevku za plačilo, ki bo prikazano, ko bo zahtevek odprt. Opomba: Opravljeno plačilo.prek omrežja UFO tega sporočila ne bo vsebovalo.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1961,8 +1961,8 @@ Naslov: %4
         <translation>Plačilo samo minimalne provizije v znesku %1</translation>
     </message>
     <message>
-        <source>Warning: Invalid Bitcoin address</source>
-        <translation>Opozorilo: Neveljaven Bitcoin naslov</translation>
+        <source>Warning: Invalid UFO address</source>
+        <translation>Opozorilo: Neveljaven UFO naslov</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2012,8 +2012,8 @@ Naslov: %4
         <translation>Plačilo je navadne vrste.</translation>
     </message>
     <message>
-        <source>The Bitcoin address to send the payment to</source>
-        <translation>Naslov Bitcoin, na katerega bo plačilo poslano</translation>
+        <source>The UFO address to send the payment to</source>
+        <translation>Naslov UFO, na katerega bo plačilo poslano</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2040,8 +2040,8 @@ Naslov: %4
         <translation>Vnesite oznako za ta naslov, ki bo shranjena v seznam uporabljenih naslovov</translation>
     </message>
     <message>
-        <source>A message that was attached to the bitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
-        <translation>Sporočilo, ki ste ga pripeli na URI bitcoin: in bo shranjeno skupaj s podatki o transakciji. Opomba: Sporočilo ne bo poslano preko omrežja Bitcoin.</translation>
+        <source>A message that was attached to the ufo: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the UFO network.</source>
+        <translation>Sporočilo, ki ste ga pripeli na URI ufo: in bo shranjeno skupaj s podatki o transakciji. Opomba: Sporočilo ne bo poslano preko omrežja UFO.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2055,8 +2055,8 @@ Naslov: %4
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Bitcoin Core is shutting down...</source>
-        <translation>Bitcoin Core se ustavlja...</translation>
+        <source>UFO Core is shutting down...</source>
+        <translation>UFO Core se ustavlja...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -2074,8 +2074,8 @@ Naslov: %4
         <translation>&amp;Podpiši sporočilo</translation>
     </message>
     <message>
-        <source>The Bitcoin address to sign the message with</source>
-        <translation>Naslov Bitcoin, s katerim podpisujete sporočilo</translation>
+        <source>The UFO address to sign the message with</source>
+        <translation>Naslov UFO, s katerim podpisujete sporočilo</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2106,7 +2106,7 @@ Naslov: %4
         <translation>Kopiranje trenutnega podpisa na sistemsko odložišče.</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bitcoin address</source>
+        <source>Sign the message to prove you own this UFO address</source>
         <translation>Podpišite sporočilo, da dokažete lastništvo nad zgornjim naslovom.</translation>
     </message>
     <message>
@@ -2126,12 +2126,12 @@ Naslov: %4
         <translation>&amp;Preveri sporočilo</translation>
     </message>
     <message>
-        <source>The Bitcoin address the message was signed with</source>
-        <translation>Naslov Bitcoin, s katerim je bilo sporočilo podpisano</translation>
+        <source>The UFO address the message was signed with</source>
+        <translation>Naslov UFO, s katerim je bilo sporočilo podpisano</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
-        <translation>Preverite, ali je bilo sporočilo v resnici podpisano z navedenim naslovom Bitcoin.</translation>
+        <source>Verify the message to ensure it was signed with the specified UFO address</source>
+        <translation>Preverite, ali je bilo sporočilo v resnici podpisano z navedenim naslovom UFO.</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -2197,12 +2197,12 @@ Naslov: %4
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>UFO Core</source>
+        <translation>UFO Core</translation>
     </message>
     <message>
-        <source>The Bitcoin Core developers</source>
-        <translation>Bitcoin Core razvijalci</translation>
+        <source>The UFO Core developers</source>
+        <translation>UFO Core razvijalci</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -2723,8 +2723,8 @@ Naslov: %4
         <translation>To je preizkusna verzija - uporaba na lastno odgovornost - ne uporabljajte je za rudarjenje bitcoinov ali za trgovske aplikacije</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. Bitcoin Core is probably already running.</source>
-        <translation>Na tem računalniku se ni bilo mogoče povezati na %s. Odjemalec Bitcoin Core je verjetno že zagnan.</translation>
+        <source>Unable to bind to %s on this computer. UFO Core is probably already running.</source>
+        <translation>Na tem računalniku se ni bilo mogoče povezati na %s. Odjemalec UFO Core je verjetno že zagnan.</translation>
     </message>
     <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
@@ -2891,8 +2891,8 @@ Naslov: %4
         <translation>Veži dani naslov in sprejemaj povezave na JSON-RPC. Za naslove protokola IPv6 uporabite zapis [gostitelj]:vrata. To opcijo lahko navedete večkrat. (privzeto: veži vse omrežne vmesnike)</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Bitcoin Core is probably already running.</source>
-        <translation>Ne morem zakleniti podatkovne mape %s. Bitcoin Core je verjetno že zagnan.</translation>
+        <source>Cannot obtain a lock on data directory %s. UFO Core is probably already running.</source>
+        <translation>Ne morem zakleniti podatkovne mape %s. UFO Core je verjetno že zagnan.</translation>
     </message>
     <message>
         <source>Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)</source>
@@ -2911,16 +2911,16 @@ Naslov: %4
         <translation>Ko bo prejeto ustrezno opozorilo, ali ko bo opažena zelo dolga razvejitev, izvedi navedeni ukazni niz. (Niz %s bo nadomeščen z vsebino sporočila.)</translation>
     </message>
     <message>
-        <source>Fees (in BTC/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Provizije (v BTC/KiB), ki so manjše od te vrednosti, se pri posredovanju smatrajo za nične (privzeto: %s)</translation>
+        <source>Fees (in UFO/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Provizije (v UFO/KiB), ki so manjše od te vrednosti, se pri posredovanju smatrajo za nične (privzeto: %s)</translation>
     </message>
     <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
         <translation>Če opcija -paytxfee ni nastavljena, nastavi znesek provizije tako visoko, da bodo transakcije potrjene v povprečno n blokih. (privzeto: %u)</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Bitcoin Core will not work properly.</source>
-        <translation>Opozorilo: Preverite, če sta datum in ura na vašem računalniku točna! Bitcoin Core ne bo dobro deloval, če je nastavljeni čas nepravilen.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong UFO Core will not work properly.</source>
+        <translation>Opozorilo: Preverite, če sta datum in ura na vašem računalniku točna! UFO Core ne bo dobro deloval, če je nastavljeni čas nepravilen.</translation>
     </message>
     <message>
         <source>Cannot resolve -whitebind address: '%s'</source>
@@ -2931,8 +2931,8 @@ Naslov: %4
         <translation>Poveži se preko posredniškega strežnika SOCKS5</translation>
     </message>
     <message>
-        <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
-        <translation>Copyright (C) 2009-%i The Bitcoin Core Developers</translation>
+        <source>Copyright (C) 2009-%i The UFO Core Developers</source>
+        <translation>Copyright (C) 2009-%i The UFO Core Developers</translation>
     </message>
     <message>
         <source>Information</source>

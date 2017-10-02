@@ -66,12 +66,12 @@
         <translation>Endereços de depósito</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estes são os seus endereços Bitcoin para enviar pagamentos. Verifique sempre o valor e o endereço de envio antes de enviar moedas.</translation>
+        <source>These are your UFO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Estes são os seus endereços UFO para enviar pagamentos. Verifique sempre o valor e o endereço de envio antes de enviar moedas.</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Estes são os seus endereços Bitcoin para receber pagamentos. É recomendado que utilize um endereço novo para cada transacção.</translation>
+        <source>These are your UFO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Estes são os seus endereços UFO para receber pagamentos. É recomendado que utilize um endereço novo para cada transacção.</translation>
     </message>
     <message>
         <source>Copy &amp;Label</source>
@@ -188,8 +188,8 @@
         <translation>Escreva a nova frase de seguraça da sua carteira. &lt;br/&gt; Por favor, use uma frase de &lt;b&gt;10 ou mais caracteres aleatórios,&lt;/b&gt; ou &lt;b&gt;oito ou mais palavras&lt;/b&gt;.</translation>
     </message>
     <message>
-        <source>Bitcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
-        <translation>O cliente Bitcoin irá agora ser fechado para terminar o processo de encriptação. Recorde que a encriptação da sua carteira não protegerá totalmente os seus bitcoins de serem roubados por programas maliciosos que infectem o seu computador.</translation>
+        <source>UFO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
+        <translation>O cliente UFO irá agora ser fechado para terminar o processo de encriptação. Recorde que a encriptação da sua carteira não protegerá totalmente os seus bitcoins de serem roubados por programas maliciosos que infectem o seu computador.</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
@@ -295,8 +295,8 @@
         <translation>Abrir &amp;URI...</translation>
     </message>
     <message>
-        <source>Bitcoin Core client</source>
-        <translation>Cliente Bitcoin Core</translation>
+        <source>UFO Core client</source>
+        <translation>Cliente UFO Core</translation>
     </message>
     <message>
         <source>Importing blocks from disk...</source>
@@ -307,11 +307,11 @@
         <translation>A reindexar blocos no disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
+        <source>Send coins to a UFO address</source>
         <translation>Enviar moedas para um endereço bitcoin</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bitcoin</source>
+        <source>Modify configuration options for UFO</source>
         <translation>Modificar opções de configuração para bitcoin</translation>
     </message>
     <message>
@@ -335,8 +335,8 @@
         <translation>&amp;Verificar mensagem...</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>UFO</source>
+        <translation>UFO</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -351,8 +351,8 @@
         <translation>&amp;Receber</translation>
     </message>
     <message>
-        <source>Show information about Bitcoin Core</source>
-        <translation>Mostrar informação sobre Bitcoin Core</translation>
+        <source>Show information about UFO Core</source>
+        <translation>Mostrar informação sobre UFO Core</translation>
     </message>
     <message>
         <source>&amp;Show / Hide</source>
@@ -367,12 +367,12 @@
         <translation>Encriptar as chaves privadas que pertencem à sua carteira</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>Assine mensagens com os seus endereços Bitcoin para provar que os controla</translation>
+        <source>Sign messages with your UFO addresses to prove you own them</source>
+        <translation>Assine mensagens com os seus endereços UFO para provar que os controla</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>Verifique mensagens para assegurar que foram assinadas com o endereço Bitcoin especificado</translation>
+        <source>Verify messages to ensure they were signed with specified UFO addresses</source>
+        <translation>Verifique mensagens para assegurar que foram assinadas com o endereço UFO especificado</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -391,16 +391,16 @@
         <translation>Barra de separadores</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>UFO Core</source>
+        <translation>UFO Core</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation>Solicitar pagamentos (gera códigos QR e URIs bitcoin:)</translation>
+        <source>Request payments (generates QR codes and ufo: URIs)</source>
+        <translation>Solicitar pagamentos (gera códigos QR e URIs ufo:)</translation>
     </message>
     <message>
-        <source>&amp;About Bitcoin Core</source>
-        <translation>&amp;Sobre o Bitcoin Core</translation>
+        <source>&amp;About UFO Core</source>
+        <translation>&amp;Sobre o UFO Core</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -411,20 +411,20 @@
         <translation>Mostrar a lista de rótulos e endereços de receção usados</translation>
     </message>
     <message>
-        <source>Open a bitcoin: URI or payment request</source>
-        <translation>Abrir URI bitcoin: ou pedido de pagamento</translation>
+        <source>Open a ufo: URI or payment request</source>
+        <translation>Abrir URI ufo: ou pedido de pagamento</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Opções da linha de &amp;comandos</translation>
     </message>
     <message>
-        <source>Show the Bitcoin Core help message to get a list with possible Bitcoin command-line options</source>
-        <translation>Mostrar a mensagem de ajuda do Bitcoin Core para obter uma lista com possíveis opções de linha de comandos</translation>
+        <source>Show the UFO Core help message to get a list with possible UFO command-line options</source>
+        <translation>Mostrar a mensagem de ajuda do UFO Core para obter uma lista com possíveis opções de linha de comandos</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoin network</source>
-        <translation><numerusform>%n ligação ativa à rede Bitcoin</numerusform><numerusform>%n ligações ativas à rede Bitcoin</numerusform></translation>
+        <source>%n active connection(s) to UFO network</source>
+        <translation><numerusform>%n ligação ativa à rede UFO</numerusform><numerusform>%n ligações ativas à rede UFO</numerusform></translation>
     </message>
     <message>
         <source>No block source available...</source>
@@ -783,7 +783,7 @@ Endereço: %4</translation>
         <translation>O endereço introduzido "%1" já se encontra no livro de endereços.</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bitcoin address.</source>
+        <source>The entered address "%1" is not a valid UFO address.</source>
         <translation>O endereço introduzido "%1" não é um endereço bitcoin válido.</translation>
     </message>
     <message>
@@ -821,8 +821,8 @@ Endereço: %4</translation>
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>UFO Core</source>
+        <translation>UFO Core</translation>
     </message>
     <message>
         <source>version</source>
@@ -833,8 +833,8 @@ Endereço: %4</translation>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Bitcoin Core</source>
-        <translation>Sobre o Bitcoin Core</translation>
+        <source>About UFO Core</source>
+        <translation>Sobre o UFO Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -880,16 +880,16 @@ Endereço: %4</translation>
         <translation>Bem-vindo</translation>
     </message>
     <message>
-        <source>Welcome to Bitcoin Core.</source>
-        <translation>Bem-vindo ao Bitcoin Core.</translation>
+        <source>Welcome to UFO Core.</source>
+        <translation>Bem-vindo ao UFO Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bitcoin Core will store its data.</source>
-        <translation>Sendo esta a primeira vez que o programa é iniciado, poderá escolher onde o Bitcoin Core irá guardar os seus dados.</translation>
+        <source>As this is the first time the program is launched, you can choose where UFO Core will store its data.</source>
+        <translation>Sendo esta a primeira vez que o programa é iniciado, poderá escolher onde o UFO Core irá guardar os seus dados.</translation>
     </message>
     <message>
-        <source>Bitcoin Core will download and store a copy of the Bitcoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>O Bitcoin Core vai transferir e armazenar uma cópia do "block chain" (cadeia de blocos). Pelo menos %1GB de dados serão armazenados nesta pasta, e vão crescer ao longo do tempo. A sua carteira também irá ser armazenada nesta pasta.</translation>
+        <source>UFO Core will download and store a copy of the UFO block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>O UFO Core vai transferir e armazenar uma cópia do "block chain" (cadeia de blocos). Pelo menos %1GB de dados serão armazenados nesta pasta, e vão crescer ao longo do tempo. A sua carteira também irá ser armazenada nesta pasta.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -900,8 +900,8 @@ Endereço: %4</translation>
         <translation>Utilizar uma pasta de dados personalizada:</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>UFO Core</source>
+        <translation>UFO Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -954,12 +954,12 @@ Endereço: %4</translation>
         <translation>&amp;Principal</translation>
     </message>
     <message>
-        <source>Automatically start Bitcoin after logging in to the system.</source>
-        <translation>Começar o Bitcoin automaticamente ao iniciar sessão no sistema.</translation>
+        <source>Automatically start UFO after logging in to the system.</source>
+        <translation>Começar o UFO automaticamente ao iniciar sessão no sistema.</translation>
     </message>
     <message>
-        <source>&amp;Start Bitcoin on system login</source>
-        <translation>&amp;Começar o Bitcoin ao iniciar o sistema</translation>
+        <source>&amp;Start UFO on system login</source>
+        <translation>&amp;Começar o UFO ao iniciar o sistema</translation>
     </message>
     <message>
         <source>Size of &amp;database cache</source>
@@ -1035,7 +1035,7 @@ Endereço: %4</translation>
         <translation>&amp;Gastar troco não confirmado</translation>
     </message>
     <message>
-        <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the UFO client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>Abrir a porta do cliente bitcoin automaticamente no seu router. Isto apenas funciona se o seu router suportar UPnP e este se encontrar ligado.</translation>
     </message>
     <message>
@@ -1043,8 +1043,8 @@ Endereço: %4</translation>
         <translation>Mapear porta usando &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
-        <translation>Conectar à rede da Bitcoin através dum proxy SOCLS5.</translation>
+        <source>Connect to the UFO network through a SOCKS5 proxy.</source>
+        <translation>Conectar à rede da UFO através dum proxy SOCLS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1091,8 +1091,8 @@ Endereço: %4</translation>
         <translation>&amp;Linguagem da interface de utilizador:</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Bitcoin.</source>
-        <translation>A linguagem da interface do utilizador pode ser definida aqui. Esta definição entrará em efeito após reiniciar o Bitcoin.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting UFO.</source>
+        <translation>A linguagem da interface do utilizador pode ser definida aqui. Esta definição entrará em efeito após reiniciar o UFO.</translation>
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
@@ -1150,8 +1150,8 @@ Endereço: %4</translation>
         <translation>Formulário</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>A informação mostrada poderá estar desatualizada. A sua carteira sincroniza automaticamente com a rede Bitcoin depois de estabelecer ligação, mas este processo ainda não está completo.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the UFO network after a connection is established, but this process has not completed yet.</source>
+        <translation>A informação mostrada poderá estar desatualizada. A sua carteira sincroniza automaticamente com a rede UFO depois de estabelecer ligação, mas este processo ainda não está completo.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1257,16 +1257,16 @@ Endereço: %4</translation>
         <translation>Erro de pedido de pagamento</translation>
     </message>
     <message>
-        <source>Cannot start bitcoin: click-to-pay handler</source>
-        <translation>Impossível iniciar o controlador de bitcoin: click-to-pay</translation>
+        <source>Cannot start ufo: click-to-pay handler</source>
+        <translation>Impossível iniciar o controlador de ufo: click-to-pay</translation>
     </message>
     <message>
         <source>Payment request fetch URL is invalid: %1</source>
         <translation>O URL de pedido de pagamento é inválido: %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
-        <translation>URI não foi lido correctamente! Isto pode ser causado por um endereço Bitcoin inválido ou por parâmetros URI malformados.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid UFO address or malformed URI parameters.</source>
+        <translation>URI não foi lido correctamente! Isto pode ser causado por um endereço UFO inválido ou por parâmetros URI malformados.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1335,8 +1335,8 @@ Endereço: %4</translation>
         <translation>Quantia</translation>
     </message>
     <message>
-        <source>Enter a Bitcoin address (e.g. %1)</source>
-        <translation>Entre um endereço Bitcoin (ex. %1)</translation>
+        <source>Enter a UFO address (e.g. %1)</source>
+        <translation>Entre um endereço UFO (ex. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1561,7 +1561,7 @@ Endereço: %4</translation>
         <translation>Ficheiro de registo de depuração</translation>
     </message>
     <message>
-        <source>Open the Bitcoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the UFO debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation>Abrir o ficheiro de registo de depuração da pasta de dados actual. Isto pode demorar alguns segundos para ficheiros de registo maiores.</translation>
     </message>
     <message>
@@ -1569,8 +1569,8 @@ Endereço: %4</translation>
         <translation>Limpar consola</translation>
     </message>
     <message>
-        <source>Welcome to the Bitcoin RPC console.</source>
-        <translation>Bem-vindo à consola RPC Bitcoin.</translation>
+        <source>Welcome to the UFO RPC console.</source>
+        <translation>Bem-vindo à consola RPC UFO.</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
@@ -1644,8 +1644,8 @@ Endereço: %4</translation>
         <translation>Reutilizar um endereço de receção existente (não recomendado)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
-        <translation>Uma mensagem opcional para anexar ao pedido de pagamento, que será exibida quando o pedido for aberto. Nota: A mensagem não será enviada com o pagamento através da rede Bitcoin.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the UFO network.</source>
+        <translation>Uma mensagem opcional para anexar ao pedido de pagamento, que será exibida quando o pedido for aberto. Nota: A mensagem não será enviada com o pagamento através da rede UFO.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2033,8 +2033,8 @@ Endereço: %4</translation>
         <translation>Confirmação deverá começar dentro de %1 bloco(s).</translation>
     </message>
     <message>
-        <source>Warning: Invalid Bitcoin address</source>
-        <translation>Aviso: Endereço Bitcoin inválido</translation>
+        <source>Warning: Invalid UFO address</source>
+        <translation>Aviso: Endereço UFO inválido</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2084,8 +2084,8 @@ Endereço: %4</translation>
         <translation>Este é um pagamento normal.</translation>
     </message>
     <message>
-        <source>The Bitcoin address to send the payment to</source>
-        <translation>O endereço Bitcoin para enviar o pagamento</translation>
+        <source>The UFO address to send the payment to</source>
+        <translation>O endereço UFO para enviar o pagamento</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2116,8 +2116,8 @@ Endereço: %4</translation>
         <translation>Introduza um rótulo para este endereço para o adicionar à sua lista de endereços usados</translation>
     </message>
     <message>
-        <source>A message that was attached to the bitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
-        <translation>Uma mensagem que estava anexada ao URI bitcoin: que será armazenada com a transação para sua referência. Nota: Esta mensagem não será enviada através da rede Bitcoin.</translation>
+        <source>A message that was attached to the ufo: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the UFO network.</source>
+        <translation>Uma mensagem que estava anexada ao URI ufo: que será armazenada com a transação para sua referência. Nota: Esta mensagem não será enviada através da rede UFO.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -2135,8 +2135,8 @@ Endereço: %4</translation>
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Bitcoin Core is shutting down...</source>
-        <translation>O Bitcoin Core está a encerrar...</translation>
+        <source>UFO Core is shutting down...</source>
+        <translation>O UFO Core está a encerrar...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -2158,8 +2158,8 @@ Endereço: %4</translation>
         <translation>Pode assinar mensagens com os seus endereços para provar que são seus. Tenha atenção ao assinar mensagens ambíguas, pois ataques de phishing podem tentar enganá-lo de modo a assinar a sua identidade para os atacantes. Apenas assine declarações detalhadas com as quais concorde.</translation>
     </message>
     <message>
-        <source>The Bitcoin address to sign the message with</source>
-        <translation>O endereço Bitcoin para designar a mensagem</translation>
+        <source>The UFO address to sign the message with</source>
+        <translation>O endereço UFO para designar a mensagem</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2190,8 +2190,8 @@ Endereço: %4</translation>
         <translation>Copiar a assinatura actual para a área de transferência</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bitcoin address</source>
-        <translation>Assine uma mensagem para provar que é dono deste endereço Bitcoin</translation>
+        <source>Sign the message to prove you own this UFO address</source>
+        <translation>Assine uma mensagem para provar que é dono deste endereço UFO</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2214,12 +2214,12 @@ Endereço: %4</translation>
         <translation>Introduza o endereço de assinatura, mensagem (assegure-se que copia quebras de linha, espaços, tabulações, etc. exactamente) e assinatura abaixo para verificar a mensagem. Tenha atenção para não ler mais na assinatura do que o que estiver na mensagem assinada, para evitar ser enganado por um atacante que se encontre entre si e quem assinou a mensagem.</translation>
     </message>
     <message>
-        <source>The Bitcoin address the message was signed with</source>
-        <translation>O endereço Bitcoin com que a mensagem foi designada</translation>
+        <source>The UFO address the message was signed with</source>
+        <translation>O endereço UFO com que a mensagem foi designada</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
-        <translation>Verifique a mensagem para assegurar que foi assinada com o endereço Bitcoin especificado</translation>
+        <source>Verify the message to ensure it was signed with the specified UFO address</source>
+        <translation>Verifique a mensagem para assegurar que foi assinada com o endereço UFO especificado</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -2285,12 +2285,12 @@ Endereço: %4</translation>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>UFO Core</source>
+        <translation>UFO Core</translation>
     </message>
     <message>
-        <source>The Bitcoin Core developers</source>
-        <translation>Os programadores do Bitcoin Core</translation>
+        <source>The UFO Core developers</source>
+        <translation>Os programadores do UFO Core</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -2839,8 +2839,8 @@ Endereço: %4</translation>
         <translation>Esta é uma versão de testes pré-lançamento - use à sua responsabilidade - não usar para minar ou aplicações comerciais</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. Bitcoin Core is probably already running.</source>
-        <translation>Incapaz de vincular à porta %s neste computador. O Bitcoin Core provavelmente já está a correr.</translation>
+        <source>Unable to bind to %s on this computer. UFO Core is probably already running.</source>
+        <translation>Incapaz de vincular à porta %s neste computador. O UFO Core provavelmente já está a correr.</translation>
     </message>
     <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
@@ -3023,8 +3023,8 @@ Endereço: %4</translation>
         <translation>Vinculado para dar o endereço para atender as ligações JSON-RPC. Use [host]: Notação de porta para IPv6. Esta opção pode ser especificada várias vezes (padrão: ligam-se a todas as interfaces)</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Bitcoin Core is probably already running.</source>
-        <translation>Impossível trancar a pasta de dados %s. Provavelmente o Bitcoin Core já está a ser executado.</translation>
+        <source>Cannot obtain a lock on data directory %s. UFO Core is probably already running.</source>
+        <translation>Impossível trancar a pasta de dados %s. Provavelmente o UFO Core já está a ser executado.</translation>
     </message>
     <message>
         <source>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</source>
@@ -3035,16 +3035,16 @@ Endereço: %4</translation>
         <translation>Definir tamanho máximo de transações com alta-prioridade/baixa-taxa em bytes (por defeito: %d)</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Bitcoin Core will not work properly.</source>
-        <translation>Atenção: Por favor verifique que a data e hora do seu computador estão correctas! Se o seu relógio não estiver certo o Bitcoin Core não irá funcionar correctamente.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong UFO Core will not work properly.</source>
+        <translation>Atenção: Por favor verifique que a data e hora do seu computador estão correctas! Se o seu relógio não estiver certo o UFO Core não irá funcionar correctamente.</translation>
     </message>
     <message>
-        <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
-        <translation>Copyright (C) 2009-%i Os Programadores do Bitcoin Core</translation>
+        <source>Copyright (C) 2009-%i The UFO Core Developers</source>
+        <translation>Copyright (C) 2009-%i Os Programadores do UFO Core</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Bitcoin Core</source>
-        <translation>Erro ao carregar wallet.dat: A Carteira requer uma versão mais recente do Bitcoin Core</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of UFO Core</source>
+        <translation>Erro ao carregar wallet.dat: A Carteira requer uma versão mais recente do UFO Core</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3091,8 +3091,8 @@ Endereço: %4</translation>
         <translation>Nome de utilizador para ligações JSON-RPC</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart Bitcoin Core to complete</source>
-        <translation>A Carteira precisou de ser reescrita: reinicie o Bitcoin Core para completar o processo</translation>
+        <source>Wallet needed to be rewritten: restart UFO Core to complete</source>
+        <translation>A Carteira precisou de ser reescrita: reinicie o UFO Core para completar o processo</translation>
     </message>
     <message>
         <source>Warning</source>

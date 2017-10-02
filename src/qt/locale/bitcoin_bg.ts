@@ -66,11 +66,11 @@
         <translation>Адреси за получаване</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your UFO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Това са адресите на получателите на плащания. Винаги проверявайте размера на сумата и адреса на получателя, преди да изпратите монети.</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your UFO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>Това са Вашите Биткойн адреси,благодарение на които ще получавате плащания.Препоръчително е да използвате нови адреси за получаване за всяка транзакция.</translation>
     </message>
     <message>
@@ -184,7 +184,7 @@
         <translation>Портфейлът е криптиран</translation>
     </message>
     <message>
-        <source>Bitcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
+        <source>UFO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
         <translation>Биткоин ще се затоври сега за да завърши процеса на криптиране. Запомнете, че криптирането на вашия портефейл не може напълно да предпази вашите Бит-монети от кражба чрез зловреден софтуер, инфектирал вашия компютър</translation>
     </message>
     <message>
@@ -291,15 +291,15 @@
         <translation>Отвори &amp;URI...</translation>
     </message>
     <message>
-        <source>Bitcoin Core client</source>
-        <translation>Bitcoin Core клиент</translation>
+        <source>UFO Core client</source>
+        <translation>UFO Core клиент</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
+        <source>Send coins to a UFO address</source>
         <translation>Изпращане към Биткоин адрес</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bitcoin</source>
+        <source>Modify configuration options for UFO</source>
         <translation>Променете настройките на Биткойн</translation>
     </message>
     <message>
@@ -323,7 +323,7 @@
         <translation>&amp;Проверка на съобщение...</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
+        <source>UFO</source>
         <translation>Биткоин</translation>
     </message>
     <message>
@@ -339,7 +339,7 @@
         <translation>&amp;Получаване</translation>
     </message>
     <message>
-        <source>Show information about Bitcoin Core</source>
+        <source>Show information about UFO Core</source>
         <translation>Покажете информация за Биткойн ядрото</translation>
     </message>
     <message>
@@ -355,11 +355,11 @@
         <translation>Шифроване на личните ключове,които принадлежат на портфейла Ви.</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <source>Sign messages with your UFO addresses to prove you own them</source>
         <translation>Пишете съобщения със своя Биткойн адрес за да докажете,че е ваш.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <source>Verify messages to ensure they were signed with specified UFO addresses</source>
         <translation>Потвърждаване на съобщения  за да се знае,че са написани с дадените Биткойн адреси.</translation>
     </message>
     <message>
@@ -379,16 +379,16 @@
         <translation>Раздели</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>Биткойн ядро</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
+        <source>Request payments (generates QR codes and ufo: URIs)</source>
         <translation>Изискване на плащания(генерира QR кодове и биткойн: URIs)</translation>
     </message>
     <message>
-        <source>&amp;About Bitcoin Core</source>
-        <translation>&amp;Относно Bitcoin Core</translation>
+        <source>&amp;About UFO Core</source>
+        <translation>&amp;Относно UFO Core</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -399,7 +399,7 @@
         <translation>Покажи списък с използваните адреси и имена.</translation>
     </message>
     <message>
-        <source>Open a bitcoin: URI or payment request</source>
+        <source>Open a ufo: URI or payment request</source>
         <translation>Отворете биткойн: URI  или заявка за плащане</translation>
     </message>
     <message>
@@ -407,11 +407,11 @@
         <translation>&amp;Налични команди</translation>
     </message>
     <message>
-        <source>Show the Bitcoin Core help message to get a list with possible Bitcoin command-line options</source>
+        <source>Show the UFO Core help message to get a list with possible UFO command-line options</source>
         <translation>Покажи помощните съобщения на Биткойн за да видиш наличните и валидни команди</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoin network</source>
+        <source>%n active connection(s) to UFO network</source>
         <translation><numerusform>%n връзка към Биткоин мрежата</numerusform><numerusform>%n връзки към Биткоин мрежата</numerusform></translation>
     </message>
     <message>
@@ -748,7 +748,7 @@ Address: %4
         <translation>Вече има адрес "%1" в списъка с адреси.</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bitcoin address.</source>
+        <source>The entered address "%1" is not a valid UFO address.</source>
         <translation>"%1" не е валиден Биткоин адрес.</translation>
     </message>
     <message>
@@ -786,7 +786,7 @@ Address: %4
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>Биткойн ядро</translation>
     </message>
     <message>
@@ -798,8 +798,8 @@ Address: %4
         <translation>(%1-битов)</translation>
     </message>
     <message>
-        <source>About Bitcoin Core</source>
-        <translation>За Bitcoin Core</translation>
+        <source>About UFO Core</source>
+        <translation>За UFO Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -837,11 +837,11 @@ Address: %4
         <translation>Добре дошли</translation>
     </message>
     <message>
-        <source>Welcome to Bitcoin Core.</source>
+        <source>Welcome to UFO Core.</source>
         <translation>Добре дошли в Биткойн ядрото.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bitcoin Core will store its data.</source>
+        <source>As this is the first time the program is launched, you can choose where UFO Core will store its data.</source>
         <translation>Тъй като това е първото стартиране на програмата можете да изберете къде Биткон ядрото да запази данните си.</translation>
     </message>
     <message>
@@ -853,7 +853,7 @@ Address: %4
         <translation>Използване на директория ръчно</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>Биткойн ядро</translation>
     </message>
     <message>
@@ -879,11 +879,11 @@ Address: %4
         <translation>&amp;Основни</translation>
     </message>
     <message>
-        <source>Automatically start Bitcoin after logging in to the system.</source>
+        <source>Automatically start UFO after logging in to the system.</source>
         <translation>Автоматично включване на Биткойн след влизане в системата.</translation>
     </message>
     <message>
-        <source>&amp;Start Bitcoin on system login</source>
+        <source>&amp;Start UFO on system login</source>
         <translation>&amp;Пускане на Биткоин при вход в системата</translation>
     </message>
     <message>
@@ -935,15 +935,15 @@ Address: %4
         <translation>&amp;Похарчете непотвърденото ресто</translation>
     </message>
     <message>
-        <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Автоматично отваряне на входящия Bitcoin порт. Работи само с рутери поддържащи UPnP.</translation>
+        <source>Automatically open the UFO client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Автоматично отваряне на входящия UFO порт. Работи само с рутери поддържащи UPnP.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Отваряне на входящия порт чрез &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
+        <source>Connect to the UFO network through a SOCKS5 proxy.</source>
         <translation>Свързване с Биткойн мрежата чрез SOCKS5  прокси.</translation>
     </message>
     <message>
@@ -991,7 +991,7 @@ Address: %4
         <translation>Език:</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Bitcoin.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting UFO.</source>
         <translation>Промяната на езика ще влезе в сила след рестартиране на Биткоин.</translation>
     </message>
     <message>
@@ -1050,7 +1050,7 @@ Address: %4
         <translation>Форма</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the UFO network after a connection is established, but this process has not completed yet.</source>
         <translation>Текущата информация на екрана може да не е актуална. Вашият портфейл ще се синхронизира автоматично с мрежата на Биткоин, щом поне една връзката с нея се установи; този процес все още не е приключил.</translation>
     </message>
     <message>
@@ -1133,7 +1133,7 @@ Address: %4
         <translation>Възникна грешка по време назаявката за плащане</translation>
     </message>
     <message>
-        <source>Cannot start bitcoin: click-to-pay handler</source>
+        <source>Cannot start ufo: click-to-pay handler</source>
         <translation>Биткойн не можe да се стартира: click-to-pay handler</translation>
     </message>
     <message>
@@ -1187,7 +1187,7 @@ Address: %4
         <translation>Сума</translation>
     </message>
     <message>
-        <source>Enter a Bitcoin address (e.g. %1)</source>
+        <source>Enter a UFO address (e.g. %1)</source>
         <translation>Въведете Биткойн адрес (например: %1)</translation>
     </message>
     <message>
@@ -1401,7 +1401,7 @@ Address: %4
         <translation>Лог файл,съдържащ грешките</translation>
     </message>
     <message>
-        <source>Open the Bitcoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the UFO debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation>Отворете Биткой дебъг лог файла от настоящата Data папка. Може да отнеме няколко секунди при по - големи лог файлове.</translation>
     </message>
     <message>
@@ -1409,7 +1409,7 @@ Address: %4
         <translation>Изчисти конзолата</translation>
     </message>
     <message>
-        <source>Welcome to the Bitcoin RPC console.</source>
+        <source>Welcome to the UFO RPC console.</source>
         <translation>Добре дошли в Биткойн RPC конзолата.</translation>
     </message>
     <message>
@@ -1785,7 +1785,7 @@ Address: %4
         <translation>Платете минималната такса от %1</translation>
     </message>
     <message>
-        <source>Warning: Invalid Bitcoin address</source>
+        <source>Warning: Invalid UFO address</source>
         <translation>Внимание: Невалиден Биткойн адрес</translation>
     </message>
     <message>
@@ -1875,7 +1875,7 @@ Address: %4
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Bitcoin Core is shutting down...</source>
+        <source>UFO Core is shutting down...</source>
         <translation>Биткойн ядрото се изключва...</translation>
     </message>
     <message>
@@ -1926,7 +1926,7 @@ Address: %4
         <translation>Копиране на текущия подпис</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bitcoin address</source>
+        <source>Sign the message to prove you own this UFO address</source>
         <translation>Подпишете съобщение като доказателство, че притежавате определен адрес</translation>
     </message>
     <message>
@@ -1942,7 +1942,7 @@ Address: %4
         <translation>&amp;Провери</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
+        <source>Verify the message to ensure it was signed with the specified UFO address</source>
         <translation>Проверете съобщение, за да сте сигурни че е подписано с определен Биткоин адрес</translation>
     </message>
     <message>
@@ -2005,12 +2005,12 @@ Address: %4
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>Биткойн ядро</translation>
     </message>
     <message>
-        <source>The Bitcoin Core developers</source>
-        <translation>Разработчици на Bitcoin Core</translation>
+        <source>The UFO Core developers</source>
+        <translation>Разработчици на UFO Core</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -2539,7 +2539,7 @@ Address: %4
         <translation>Свързване чрез SOCKS5  прокси</translation>
     </message>
     <message>
-        <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
+        <source>Copyright (C) 2009-%i The UFO Core Developers</source>
         <translation>Всички права запазени (C) 2009-%i Доставчиците на Биткойн</translation>
     </message>
     <message>

@@ -140,8 +140,8 @@
         <translation>Billetera codificada</translation>
     </message>
     <message>
-        <source>Bitcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
-        <translation>Bitcoin se cerrará para finalizar el proceso de encriptación. Recuerde que encriptar su billetera no protegera completatamente sus bitcoins de ser robados por malware que infecte su computador</translation>
+        <source>UFO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
+        <translation>UFO se cerrará para finalizar el proceso de encriptación. Recuerde que encriptar su billetera no protegera completatamente sus bitcoins de ser robados por malware que infecte su computador</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
@@ -235,7 +235,7 @@
         <translation>Abrir y url...</translation>
     </message>
     <message>
-        <source>Bitcoin Core client</source>
+        <source>UFO Core client</source>
         <translation>cliente bitcoin core</translation>
     </message>
     <message>
@@ -243,11 +243,11 @@
         <translation>Cargando el index de bloques...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
+        <source>Send coins to a UFO address</source>
         <translation>Enviar monedas a una dirección bitcoin</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bitcoin</source>
+        <source>Modify configuration options for UFO</source>
         <translation>Modifica las opciones de configuración de bitcoin</translation>
     </message>
     <message>
@@ -267,8 +267,8 @@
         <translation>Abre consola de depuración y diagnóstico</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>UFO</source>
+        <translation>UFO</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -287,7 +287,7 @@
         <translation>&amp;Mostrar/Ocultar</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <source>Sign messages with your UFO addresses to prove you own them</source>
         <translation>Firmar un mensaje para provar que usted es dueño de esta dirección</translation>
     </message>
     <message>
@@ -307,12 +307,12 @@
         <translation>Barra de pestañas</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>bitcoin core</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoin network</source>
-        <translation><numerusform>%n conexión activa hacia la red Bitcoin</numerusform><numerusform>%n conexiones activas hacia la red Bitcoin</numerusform></translation>
+        <source>%n active connection(s) to UFO network</source>
+        <translation><numerusform>%n conexión activa hacia la red UFO</numerusform><numerusform>%n conexiones activas hacia la red UFO</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n hour(s)</source>
@@ -467,8 +467,8 @@ Dirección: %4</translation>
         <translation>La dirección introducida "%1" ya esta guardada en la libreta de direcciones.</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bitcoin address.</source>
-        <translation>La dirección introducida "%1" no es una dirección Bitcoin valida.</translation>
+        <source>The entered address "%1" is not a valid UFO address.</source>
+        <translation>La dirección introducida "%1" no es una dirección UFO valida.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -489,7 +489,7 @@ Dirección: %4</translation>
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>bitcoin core</translation>
     </message>
     <message>
@@ -517,7 +517,7 @@ Dirección: %4</translation>
         <translation>bienvenido</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>bitcoin core</translation>
     </message>
     <message>
@@ -543,12 +543,12 @@ Dirección: %4</translation>
         <translation>&amp;Principal</translation>
     </message>
     <message>
-        <source>Automatically start Bitcoin after logging in to the system.</source>
-        <translation>Inicia Bitcoin automáticamente despues de encender el computador</translation>
+        <source>Automatically start UFO after logging in to the system.</source>
+        <translation>Inicia UFO automáticamente despues de encender el computador</translation>
     </message>
     <message>
-        <source>&amp;Start Bitcoin on system login</source>
-        <translation>&amp;Inicia Bitcoin al iniciar el sistema</translation>
+        <source>&amp;Start UFO on system login</source>
+        <translation>&amp;Inicia UFO al iniciar el sistema</translation>
     </message>
     <message>
         <source>Reset all client options to default.</source>
@@ -563,8 +563,8 @@ Dirección: %4</translation>
         <translation>experto</translation>
     </message>
     <message>
-        <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abre automáticamente el puerto del cliente Bitcoin en el router. Esto funciona solo cuando tu router es compatible con UPnP y está habilitado.</translation>
+        <source>Automatically open the UFO client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abre automáticamente el puerto del cliente UFO en el router. Esto funciona solo cuando tu router es compatible con UPnP y está habilitado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -952,7 +952,7 @@ Dirección: %4</translation>
         <translation>Firma</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bitcoin address</source>
+        <source>Sign the message to prove you own this UFO address</source>
         <translation>Firmar un mensjage para probar que usted es dueño de esta dirección</translation>
     </message>
     <message>
@@ -977,7 +977,7 @@ Dirección: %4</translation>
     </message>
     <message>
         <source>Please check the address and try again.</source>
-        <translation>Por favor, revise la dirección Bitcoin e inténtelo denuevo</translation>
+        <translation>Por favor, revise la dirección UFO e inténtelo denuevo</translation>
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
@@ -999,7 +999,7 @@ Dirección: %4</translation>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>bitcoin core</translation>
     </message>
     <message>
