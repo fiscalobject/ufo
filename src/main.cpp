@@ -2451,11 +2451,6 @@ bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool f
         return state.DoS(50, error("CheckBlockHeader() : proof of work failed"),
                          REJECT_INVALID, "high-hash");
 
-    // Check timestamp
-    if (block.GetBlockTime() > GetAdjustedTime() + 2 * 60 * 60)
-        return state.Invalid(error("CheckBlockHeader() : block timestamp too far in the future"),
-                             REJECT_INVALID, "time-too-new");
-
     return true;
 }
 
@@ -2568,6 +2563,16 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
     // Reject block.nVersion=3 blocks when 95% (75% on testnet) of the network has upgraded:
     if (block.nVersion < 4 && CBlockIndex::IsSuperMajority(4, pindexPrev, Params().RejectBlockOutdatedMajority()))
         return state.Invalid(error("%s : rejected nVersion=3 block", __func__),
+                             REJECT_OBSOLETE, "bad-version");
+
+    // limit block in future accepted in chain to only a time window of 15 min
+    if (block.GetBlockTime() > GetAdjustedTime() + 15 * 60)
+        return state.Invalid(error("%s: block's timestamp too far in the future", __func__),
+                             REJECT_OBSOLETE, "bad-version");
+
+    // Check timestamp against prev it should not be more then 15 minutes outside blockchain time
+    if ((nHeight >= Params().ForkTwo() && block.GetBlockTime() <= pindexPrev->GetBlockTime() - 15 * 60))
+        return state.Invalid(error("%s: block's timestamp is too early compare to last block", __func__),
                              REJECT_OBSOLETE, "bad-version");
 
     return true;
