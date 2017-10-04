@@ -22,6 +22,18 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     if (pindexLast->nHeight >= Params().ForkTwo())
         DiffMode = 2;
 
+    /* NeoScrypt hard fork */
+    if (nHeight >= Params().ForkThree())
+    {
+        // Difficulty reset after the switch
+        if(nHeight == Params().ForkThree())
+            return Params().ProofOfWorkLimit().GetCompact();
+
+        // Use normal difficulty adjust following fork for 10 blocks
+        if (nHeight <= Params().ForkThree() + 10)
+            DiffMode = 1;
+    }
+
     if (DiffMode == 1) 
         return GetNextWorkRequired_V1(pindexLast, pblock);
 
