@@ -12,6 +12,7 @@
 #include "rpcserver.h"
 #include "timedata.h"
 #include "util.h"
+#include "checkpointsync.h"
 #ifdef ENABLE_WALLET
 #include "wallet.h"
 #include "walletdb.h"
@@ -375,4 +376,61 @@ Value setmocktime(const Array& params, bool fHelp)
     SetMockTime(params[0].get_int64());
 
     return Value::null;
+}
+
+// RPC commands related to sync checkpoints
+// get information of sync-checkpoint
+Value getcheckpoint(const Array& params, bool fHelp)
+{
+    if (fHelp || params.size() != 0)
+        throw runtime_error(
+            "getcheckpoint\n"
+            "Show info of synchronized checkpoint.\n");
+
+    Object result;
+    CBlockIndex* pindexCheckpoint;
+
+    result.push_back(Pair("synccheckpoint", hashSyncCheckpoint.ToString().c_str()));
+    if (mapBlockIndex.count(hashSyncCheckpoint))
+    {
+        pindexCheckpoint = mapBlockIndex[hashSyncCheckpoint];
+        result.push_back(Pair("height", pindexCheckpoint->nHeight));
+        result.push_back(Pair("timestamp", (boost::int64_t) pindexCheckpoint->GetBlockTime()));
+    }
+    if (mapArgs.count("-checkpointkey"))
+        result.push_back(Pair("checkpointmaster", true));
+
+    return result;
+}
+
+Value sendcheckpoint(const Array& params, bool fHelp)
+{
+    if (fHelp || params.size() != 1)
+        throw runtime_error(
+            "sendcheckpoint <blockhash>\n"
+            "Send a synchronized checkpoint.\n");
+
+    if (!mapArgs.count("-checkpointkey") || CSyncCheckpoint::strMasterPrivKey.empty())
+        throw runtime_error("Not a checkpointmaster node, first set checkpointkey in configuration and restart client. ");
+
+    std::string strHash = params[0].get_str();
+    uint256 hash(strHash);
+
+    if (!SendSyncCheckpoint(hash))
+        throw runtime_error("Failed to send checkpoint, check log. ");
+
+    Object result;
+    CBlockIndex* pindexCheckpoint;
+
+    result.push_back(Pair("synccheckpoint", hashSyncCheckpoint.ToString().c_str()));
+    if (mapBlockIndex.count(hashSyncCheckpoint))
+    {
+        pindexCheckpoint = mapBlockIndex[hashSyncCheckpoint];
+        result.push_back(Pair("height", pindexCheckpoint->nHeight));
+        result.push_back(Pair("timestamp", (boost::int64_t) pindexCheckpoint->GetBlockTime()));
+    }
+    if (mapArgs.count("-checkpointkey"))
+        result.push_back(Pair("checkpointmaster", true));
+
+    return result;
 }

@@ -35,6 +35,9 @@ int GetTotalBlocksEstimate();
 //! Returns last CBlockIndex* in mapBlockIndex that is a checkpoint
 CBlockIndex* GetLastCheckpoint();
 
+// Returns the block hash of latest hardened checkpoint
+uint256 GetLatestHardenedCheckpoint();
+
 double GuessVerificationProgress(CBlockIndex* pindex, bool fSigchecks = true);
 
 extern bool fEnabled;

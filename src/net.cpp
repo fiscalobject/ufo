@@ -1986,6 +1986,7 @@ CNode::CNode(SOCKET hSocketIn, CAddress addrIn, std::string addrNameIn, bool fIn
     fNetworkNode = false;
     fSuccessfullyConnected = false;
     fDisconnect = false;
+    hashCheckpointKnown = 0;
     nRefCount = 0;
     nSendSize = 0;
     nSendOffset = 0;
