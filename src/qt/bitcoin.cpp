@@ -352,6 +352,9 @@ void BitcoinApplication::createWindow(const NetworkStyle *networkStyle)
 void BitcoinApplication::createSplashScreen(const NetworkStyle *networkStyle)
 {
     SplashScreen *splash = new SplashScreen(0, networkStyle);
+    QFont* font = new QFont("Nasalization Rg");
+    font->setPixelSize(14);
+    splash->setFont(*font);
     // We don't hold a direct pointer to the splash screen after creation, so use
     // Qt::WA_DeleteOnClose to make sure that the window will be deleted eventually.
     splash->setAttribute(Qt::WA_DeleteOnClose);

@@ -19,75 +19,71 @@
 #include <QCloseEvent>
 #include <QDesktopWidget>
 #include <QPainter>
+#include <QFontDatabase>
 
 SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) :
     QWidget(0, f), curAlignment(0)
 {
+    setAutoFillBackground(true);
+
+    QFontDatabase::addApplicationFont(":fonts/res/fonts/nasalization-rg.ttf");
+
     // set reference point, paddings
-    int paddingRight            = 50;
-    int paddingTop              = 50;
-    int titleVersionVSpace      = 17;
-    int titleCopyrightVSpace    = 40;
+    int paddingLeftCol2         = 10;
+    int paddingTopCol2          = 375;
+    int line1 = 0;
+    int line2 = 20;
+    int line3 = 40;
 
     float fontFactor            = 1.0;
 
     // define text to place
-    QString titleText       = tr("Bitcoin Core");
+    QString titleText       = tr("UNIFORM FISCAL OBJECT");
     QString versionText     = QString("Version %1").arg(QString::fromStdString(FormatFullVersion()));
-    QString copyrightText   = QChar(0xA9)+QString(" 2009-%1 ").arg(COPYRIGHT_YEAR) + QString(tr("The Bitcoin Core developers"));
+    QString copyrightText1  = QChar(0xA9)+QString(" 2009-%1 ").arg(COPYRIGHT_YEAR) + QString(tr("Bitcoin Core developers"));
+    QString copyrightText2  = QChar(0xA9)+QString(" 2014-%1 ").arg(COPYRIGHT_YEAR) + QString(tr("UFO Core developers"));
     QString titleAddText    = networkStyle->getTitleAddText();
 
-    QString font            = QApplication::font().toString();
+    QString font            = "Nasalization Rg";
 
     // load the bitmap for writing some text over it
     pixmap     = networkStyle->getSplashImage();
 
     QPainter pixPaint(&pixmap);
-    pixPaint.setPen(QColor(100,100,100));
+    pixPaint.setPen(QColor(138,255,44));
 
     // check font size and drawing with
-    pixPaint.setFont(QFont(font, 33*fontFactor));
+    pixPaint.setFont(QFont(font, 14*fontFactor));
     QFontMetrics fm = pixPaint.fontMetrics();
     int titleTextWidth  = fm.width(titleText);
-    if(titleTextWidth > 160) {
-        // strange font rendering, Arial probably not found
-        fontFactor = 0.75;
+    if(titleTextWidth > 380) {
+        fontFactor = fontFactor * 380 / titleTextWidth;;
+        pixPaint.setFont(QFont(font, 11*fontFactor));
     }
 
-    pixPaint.setFont(QFont(font, 33*fontFactor));
-    fm = pixPaint.fontMetrics();
-    titleTextWidth  = fm.width(titleText);
-    pixPaint.drawText(pixmap.width()-titleTextWidth-paddingRight,paddingTop,titleText);
+    pixPaint.drawText(290, paddingTopCol2+25, QString("NEOSCRYPT"));
 
-    pixPaint.setFont(QFont(font, 15*fontFactor));
+    pixPaint.setPen(QColor(255,255,255));
 
-    // if the version string is to long, reduce size
-    fm = pixPaint.fontMetrics();
-    int versionTextWidth  = fm.width(versionText);
-    if(versionTextWidth > titleTextWidth+paddingRight-10) {
-        pixPaint.setFont(QFont(font, 10*fontFactor));
-        titleVersionVSpace -= 5;
-    }
-    pixPaint.drawText(pixmap.width()-titleTextWidth-paddingRight+2,paddingTop+titleVersionVSpace,versionText);
+    pixPaint.setFont(QFont(font, 14*fontFactor));
+    pixPaint.drawText(50, 46,titleText);
 
-    // draw copyright stuff
-    pixPaint.setFont(QFont(font, 10*fontFactor));
-    pixPaint.drawText(pixmap.width()-titleTextWidth-paddingRight,paddingTop+titleCopyrightVSpace,copyrightText);
+    pixPaint.setFont(QFont(font, 7*fontFactor));
+    pixPaint.drawText(paddingLeftCol2,paddingTopCol2+line3,versionText);
+    pixPaint.drawText(paddingLeftCol2,paddingTopCol2+line1,copyrightText1);
+    pixPaint.drawText(paddingLeftCol2,paddingTopCol2+line2,copyrightText2);
 
     // draw additional text if special network
     if(!titleAddText.isEmpty()) {
-        QFont boldFont = QFont(font, 10*fontFactor);
-        boldFont.setWeight(QFont::Bold);
-        pixPaint.setFont(boldFont);
-        fm = pixPaint.fontMetrics();
-        int titleAddTextWidth  = fm.width(titleAddText);
-        pixPaint.drawText(pixmap.width()-titleAddTextWidth-10,15,titleAddText);
+        pixPaint.setFont(QFont(font, 14*fontFactor));
+        pixPaint.setPen(QColor(255,26,26));
+        pixPaint.drawText(320,100,titleAddText);
     }
 
     pixPaint.end();
 
     // Set window title
-    setWindowTitle(titleText + " " + titleAddText);
+    setWindowTitle(QString("UFO") + " " + titleAddText);
 
     // Resize window and move to center of desktop, disallow resizing
     QRect r(QPoint(), pixmap.size());
@@ -173,3 +169,4 @@ void SplashScreen::closeEvent(QCloseEvent *event)
     StartShutdown(); // allows an "emergency" shutdown during startup
     event->ignore();
 }
+
