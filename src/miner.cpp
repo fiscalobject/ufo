@@ -481,7 +481,9 @@ void static BitcoinMiner(CWallet *pwallet)
         while (true)
         {
             unsigned int nHashesDone = 0;
-            unsigned int profile = fNeoScrypt ? 0x0 : 0x3;
+            unsigned int profile = 0x0;
+            if (pblock->nTime < Params().NeoScryptFork())
+                profile = 0x3;
             uint256 hash;
             
             while(true) {
