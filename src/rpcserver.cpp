@@ -255,6 +255,7 @@ static const CRPCCommand vRPCCommands[] =
     { "network",            "getnettotals",           &getnettotals,           true,      true,       false },
     { "network",            "getpeerinfo",            &getpeerinfo,            true,      false,      false },
     { "network",            "ping",                   &ping,                   true,      false,      false },
+    { "network",            "sendalert",              &sendalert,              true,      false,	  false },
 
     /* Checkpointing */
     { "network",            "getcheckpoint",          &getcheckpoint,          true,      false,	  false },
