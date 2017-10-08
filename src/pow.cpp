@@ -14,17 +14,21 @@
 
 #include <math.h>
 
+/**
+ * Difficulty set by DiffMode
+ * 1 = Normal difficulty adjust
+ * 2 = Dr Kimoto's Gravity Well
+ * 3 = Wrapper's eHRC (enhance Hash Rate Compensation)
+**/
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
     int nHeight = pindexLast->nHeight + 1;
-
     int DiffMode = 1;
+
     if (pindexLast->nHeight >= Params().ForkTwo())
         DiffMode = 2;
 
-    /* NeoScrypt hard fork */
-    if (nHeight >= Params().ForkThree())
-    {
+    if (nHeight >= Params().ForkThree() && nHeight < Params().ForkFour()) {
         // Difficulty reset after the switch
         if(nHeight == Params().ForkThree())
             return Params().ProofOfWorkLimit().GetCompact();
@@ -32,12 +36,16 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         // Use normal difficulty adjust following fork for 10 blocks
         if (nHeight <= Params().ForkThree() + 10)
             DiffMode = 1;
+    } else if (nHeight >= Params().ForkFour()) {
+        DiffMode = 3;
     }
 
-    if (DiffMode == 1) 
-        return GetNextWorkRequired_V1(pindexLast, pblock);
+    if (DiffMode == 2)
+        return GetNextWorkRequired_V2(pindexLast);
+    else if (DiffMode == 3)
+        return GetNextWorkRequired_V3(pindexLast);
 
-    return GetNextWorkRequired_V2(pindexLast); 
+    return GetNextWorkRequired_V1(pindexLast, pblock);
 }
 
 unsigned int GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
@@ -99,7 +107,7 @@ unsigned int GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockH
         nActualTimespan = (pindexLast->GetBlockTime() - pindexFirst->GetBlockTime()) / nReTargetHistoryFact;
     else
         nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
-    LogPrintf("  nActualTimespan = %d  before bounds\n", nActualTimespan);
+
     if (nActualTimespan < nTargetTimespan/4)
         nActualTimespan = nTargetTimespan/4;
     if (nActualTimespan > nTargetTimespan*4)
@@ -115,12 +123,6 @@ unsigned int GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockH
 
     if (bnNew > Params().ProofOfWorkLimit())
         bnNew = Params().ProofOfWorkLimit();
-
-    /// debug print
-    LogPrintf("GetNextWorkRequired RETARGET\n");
-    LogPrintf("nTargetTimespan() = %d    nActualTimespan = %d\n", nTargetTimespan, nActualTimespan);
-    LogPrintf("Before: %08x  %s\n", pindexLast->nBits, bnOld.ToString());
-    LogPrintf("After:  %08x  %s\n", bnNew.GetCompact(), bnNew.ToString());
 
     return bnNew.GetCompact();
 }
@@ -213,6 +215,77 @@ unsigned int GetNextWorkRequired_V2(const CBlockIndex* pindexLast)
 
     if (bnNew > bnProofOfWorkLimit)
         bnNew = bnProofOfWorkLimit;
+
+    return bnNew.GetCompact();
+}
+
+/**
+ * eHRC designed by Wrapper
+ * Short, medium and long samples averaged together and compared against the target time span.
+ * Adjust every block but limted to 9% change maximum.
+*/
+unsigned int GetNextWorkRequired_V3(const CBlockIndex* pindexLast)
+{
+    int nHeight = pindexLast->nHeight + 1;
+    int nTargetTimespan = 90;
+    int shortSample = 15;
+    int mediumSample = 200;
+    int longSample = 1000;
+    int pindexFirstShortTime = 0;
+    int pindexFirstMediumTime = 0;
+
+    // Genesis block or new chain
+    if (pindexLast == NULL || nHeight < longSample)
+        return Params().ProofOfWorkLimit().GetCompact();;
+
+    const CBlockIndex* pindexFirstLong = pindexLast;
+    for(int i = 0; pindexFirstLong && i < longSample; i++) {
+        pindexFirstLong = pindexFirstLong->pprev;
+        if (i == shortSample - 1)
+            pindexFirstShortTime = pindexFirstLong->GetBlockTime();
+
+        if (i == mediumSample - 1)
+            pindexFirstMediumTime = pindexFirstLong->GetBlockTime();
+    }
+
+    int nActualTimespanShort = (pindexLast->GetBlockTime() - pindexFirstShortTime) / shortSample;
+    int nActualTimespanMedium = (pindexLast->GetBlockTime() - pindexFirstMediumTime)/ mediumSample;
+    int nActualTimespanLong = (pindexLast->GetBlockTime() - pindexFirstLong->GetBlockTime()) / longSample;
+
+    int nActualTimespan = (nActualTimespanShort + nActualTimespanMedium + nActualTimespanLong)/3;
+
+    LogPrintf("RETARGET: nActualTimespanShort = %d, nActualTimespanMedium = %d, nActualTimespanLong = %d, nActualTimespan = %d\n",
+    nActualTimespanShort, nActualTimespanMedium, nActualTimespanLong, nActualTimespan);
+
+    // 9% difficulty limiter
+    int nActualTimespanMax = nTargetTimespan * 494 / 453;
+    int nActualTimespanMin = nTargetTimespan * 453 / 494;
+
+    if(nActualTimespan < nActualTimespanMin)
+        nActualTimespan = nActualTimespanMin;
+
+    if(nActualTimespan > nActualTimespanMax)
+        nActualTimespan = nActualTimespanMax;
+
+    LogPrintf("RETARGET: nActualTimespan = %d after bounds\n", nActualTimespan);
+    LogPrintf("RETARGET: nTargetTimespan = %d, nTargetTimespan/nActualTimespan = %.4f\n", nTargetTimespan, (float) nTargetTimespan/nActualTimespan);
+
+    // Retarget
+    uint256 bnNew;
+    uint256 bnOld;
+    bnNew.SetCompact(pindexLast->nBits);
+    bnOld = bnNew;
+    bnNew *= nActualTimespan;
+    bnNew /= nTargetTimespan;
+
+    if (bnNew > Params().ProofOfWorkLimit())
+        bnNew = Params().ProofOfWorkLimit();
+
+    /// debug print
+    LogPrintf("GetNextWorkRequired RETARGET\n");
+    LogPrintf("nTargetTimespan() = %d    nActualTimespan = %d\n", nTargetTimespan, nActualTimespan);
+    LogPrintf("Before: %08x  %s\n", pindexLast->nBits, bnOld.ToString());
+    LogPrintf("After:  %08x  %s\n", bnNew.GetCompact(), bnNew.ToString());
 
     return bnNew.GetCompact();
 }

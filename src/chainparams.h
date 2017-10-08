@@ -50,6 +50,7 @@ public:
     int ForkTwo() const { return nHardForkTwo; }
     int ForkTwoA() const { return nHardForkTwoA; }
     int ForkThree() const { return nHardForkThree; }
+    int ForkFour() const { return nHardForkFour; }
     unsigned int NeoScryptSwitch() const { return nNeoScryptSwitch;}
     unsigned int NeoScryptFork() const { return nNeoScryptFork;}
     int GetDefaultPort() const { return nDefaultPort; }
@@ -101,6 +102,7 @@ protected:
     int nHardForkTwo;
     int nHardForkTwoA;
     int nHardForkThree;
+    int nHardForkFour;
     unsigned int nNeoScryptSwitch;
     unsigned int nNeoScryptFork;
     int nDefaultPort;
