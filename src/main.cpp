@@ -2533,10 +2533,6 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
         return state.DoS(100, error("%s : rejected by checkpoint lock-in at %d", __func__, nHeight),
                          REJECT_CHECKPOINT, "checkpoint mismatch");
 
-    // Check that the block satisfies synchronized checkpoint
-    if (!IsInitialBlockDownload() && !CheckSyncCheckpoint(hash, pindexPrev))
-        return error("AcceptBlock() : rejected by synchronized checkpoint");
-
     // Reject block.nVersion=1 blocks when 95% (75% on testnet) of the network has upgraded:
     if (block.nVersion < 2 && 
         CBlockIndex::IsSuperMajority(2, pindexPrev, Params().RejectBlockOutdatedMajority()) && block.nTime > Params().NeoScryptSwitch())
@@ -2567,9 +2563,6 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
         return state.Invalid(error("%s: block's timestamp is too early compare to last block", __func__),
                              REJECT_OBSOLETE, "bad-version");
 
-    // Check pending sync-checkpoint
-    AcceptPendingSyncCheckpoint();
-
     return true;
 }
 
@@ -2594,6 +2587,11 @@ bool ContextualCheckBlock(const CBlock& block, CValidationState& state, CBlockIn
             return state.DoS(100, error("%s : block height mismatch in coinbase", __func__), REJECT_INVALID, "bad-cb-height");
         }
     }
+
+    // Check that the block satisfies synchronized checkpoint
+    if (!IsInitialBlockDownload() && !CheckSyncCheckpoint(block.GetHash(), pindexPrev))
+        return state.Invalid(error("%s : rejected by synchronized checkpoint", __func__),
+                             REJECT_OBSOLETE, "bad-version");
 
     return true;
 }
@@ -2682,6 +2680,9 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
     } catch(std::runtime_error &e) {
         return state.Abort(std::string("System error: ") + e.what());
     }
+
+    // Check pending sync-checkpoint
+    AcceptPendingSyncCheckpoint();
 
     return true;
 }
