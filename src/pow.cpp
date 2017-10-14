@@ -28,14 +28,13 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     if (pindexLast->nHeight >= Params().ForkTwo())
         DiffMode = 2;
 
-    if (nHeight >= Params().ForkThree() && nHeight < Params().ForkFour()) {
-        // Difficulty reset after the switch
-        if(nHeight == Params().ForkThree())
-            return Params().ProofOfWorkLimit().GetCompact();
+    // Difficulty reset after the switch
+    if(nHeight == Params().ForkThree())
+        return Params().ProofOfWorkLimit().GetCompact();
 
-        // Use normal difficulty adjust following fork for 10 blocks
-        if (nHeight <= Params().ForkThree() + 10)
-            DiffMode = 1;
+    // NeoScrypt Use normal difficulty adjust following fork for 10 blocks
+    if (nHeight >= Params().ForkThree() && nHeight <= Params().ForkThree() + 10) {
+        DiffMode = 1;
     } else if (nHeight >= Params().ForkFour()) {
         DiffMode = 3;
     }
@@ -254,9 +253,6 @@ unsigned int GetNextWorkRequired_V3(const CBlockIndex* pindexLast)
 
     int nActualTimespan = (nActualTimespanShort + nActualTimespanMedium + nActualTimespanLong)/3;
 
-    LogPrintf("RETARGET: nActualTimespanShort = %d, nActualTimespanMedium = %d, nActualTimespanLong = %d, nActualTimespan = %d\n",
-    nActualTimespanShort, nActualTimespanMedium, nActualTimespanLong, nActualTimespan);
-
     // 9% difficulty limiter
     int nActualTimespanMax = nTargetTimespan * 494 / 453;
     int nActualTimespanMin = nTargetTimespan * 453 / 494;
@@ -267,25 +263,14 @@ unsigned int GetNextWorkRequired_V3(const CBlockIndex* pindexLast)
     if(nActualTimespan > nActualTimespanMax)
         nActualTimespan = nActualTimespanMax;
 
-    LogPrintf("RETARGET: nActualTimespan = %d after bounds\n", nActualTimespan);
-    LogPrintf("RETARGET: nTargetTimespan = %d, nTargetTimespan/nActualTimespan = %.4f\n", nTargetTimespan, (float) nTargetTimespan/nActualTimespan);
-
     // Retarget
     uint256 bnNew;
-    uint256 bnOld;
     bnNew.SetCompact(pindexLast->nBits);
-    bnOld = bnNew;
     bnNew *= nActualTimespan;
     bnNew /= nTargetTimespan;
 
     if (bnNew > Params().ProofOfWorkLimit())
         bnNew = Params().ProofOfWorkLimit();
-
-    /// debug print
-    LogPrintf("GetNextWorkRequired RETARGET\n");
-    LogPrintf("nTargetTimespan() = %d    nActualTimespan = %d\n", nTargetTimespan, nActualTimespan);
-    LogPrintf("Before: %08x  %s\n", pindexLast->nBits, bnOld.ToString());
-    LogPrintf("After:  %08x  %s\n", bnNew.GetCompact(), bnNew.ToString());
 
     return bnNew.GetCompact();
 }
