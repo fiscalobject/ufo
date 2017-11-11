@@ -94,7 +94,6 @@ bool fPrintToDebugLog = true;
 bool fDaemon = false;
 bool fServer = false;
 string strMiscWarning;
-bool fNeoScrypt = false;
 unsigned int nNeoScryptOptions = 0;
 bool fNoListen = false;
 bool fLogTimestamps = false;

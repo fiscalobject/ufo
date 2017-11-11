@@ -368,10 +368,12 @@ void FormatDataBuffer(CBlock *pblock, unsigned int *pdata) {
     data.nBits          = pblock->nBits;
     data.nNonce         = pblock->nNonce;
 
-    if(fNeoScrypt) {
+    // NeoScrypt
+    if(pblock->nTime >= Params().NeoScryptFork()) {
         /* Copy the LE data */
         for(i = 0; i < 20; i++)
           pdata[i] = ((unsigned int *) &data)[i];
+    // Scrypt
     } else {
         /* Block header size in bits */
         pdata[31] = 640;

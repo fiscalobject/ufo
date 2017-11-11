@@ -100,7 +100,6 @@ extern bool fPrintToConsole;
 extern bool fPrintToDebugLog;
 extern bool fServer;
 extern std::string strMiscWarning;
-extern bool fNeoScrypt;
 extern unsigned int nNeoScryptOptions;
 extern bool fNoListen;
 extern bool fLogTimestamps;

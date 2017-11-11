@@ -40,6 +40,7 @@ public:
         nHardForkTwo = 160997;
         nHardForkTwoA = 171900;
         nHardForkThree = 266000;
+        nHardForkFour = 1145000;
         nNeoScryptSwitch = 1414195200;
         nNeoScryptFork = 1414446393;
         nDefaultPort = 9887;
@@ -120,10 +121,10 @@ public:
         pchMessageStart[3] = 0xdb;
         vAlertPubKey = ParseHex("0452c73ce2a53acd207b5c7f643c80d1bae3b13263b443762ef772de30c7fb7fcc3b7b4b1b19d025e730a0beb6245cacb668118e34a2b0fed2dd8c8fa44a8357d6");
         checkpointPubKey = "04d0dd87fbb6ac3483f57c9cd010c8fa804219ec641fad97a9cbb31605327b15fa9c40232fa214f02b80883955f7b14e49dbd03e44d45123f06ee08b911a08be33";
-        nCoinFix = 100;
-        nHardForkOne = 200;
-        nHardForkTwo = 300;
-        nHardForkThree = 400;
+        nHardForkTwo = 1;
+        nHardForkTwoA = 1;
+        nHardForkThree = 1;
+        nHardForkFour = 100;
         nNeoScryptSwitch = 1506816000;
         nNeoScryptFork = 1506816000;
         nDefaultPort = 19887;

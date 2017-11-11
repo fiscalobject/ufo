@@ -184,6 +184,7 @@ int64_t GetBlockValue(int nHeight, int64_t nFees);
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock);
 unsigned int GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockHeader *pblock);
 unsigned int GetNextWorkRequired_V2(const CBlockIndex* pindexLast);
+unsigned int GetNextWorkRequired_V3(const CBlockIndex* pindexLast);
 
 void UpdateTime(CBlockHeader& block, const CBlockIndex* pindexPrev);
 
