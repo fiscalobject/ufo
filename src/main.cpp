@@ -1104,8 +1104,8 @@ int64 GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static int64 nTargetTimespan = 1 * 24 * 60 * 60; // 1 day
-static int64 nTargetSpacing = 1.5 * 60; // 1.5 minute blocks
+static int64 nTargetTimespan = 24 * 60 * 60; // 1 day
+static int64 nTargetSpacing = 90; // 1.5 minute blocks
 static int64 nInterval = nTargetTimespan / nTargetSpacing;
 static int64 nReTargetHistoryFact = 4; // look at 4 times the retarget interval into block history
 
@@ -1134,72 +1134,16 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
     return bnResult.GetCompact();
 }
 
-unsigned int static NiteGravityWell(const CBlockIndex* pindexLast, const CBlockHeader *pblock, uint64 TargetBlocksSpacingSeconds, uint64 PastBlocksMin, uint64 PastBlocksMax) {
-    /* current difficulty formula, megacoin - kimoto gravity well */
-    const CBlockIndex *BlockLastSolved = pindexLast;
-    const CBlockIndex *BlockReading = pindexLast;
-    const CBlockHeader *BlockCreating = pblock;
-    BlockCreating = BlockCreating;
-    uint64 PastBlocksMass = 0;
-    int64 PastRateActualSeconds = 0;
-    int64 PastRateTargetSeconds = 0;
-    double PastRateAdjustmentRatio = double(1);
-    CBigNum PastDifficultyAverage;
-    CBigNum PastDifficultyAveragePrev;
-    double EventHorizonDeviation;
-    double EventHorizonDeviationFast;
-    double EventHorizonDeviationSlow;
-        
-    if (BlockLastSolved == NULL || BlockLastSolved->nHeight == 0 || (uint64)BlockLastSolved->nHeight < PastBlocksMin) { return bnProofOfWorkLimit.GetCompact(); }
-        int64 LatestBlockTime = BlockLastSolved->GetBlockTime();
-        for (unsigned int i = 1; BlockReading && BlockReading->nHeight > 0; i++) {
-                if (PastBlocksMax > 0 && i > PastBlocksMax) { break; }
-                PastBlocksMass++;
-                
-                if (i == 1) { PastDifficultyAverage.SetCompact(BlockReading->nBits); }
-                else { PastDifficultyAverage = ((CBigNum().SetCompact(BlockReading->nBits) - PastDifficultyAveragePrev) / i) + PastDifficultyAveragePrev; }
-                PastDifficultyAveragePrev = PastDifficultyAverage;
-                
-                if (LatestBlockTime < BlockReading->GetBlockTime()) {
-                    LatestBlockTime = BlockReading->GetBlockTime();
-                }
-                PastRateActualSeconds = LatestBlockTime - BlockReading->GetBlockTime();
-                PastRateTargetSeconds = TargetBlocksSpacingSeconds * PastBlocksMass;
-                PastRateAdjustmentRatio = double(1);
-
-                if (PastRateActualSeconds < 1) { PastRateActualSeconds = 5; }
-
-                if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
-                PastRateAdjustmentRatio = double(PastRateTargetSeconds) / double(PastRateActualSeconds);
-                }
-				if (pindexLast->nHeight + 1 >= 171900) {
-				    EventHorizonDeviation = 1 + (0.7084 * pow((double(PastBlocksMass)/double(144)), -1.228));
-				} else {
-					EventHorizonDeviation = 1 + (0.7084 * pow((double(PastBlocksMass)/double(28.2)), -1.228));
-				}
-                EventHorizonDeviationFast = EventHorizonDeviation;
-                EventHorizonDeviationSlow = 1 / EventHorizonDeviation;
-                
-                if (PastBlocksMass >= PastBlocksMin) {
-                        if ((PastRateAdjustmentRatio <= EventHorizonDeviationSlow) || (PastRateAdjustmentRatio >= EventHorizonDeviationFast)) { assert(BlockReading); break; }
-                }
-                if (BlockReading->pprev == NULL) { assert(BlockReading); break; }
-                BlockReading = BlockReading->pprev;
-        }
-        
-        CBigNum bnNew(PastDifficultyAverage);
-        if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
-                bnNew *= PastRateActualSeconds;
-                bnNew /= PastRateTargetSeconds;
-        }
-    if (bnNew > bnProofOfWorkLimit) { bnNew = bnProofOfWorkLimit; }
-        
-    return bnNew.GetCompact();
-}
-
 unsigned int static GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
     unsigned int nProofOfWorkLimit = bnProofOfWorkLimit.GetCompact();
+
+    if ((!fTestNet && pindexLast->nHeight >= nHardForkOne) || (fTestNet && pindexLast->nHeight >= nTestnetOldFork))
+    {
+        nTargetTimespan = 60 * 60; // 1 hour
+        nInterval = nTargetTimespan / nTargetSpacing;
+        nReTargetHistoryFact = 2;
+    }
 
     // Genesis block
     if (pindexLast == NULL)
@@ -1250,7 +1194,7 @@ unsigned int static GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const 
         nActualTimespan = (pindexLast->GetBlockTime() - pindexFirst->GetBlockTime())/nReTargetHistoryFact;
     else
         nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
-    printf("  nActualTimespan = %"PRI64d"  before bounds\n", nActualTimespan);
+
     if (nActualTimespan < nTargetTimespan/4)
         nActualTimespan = nTargetTimespan/4;
     if (nActualTimespan > nTargetTimespan*4)
@@ -1265,65 +1209,179 @@ unsigned int static GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const 
     if (bnNew > bnProofOfWorkLimit)
         bnNew = bnProofOfWorkLimit;
 
-    /// debug print
-    printf("GetNextWorkRequired RETARGET\n");
-    printf("nTargetTimespan = %"PRI64d"    nActualTimespan = %"PRI64d"\n", nTargetTimespan, nActualTimespan);
-    printf("Before: %08x  %s\n", pindexLast->nBits, CBigNum().SetCompact(pindexLast->nBits).getuint256().ToString().c_str());
-    printf("After:  %08x  %s\n", bnNew.GetCompact(), bnNew.getuint256().ToString().c_str());
+    return bnNew.GetCompact();
+}
+
+unsigned int static GetNextWorkRequired_V2(const CBlockIndex* pindexLast)
+{
+    nTargetTimespan = 60 * 60;
+    int64 PastSecondsMin = nTargetTimespan * 0.025;
+    if((!fTestNet && pindexLast->nHeight + 1 >= nHardForkTwoA) || (fTestNet && pindexLast->nHeight + 1 >= nTestnetOldFork))
+        PastSecondsMin = nTargetTimespan * 0.15;
+    int64 PastSecondsMax = nTargetTimespan * 7;
+    uint64 PastBlocksMin = PastSecondsMin / nTargetSpacing;
+    uint64 PastBlocksMax = PastSecondsMax / nTargetSpacing;
+    const CBlockIndex *BlockLastSolved = pindexLast;
+    const CBlockIndex *BlockReading = pindexLast;
+    uint64 PastBlocksMass = 0;
+    int64 PastRateActualSeconds = 0;
+    int64 PastRateTargetSeconds = 0;
+    double PastRateAdjustmentRatio = double(1);
+    CBigNum PastDifficultyAverage;
+    CBigNum PastDifficultyAveragePrev;
+    double EventHorizonDeviation;
+    double EventHorizonDeviationFast;
+    double EventHorizonDeviationSlow;
+
+    if (BlockLastSolved == NULL || BlockLastSolved->nHeight == 0 || (uint64)BlockLastSolved->nHeight < PastBlocksMin)
+        return bnProofOfWorkLimit.GetCompact();
+
+    int64 LatestBlockTime = BlockLastSolved->GetBlockTime();
+
+    for (unsigned int i = 1; BlockReading && BlockReading->nHeight > 0; i++) {
+        if (PastBlocksMax > 0 && i > PastBlocksMax)
+            break;
+
+        PastBlocksMass++;
+
+        if (i == 1)
+            PastDifficultyAverage.SetCompact(BlockReading->nBits);
+        else
+            PastDifficultyAverage = ((CBigNum().SetCompact(BlockReading->nBits) - PastDifficultyAveragePrev) / i) + PastDifficultyAveragePrev;
+
+        PastDifficultyAveragePrev = PastDifficultyAverage;
+
+        if (LatestBlockTime < BlockReading->GetBlockTime())
+            LatestBlockTime = BlockReading->GetBlockTime();
+
+        PastRateActualSeconds = LatestBlockTime - BlockReading->GetBlockTime();
+        PastRateTargetSeconds = nTargetSpacing * PastBlocksMass;
+        PastRateAdjustmentRatio = double(1);
+
+        if (PastRateActualSeconds < 1)
+            PastRateActualSeconds = 5;
+
+        if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0)
+            PastRateAdjustmentRatio = double(PastRateTargetSeconds) / double(PastRateActualSeconds);
+
+        if ((!fTestNet && pindexLast->nHeight + 1 >= nHardForkTwoA) || (fTestNet && pindexLast->nHeight + 1 >= nTestnetOldFork))
+            EventHorizonDeviation = 1 + (0.7084 * pow((double(PastBlocksMass)/double(144)), -1.228));
+        else
+            EventHorizonDeviation = 1 + (0.7084 * pow((double(PastBlocksMass)/double(28.2)), -1.228));
+
+        EventHorizonDeviationFast = EventHorizonDeviation;
+        EventHorizonDeviationSlow = 1 / EventHorizonDeviation;
+
+        if (PastBlocksMass >= PastBlocksMin) {
+            if ((PastRateAdjustmentRatio <= EventHorizonDeviationSlow) || (PastRateAdjustmentRatio >= EventHorizonDeviationFast)) {
+                assert(BlockReading);
+                break;
+            }
+        }
+
+        if (BlockReading->pprev == NULL) {
+            assert(BlockReading);
+            break;
+        }
+
+        BlockReading = BlockReading->pprev;
+    }
+
+    CBigNum bnNew(PastDifficultyAverage);
+    if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
+        bnNew *= PastRateActualSeconds;
+        bnNew /= PastRateTargetSeconds;
+    }
+
+    if (bnNew > bnProofOfWorkLimit)
+        bnNew = bnProofOfWorkLimit;
 
     return bnNew.GetCompact();
 }
 
-unsigned int static GetNextWorkRequired_V2(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
-{
-    static const int64 BlocksTargetSpacing = nTargetSpacing;
-    static const unsigned int TimeDaySeconds = nTargetTimespan;
-    int64 PastSecondsMin = TimeDaySeconds * 0.025;
-	if(pindexLast->nHeight + 1 >= 171900) {
-		PastSecondsMin = TimeDaySeconds * 0.15;
-    }
-    int64 PastSecondsMax = TimeDaySeconds * 7;
-    uint64 PastBlocksMin = PastSecondsMin / BlocksTargetSpacing;
-    uint64 PastBlocksMax = PastSecondsMax / BlocksTargetSpacing;
-
-    return NiteGravityWell(pindexLast, pblock, BlocksTargetSpacing, PastBlocksMin, PastBlocksMax);
-}
-
-unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
+/**
+ * eHRC designed by Wrapper
+ * Short, medium and long samples averaged together and compared against the target time span.
+ * Adjust every block but limted to 9% change maximum.
+*/
+unsigned int static GetNextWorkRequired_V3(const CBlockIndex* pindexLast)
 {
     int nHeight = pindexLast->nHeight + 1;
-    
-    // From block 33479 reassess the difficulty every 40 blocks
-    // Reduce Retarget factor to 2
-    if(pindexLast->nHeight >= nHardForkOne)
-    {
-        nTargetTimespan = 60 * 60; // 1 hour
-        nInterval = nTargetTimespan / nTargetSpacing;
-        nReTargetHistoryFact = 2;
+    nTargetTimespan = 90;
+    int shortSample = 15;
+    int mediumSample = 200;
+    int longSample = 1000;
+    int pindexFirstShortTime = 0;
+    int pindexFirstMediumTime = 0;
+
+    // Genesis block or new chain
+    if (pindexLast == NULL || nHeight <= longSample + 1)
+        return bnProofOfWorkLimit.GetCompact();;
+
+    const CBlockIndex* pindexFirstLong = pindexLast;
+    for(int i = 0; pindexFirstLong && i < longSample; i++) {
+        pindexFirstLong = pindexFirstLong->pprev;
+        if (i == shortSample - 1)
+            pindexFirstShortTime = pindexFirstLong->GetBlockTime();
+
+        if (i == mediumSample - 1)
+            pindexFirstMediumTime = pindexFirstLong->GetBlockTime();
     }
-    
-    int DiffMode = 1;
-    if ((pindexLast->nHeight >= nHardForkTwo) || (fTestNet && (pindexLast->nHeight >= 10))) {
-        DiffMode = 2;
-    }
-    
-    /* The 3rd hard fork and testnet hard fork */
-    if((nHeight >= nHardForkThree) || (fTestNet && (nHeight >= nTestnetFork))) {
-        if(!fNeoScrypt) fNeoScrypt = true;
-        // Difficulty reset after the switch
-        if((nHeight == nHardForkThree)  || (fTestNet && (nHeight == nTestnetFork)))
-          return(bnProofOfWorkLimit.GetCompact());
-        // Use normal difficulty adjust following fork for 10 blocks
-        if((nHeight <= nHardForkThree + 10)  || (fTestNet && (nHeight <= nTestnetFork + 10)))
-          DiffMode = 1;
-    }
-        
-    if (DiffMode == 1) {
-        return GetNextWorkRequired_V1(pindexLast, pblock);
-    }
-    return GetNextWorkRequired_V2(pindexLast, pblock);
+
+    int nActualTimespanShort = (pindexLast->GetBlockTime() - pindexFirstShortTime) / shortSample;
+    int nActualTimespanMedium = (pindexLast->GetBlockTime() - pindexFirstMediumTime)/ mediumSample;
+    int nActualTimespanLong = (pindexLast->GetBlockTime() - pindexFirstLong->GetBlockTime()) / longSample;
+
+    int nActualTimespan = (nActualTimespanShort + nActualTimespanMedium + nActualTimespanLong)/3;
+
+    // 9% difficulty limiter
+    int nActualTimespanMax = nTargetTimespan * 494 / 453;
+    int nActualTimespanMin = nTargetTimespan * 453 / 494;
+
+    if(nActualTimespan < nActualTimespanMin)
+        nActualTimespan = nActualTimespanMin;
+
+    if(nActualTimespan > nActualTimespanMax)
+        nActualTimespan = nActualTimespanMax;
+
+    // Retarget
+    CBigNum bnNew;
+    bnNew.SetCompact(pindexLast->nBits);
+    bnNew *= nActualTimespan;
+    bnNew /= nTargetTimespan;
+
+    if (bnNew > bnProofOfWorkLimit)
+        bnNew = bnProofOfWorkLimit;
+
+    return bnNew.GetCompact();
 }
 
+unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock){
+    int nHeight = pindexLast->nHeight + 1;
+    int DiffMode = 1;
+
+    if ((!fTestNet && pindexLast->nHeight >= nHardForkTwo) || (fTestNet && (pindexLast->nHeight >= nTestnetOldFork)))
+        DiffMode = 2;
+
+    // Difficulty reset after the switch
+    if((!fTestNet && nHeight == nHardForkThree)  || (fTestNet && nHeight == nTestnetOldFork))
+        return bnProofOfWorkLimit.GetCompact();
+
+    /* NeoScrypt Use normal difficulty adjust following fork for 10 blocks */
+    if ((!fTestNet && nHeight >= nHardForkThree && nHeight <= nHardForkThree + 10) || (fTestNet && nHeight >= nTestnetOldFork && nHeight <= nTestnetOldFork + 10)) {
+        DiffMode = 1;
+    /* eHRC hard fork */
+    } else if ((!fTestNet && nHeight >= nHardForkFour) || (fTestNet && nHeight >= nTestnetFork)) {
+        DiffMode = 3;
+    }
+
+    if (DiffMode == 2)
+        return GetNextWorkRequired_V2(pindexLast);
+    if (DiffMode == 3)
+        return GetNextWorkRequired_V3(pindexLast);
+
+    return GetNextWorkRequired_V1(pindexLast, pblock);
+}
 
 bool CheckProofOfWork(uint256 hash, unsigned int nBits)
 {
@@ -2300,7 +2358,7 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
         }
 
         /* Don't accept blocks with bogus nVersion numbers after this point */
-        if((nHeight >= nHardForkThree) || (fTestNet && (nHeight >= nTestnetFork))) {
+        if((nHeight >= nHardForkThree) || (fTestNet && (nHeight >= nTestnetOldFork))) {
             if(nVersion < 2)
                 return(state.DoS(100, error("AcceptBlock() : incorrect block version")));
         }
@@ -4634,7 +4692,7 @@ void FormatDataBuffer(CBlock *pblock, unsigned int *pdata) {
     data.nBits          = pblock->nBits;
     data.nNonce         = pblock->nNonce;
 
-    if(fNeoScrypt) {
+    if(pblock->nTime >= nNeoScryptFork) {
         /* Copy the LE data */
         for(i = 0; i < 20; i++)
           pdata[i] = ((unsigned int *) &data)[i];

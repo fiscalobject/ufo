@@ -214,7 +214,7 @@ Value getworkex(const Array& params, bool fHelp)
             
         CBlock* pdata = (CBlock*)&vchData[0];
 
-        if(!fNeoScrypt) {
+        if(!pdata->nTime >= nNeoScryptFork) {
             unsigned int i;
             for(i = 9; i < 20; i++)
                 ((unsigned int *) pdata)[i] = ByteReverse(((unsigned int *) pdata)[i]);
@@ -317,10 +317,10 @@ Value getwork(const Array& params, bool fHelp)
         uint256 hashTarget = CBigNum().SetCompact(pblock->nBits).getuint256();
 
         Object result;
-        result.push_back(Pair("data",     HexStr(BEGIN(pdata), fNeoScrypt ? (char *) &pdata[21] : END(pdata))));
+        result.push_back(Pair("data",     HexStr(BEGIN(pdata), pblock->nTime >= nNeoScryptFork ? (char *) &pdata[21] : END(pdata))));
         result.push_back(Pair("target",   HexStr(BEGIN(hashTarget), END(hashTarget))));
         /* Optional */
-        if(fNeoScrypt)
+        if(pblock->nTime >= nNeoScryptFork)
           result.push_back(Pair("algorithm", "neoscrypt"));
         else
           result.push_back(Pair("algorithm", "scrypt:1024,1,1"));
@@ -337,7 +337,7 @@ Value getwork(const Array& params, bool fHelp)
 
         CBlock* pdata = (CBlock*)&vchData[0];
 
-        if(!fNeoScrypt) {
+        if(!pdata->nTime >= nNeoScryptFork) {
             unsigned int i;
             /* nVersion and hashPrevBlock aren't needed */
             for(i = 9; i < 20; i++)

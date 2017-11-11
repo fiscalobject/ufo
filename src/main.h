@@ -84,11 +84,15 @@ static const int fHaveUPnP = false;
 // Hard and soft fork data
 const int nHardForkOne = 33479;
 const int nHardForkTwo = 160997;
+const int nHardForkTwoA = 171900;
 const int nHardForkThree = 266000;
+const int nHardForkFour = 1145000;
 
-const int nTestnetFork   =  40;
+const int nTestnetFork      = 100;
+const int nTestnetOldFork   = 1;
 
 static const unsigned int nSwitchV2            = 1414195200; // Sat, 25 Oct 2014 00:00:00 GMT
+static const unsigned int nNeoScryptFork       = 1414446393;
 static const unsigned int nTestnetSwitchV2     = 1406473140; // Sun, 27 Jul 2014 14:59:00 GMT
 
 extern CScript COINBASE_FLAGS;
@@ -1400,20 +1404,8 @@ public:
         uint256 hash;
 
         /* All blocks generated up to this time point are Scrypt only */
-        if((fTestNet && (nTime < nTestnetSwitchV2)) ||
-          (!fTestNet && (nTime < nSwitchV2))) {
+        if (nTime < nNeoScryptFork)
             profile = 0x3;
-        } else {
-            /* All these blocks must be v2+ with valid nHeight */
-            int nHeight = GetBlockHeight();
-            if(fTestNet) {
-                if(nHeight < nTestnetFork)
-                  profile = 0x3;
-            } else {
-                if(nHeight < nHardForkThree)
-                  profile = 0x3;
-            }
-        }
 
         neoscrypt((unsigned char *) &nVersion, (unsigned char *) &hash, profile);
 
