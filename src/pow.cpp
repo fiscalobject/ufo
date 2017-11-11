@@ -234,7 +234,7 @@ unsigned int GetNextWorkRequired_V3(const CBlockIndex* pindexLast)
     int pindexFirstMediumTime = 0;
 
     // Genesis block or new chain
-    if (pindexLast == NULL || nHeight <= longSample)
+    if (pindexLast == NULL || nHeight <= longSample + 1)
         return Params().ProofOfWorkLimit().GetCompact();
 
     const CBlockIndex* pindexFirstLong = pindexLast;
