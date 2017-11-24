@@ -171,8 +171,8 @@ Value validateaddress(const Array& params, bool fHelp)
             "  \"account\" : \"account\"         (string) The account associated with the address, \"\" is the default account\n"
             "}\n"
             "\nExamples:\n"
-            + HelpExampleCli("validateaddress", "\"1PSSGeFHDnKNxiEyFrD1wcEaHr9hrQDDWc\"")
-            + HelpExampleRpc("validateaddress", "\"1PSSGeFHDnKNxiEyFrD1wcEaHr9hrQDDWc\"")
+            + HelpExampleCli("validateaddress", "\"Bv9cjXmszn4ePXe2izQCsS69vCCj2TmMjD\"")
+            + HelpExampleRpc("validateaddress", "\"Bv9cjXmszn4ePXe2izQCsS69vCCj2TmMjD\"")
         );
 
     CBitcoinAddress address(params[0].get_str());
@@ -288,9 +288,9 @@ Value createmultisig(const Array& params, bool fHelp)
 
             "\nExamples:\n"
             "\nCreate a multisig address from 2 addresses\n"
-            + HelpExampleCli("createmultisig", "2 \"[\\\"16sSauSf5pF2UkUwvKGq4qjNRzBZYqgEL5\\\",\\\"171sgjn4YtPu27adkKGrdDwzRTxnRkBfKV\\\"]\"") +
+            + HelpExampleCli("createmultisig", "2 \"[\\\"CDSTCc6qT9GkJL93XnGWxmQ5uG1hzH6FLb\\\",\\\"C1DdtMt9ikhs9XkNYxYkW44EpEsR8szbZB\\\"]\"") +
             "\nAs a json rpc call\n"
-            + HelpExampleRpc("createmultisig", "2, \"[\\\"16sSauSf5pF2UkUwvKGq4qjNRzBZYqgEL5\\\",\\\"171sgjn4YtPu27adkKGrdDwzRTxnRkBfKV\\\"]\"")
+            + HelpExampleRpc("createmultisig", "2, \"[\\\"CDSTCc6qT9GkJL93XnGWxmQ5uG1hzH6FLb\\\",\\\"C1DdtMt9ikhs9XkNYxYkW44EpEsR8szbZB\\\"]\"")
         ;
         throw runtime_error(msg);
     }

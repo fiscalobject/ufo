@@ -936,9 +936,9 @@ Value addmultisigaddress(const Array& params, bool fHelp)
 
             "\nExamples:\n"
             "\nAdd a multisig address from 2 addresses\n"
-            + HelpExampleCli("addmultisigaddress", "2 \"[\\\"16sSauSf5pF2UkUwvKGq4qjNRzBZYqgEL5\\\",\\\"171sgjn4YtPu27adkKGrdDwzRTxnRkBfKV\\\"]\"") +
+            + HelpExampleCli("addmultisigaddress", "2 \"[\\\"CDSTCc6qT9GkJL93XnGWxmQ5uG1hzH6FLb\\\",\\\"C1DdtMt9ikhs9XkNYxYkW44EpEsR8szbZB\\\"]\"") +
             "\nAs json rpc call\n"
-            + HelpExampleRpc("addmultisigaddress", "2, \"[\\\"16sSauSf5pF2UkUwvKGq4qjNRzBZYqgEL5\\\",\\\"171sgjn4YtPu27adkKGrdDwzRTxnRkBfKV\\\"]\"")
+            + HelpExampleRpc("addmultisigaddress", "2, \"[\\\"CDSTCc6qT9GkJL93XnGWxmQ5uG1hzH6FLb\\\",\\\"C1DdtMt9ikhs9XkNYxYkW44EpEsR8szbZB\\\"]\"")
         ;
         throw runtime_error(msg);
     }
