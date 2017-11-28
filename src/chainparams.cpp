@@ -190,7 +190,7 @@ public:
         nHardForkTwo = 1;
         nHardForkTwoA = 1;
         nHardForkThree = 1;
-        nHardForkFour = 100;
+        nHardForkFour = 1100;
         nNeoScryptSwitch = 1506816000;
         nNeoScryptFork = 1506816000;
         nDefaultPort = 19887;
