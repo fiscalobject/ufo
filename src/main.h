@@ -86,9 +86,9 @@ const int nHardForkOne = 33479;
 const int nHardForkTwo = 160997;
 const int nHardForkTwoA = 171900;
 const int nHardForkThree = 266000;
-const int nHardForkFour = 1145000;
+const int nHardForkFour = 1182000;
 
-const int nTestnetFork      = 100;
+const int nTestnetFork      = 1100;
 const int nTestnetOldFork   = 1;
 
 static const unsigned int nSwitchV2            = 1414195200; // Sat, 25 Oct 2014 00:00:00 GMT

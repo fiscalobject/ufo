@@ -1177,7 +1177,7 @@ unsigned int static GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const 
     int blockstogoback = nInterval-1;
     if ((pindexLast->nHeight+1) != nInterval)
         blockstogoback = nInterval;
-    if (pindexLast->nHeight > COINFIX1_BLOCK) {
+    if (pindexLast->nHeight > COINFIX1_BLOCK || fTestNet) {
         blockstogoback = nReTargetHistoryFact * nInterval;
     }
 
@@ -1189,7 +1189,7 @@ unsigned int static GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const 
 
     // Limit adjustment step
     int64 nActualTimespan = 0;
-    if (pindexLast->nHeight > COINFIX1_BLOCK)
+    if (pindexLast->nHeight > COINFIX1_BLOCK || fTestNet)
         // obtain average actual timespan
         nActualTimespan = (pindexLast->GetBlockTime() - pindexFirst->GetBlockTime())/nReTargetHistoryFact;
     else
