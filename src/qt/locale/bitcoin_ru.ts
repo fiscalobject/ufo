@@ -3001,8 +3001,8 @@
         <translation>Выполнить команду, когда приходит соответствующее сообщение о тревоге или наблюдается очень длинное расщепление цепи (%s в команде заменяется на сообщение)</translation>
     </message>
     <message>
-        <source>Fees (in BTC/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Комиссии (в BTC/Кб) меньшие этого значения считаются нулевыми для трансляции (по умолчанию: %s)</translation>
+        <source>Fees (in UFO/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Комиссии (в UFO/Кб) меньшие этого значения считаются нулевыми для трансляции (по умолчанию: %s)</translation>
     </message>
     <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
@@ -3137,8 +3137,8 @@ rpcpassword=%s
         <translation>Ошибка: обнаружен неподдерживаемый параметр -tor, используйте -onion.</translation>
     </message>
     <message>
-        <source>Fee (in BTC/kB) to add to transactions you send (default: %s)</source>
-        <translation>Комиссия (в BTC/Кб) для добавления к вашим транзакциям (по умолчанию: %s)</translation>
+        <source>Fee (in UFO/kB) to add to transactions you send (default: %s)</source>
+        <translation>Комиссия (в UFO/Кб) для добавления к вашим транзакциям (по умолчанию: %s)</translation>
     </message>
     <message>
         <source>Information</source>
