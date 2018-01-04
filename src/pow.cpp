@@ -258,6 +258,12 @@ unsigned int GetNextWorkRequired_V3(const CBlockIndex* pindexLast, const Consens
     if (nActualTimespanSum != 0)
         nActualTimespan = nActualTimespanSum / 3;
 
+    if (nHeight >= params.ForkFourA()) {
+        // Apply .25 damping
+        nActualTimespan = nActualTimespan + (3 * nTargetTimespan);
+        nActualTimespan /= 4;
+    }
+
     // 9% difficulty limiter
     int nActualTimespanMax = nTargetTimespan * 494 / 453;
     int nActualTimespanMin = nTargetTimespan * 453 / 494;

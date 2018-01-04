@@ -32,6 +32,7 @@ struct Params {
     int nHardForkTwoA;
     int nHardForkThree;
     int nHardForkFour;
+    int nHardForkFourA;
     unsigned int nNeoScryptSwitch;
     unsigned int nNeoScryptFork;
     int CoinFix() const { return nCoinFix; }
@@ -40,6 +41,7 @@ struct Params {
     int ForkTwoA() const { return nHardForkTwoA; }
     int ForkThree() const { return nHardForkThree; }
     int ForkFour() const { return nHardForkFour; }
+    int ForkFourA() const { return nHardForkFourA; }
     unsigned int NeoScryptSwitch() const { return nNeoScryptSwitch;}
     unsigned int NeoScryptFork() const { return nNeoScryptFork;}
 };
