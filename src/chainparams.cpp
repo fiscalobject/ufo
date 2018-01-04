@@ -40,6 +40,8 @@ public:
         consensus.nPowTargetSpacing = 90;
         consensus.nCoinFix = 15000;
         consensus.nHardForkOne = 33479;
+        consensus.nHardForkTwo = 160997;
+        consensus.nHardForkTwoA = 171900;
         consensus.fPowAllowMinDifficultyBlocks = false;
         /** 
          * The message start string is designed to be unlikely to occur in normal data.
@@ -123,6 +125,8 @@ public:
         consensus.nMajorityEnforceBlockUpgrade = 51;
         consensus.nMajorityRejectBlockOutdated = 75;
         consensus.nMajorityWindow = 100;
+        consensus.nHardForkTwo = 1;
+        consensus.nHardForkTwoA = 1;
         consensus.fPowAllowMinDifficultyBlocks = true;
         pchMessageStart[0] = 0xfb;
         pchMessageStart[1] = 0xc0;

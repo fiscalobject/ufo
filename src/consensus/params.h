@@ -28,8 +28,12 @@ struct Params {
     /** Hard fork parameters */
     int nCoinFix;
     int nHardForkOne;
+    int nHardForkTwo;
+    int nHardForkTwoA;
     int CoinFix() const { return nCoinFix; }
     int ForkOne() const { return nHardForkOne; }
+    int ForkTwo() const { return nHardForkTwo; }
+    int ForkTwoA() const { return nHardForkTwoA; }
 };
 } // namespace Consensus
 
