@@ -13,6 +13,7 @@
 
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
 {
+    int64_t nReTargetHistoryFact = 4;
     unsigned int nProofOfWorkLimit = UintToArith256(params.powLimit).GetCompact();
 
     // Genesis block
@@ -46,20 +47,26 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     int blockstogoback = params.DifficultyAdjustmentInterval() - 1;
     if ((pindexLast->nHeight + 1) != params.DifficultyAdjustmentInterval())
         blockstogoback = params.DifficultyAdjustmentInterval();
+    if (pindexLast->nHeight > params.CoinFix())
+        blockstogoback = nReTargetHistoryFact * params.DifficultyAdjustmentInterval();
 
     const CBlockIndex* pindexFirst = pindexLast;
     for (int i = 0; pindexFirst && i < blockstogoback; i++)
         pindexFirst = pindexFirst->pprev;
     assert(pindexFirst);
 
-    return CalculateNextWorkRequired(pindexLast, pindexFirst->GetBlockTime(), params);
+    return CalculateNextWorkRequired(pindexLast, pindexFirst->GetBlockTime(), nReTargetHistoryFact, params);
 }
 
-unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params)
+unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, int64_t nReTargetHistoryFact, const Consensus::Params& params)
 {
     // Limit adjustment step
-    int64_t nActualTimespan = pindexLast->GetBlockTime() - nFirstBlockTime;
-    LogPrintf("  nActualTimespan = %d  before bounds\n", nActualTimespan);
+    int64_t nActualTimespan = 0;
+    if (pindexLast->nHeight > params.CoinFix())
+        nActualTimespan = (pindexLast->GetBlockTime() - nFirstBlockTime) / nReTargetHistoryFact;
+    else
+        nActualTimespan = pindexLast->GetBlockTime() - nFirstBlockTime;
+
     if (nActualTimespan < params.nPowTargetTimespan/4)
         nActualTimespan = params.nPowTargetTimespan/4;
     if (nActualTimespan > params.nPowTargetTimespan*4)
@@ -76,12 +83,6 @@ unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nF
 
     if (bnNew > bnPowLimit)
         bnNew = bnPowLimit;
-
-    /// debug print
-    LogPrintf("GetNextWorkRequired RETARGET\n");
-    LogPrintf("params.nPowTargetTimespan = %d    nActualTimespan = %d\n", params.nPowTargetTimespan, nActualTimespan);
-    LogPrintf("Before: %08x  %s\n", pindexLast->nBits, bnOld.ToString());
-    LogPrintf("After:  %08x  %s\n", bnNew.GetCompact(), bnNew.ToString());
 
     return bnNew.GetCompact();
 }
