@@ -387,8 +387,8 @@
         <translation>Bitcoin Core</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation>Fizetési kérelem (QR-kódot és "bitcoin:" URI azonosítót hoz létre)</translation>
+        <source>Request payments (generates QR codes and ufo: URIs)</source>
+        <translation>Fizetési kérelem (QR-kódot és "ufo:" URI azonosítót hoz létre)</translation>
     </message>
     <message>
         <source>&amp;About Bitcoin Core</source>
@@ -407,8 +407,8 @@
         <translation>A használt fogadó címek és címkék megtekintése</translation>
     </message>
     <message>
-        <source>Open a bitcoin: URI or payment request</source>
-        <translation>"bitcoin:" URI azonosító vagy fizetési kérelem megnyitása</translation>
+        <source>Open a ufo: URI or payment request</source>
+        <translation>"ufo:" URI azonosító vagy fizetési kérelem megnyitása</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1139,7 +1139,7 @@
         <translation>URI kezelés</translation>
     </message>
     <message>
-        <source>Cannot start bitcoin: click-to-pay handler</source>
+        <source>Cannot start ufo: click-to-pay handler</source>
         <translation>A bitcoint nem lehet elindítani: click-to-pay handler</translation>
     </message>
     <message>

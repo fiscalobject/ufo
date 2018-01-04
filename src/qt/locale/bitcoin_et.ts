@@ -771,7 +771,7 @@
         <translation>URI käsitsemine</translation>
     </message>
     <message>
-        <source>Cannot start bitcoin: click-to-pay handler</source>
+        <source>Cannot start ufo: click-to-pay handler</source>
         <translation>Bitcoin ei käivitu: vajuta-maksa toiming</translation>
     </message>
     </context>

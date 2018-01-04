@@ -383,7 +383,7 @@
         <translation>جوهر البيت كوين</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
+        <source>Request payments (generates QR codes and ufo: URIs)</source>
         <translation>أطلب دفعات (يولد كودات الرمز المربع وبيتكوين: العناوين المعطاة</translation>
     </message>
     <message>
@@ -403,7 +403,7 @@
         <translation>عرض قائمة عناوين الإستقبال المستخدمة والملصقات</translation>
     </message>
     <message>
-        <source>Open a bitcoin: URI or payment request</source>
+        <source>Open a ufo: URI or payment request</source>
         <translation>فتح URI : Bitcoin أو طلب دفع</translation>
     </message>
     <message>
