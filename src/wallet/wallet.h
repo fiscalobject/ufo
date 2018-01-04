@@ -49,7 +49,7 @@ static const unsigned int DEFAULT_TX_CONFIRM_TARGET = 2;
 //! -maxtxfee will warn if called with a higher fee than this amount (in satoshis)
 static const CAmount nHighTransactionMaxFeeWarning = 100 * nHighTransactionFeeWarning;
 //! Largest (in bytes) free transaction we're willing to create
-static const unsigned int MAX_FREE_TRANSACTION_CREATE_SIZE = 1000;
+static const unsigned int MAX_FREE_TRANSACTION_CREATE_SIZE = 5000;
 
 class CAccountingEntry;
 class CBlockIndex;
