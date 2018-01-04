@@ -27,7 +27,9 @@ struct Params {
     int64_t DifficultyAdjustmentInterval() const { return nPowTargetTimespan / nPowTargetSpacing; }
     /** Hard fork parameters */
     int nCoinFix;
+    int nHardForkOne;
     int CoinFix() const { return nCoinFix; }
+    int ForkOne() const { return nHardForkOne; }
 };
 } // namespace Consensus
 
