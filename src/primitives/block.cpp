@@ -6,6 +6,8 @@
 #include "primitives/block.h"
 
 #include "hash.h"
+#include "chainparams.h"
+#include "crypto/neoscrypt.h"
 #include "tinyformat.h"
 #include "utilstrencodings.h"
 #include "crypto/common.h"
@@ -13,6 +15,19 @@
 uint256 CBlockHeader::GetHash() const
 {
     return SerializeHash(*this);
+}
+
+uint256 CBlockHeader::GetPoWHash() const
+{
+    unsigned int profile = 0x0;
+    uint256 hash;
+
+    if (this->nTime < Params().GetConsensus().NeoScryptFork())
+        profile = 0x3;
+
+    neoscrypt((unsigned char *) &nVersion, (unsigned char *) &hash, profile);
+
+    return(hash);
 }
 
 uint256 CBlock::BuildMerkleTree(bool* fMutated) const

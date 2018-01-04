@@ -42,6 +42,9 @@ public:
         consensus.nHardForkOne = 33479;
         consensus.nHardForkTwo = 160997;
         consensus.nHardForkTwoA = 171900;
+        consensus.nHardForkThree = 266000;
+        consensus.nNeoScryptSwitch = 1414195200;
+        consensus.nNeoScryptFork = 1414446393;
         consensus.fPowAllowMinDifficultyBlocks = false;
         /** 
          * The message start string is designed to be unlikely to occur in normal data.
@@ -127,6 +130,9 @@ public:
         consensus.nMajorityWindow = 100;
         consensus.nHardForkTwo = 1;
         consensus.nHardForkTwoA = 1;
+        consensus.nHardForkThree = 1;
+        consensus.nNeoScryptSwitch = 1506816000;
+        consensus.nNeoScryptFork = 1506816000;
         consensus.fPowAllowMinDifficultyBlocks = true;
         pchMessageStart[0] = 0xfb;
         pchMessageStart[1] = 0xc0;

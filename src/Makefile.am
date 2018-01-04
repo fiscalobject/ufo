@@ -231,6 +231,8 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/hmac_sha256.h \
   crypto/hmac_sha512.cpp \
   crypto/hmac_sha512.h \
+  crypto/neoscrypt.h \
+  crypto/neoscrypt.c \
   crypto/ripemd160.cpp \
   crypto/ripemd160.h \
   crypto/sha1.cpp \
@@ -239,6 +241,11 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sha256.h \
   crypto/sha512.cpp \
   crypto/sha512.h
+
+if ASM
+crypto_libbitcoin_crypto_a_SOURCES += \
+  crypto/neoscrypt_asm.S
+endif
 
 # univalue JSON library
 univalue_libbitcoin_univalue_a_CPPFLAGS = $(AM_CPPFLAGS)
@@ -390,6 +397,7 @@ libbitcoinconsensus_la_SOURCES = \
   crypto/sha1.cpp \
   crypto/sha256.cpp \
   crypto/sha512.cpp \
+  crypto/neoscrypt.c \
   eccryptoverify.cpp \
   ecwrapper.cpp \
   hash.cpp \
@@ -400,6 +408,11 @@ libbitcoinconsensus_la_SOURCES = \
   script/script.cpp \
   uint256.cpp \
   utilstrencodings.cpp
+
+if ASM
+libbitcoinconsensus_la_SOURCES += \
+  crypto/neoscrypt_asm.S
+endif
 
 if GLIBC_BACK_COMPAT
   libbitcoinconsensus_la_SOURCES += compat/glibc_compat.cpp

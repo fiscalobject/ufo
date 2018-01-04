@@ -30,10 +30,16 @@ struct Params {
     int nHardForkOne;
     int nHardForkTwo;
     int nHardForkTwoA;
+    int nHardForkThree;
+    unsigned int nNeoScryptSwitch;
+    unsigned int nNeoScryptFork;
     int CoinFix() const { return nCoinFix; }
     int ForkOne() const { return nHardForkOne; }
     int ForkTwo() const { return nHardForkTwo; }
     int ForkTwoA() const { return nHardForkTwoA; }
+    int ForkThree() const { return nHardForkThree; }
+    unsigned int NeoScryptSwitch() const { return nNeoScryptSwitch;}
+    unsigned int NeoScryptFork() const { return nNeoScryptFork;}
 };
 } // namespace Consensus
 
