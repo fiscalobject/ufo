@@ -87,4 +87,13 @@ namespace Checkpoints {
         return NULL;
     }
 
+    uint256 GetLatestHardenedCheckpoint(const CCheckpointData& data)
+    {
+        const MapCheckpoints& checkpoints = data.mapCheckpoints;
+
+        if (checkpoints.empty())
+            return Params().GetConsensus().hashGenesisBlock;
+
+        return (checkpoints.rbegin()->second);
+    }
 } // namespace Checkpoints

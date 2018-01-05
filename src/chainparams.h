@@ -48,6 +48,7 @@ public:
     const Consensus::Params& GetConsensus() const { return consensus; }
     const CMessageHeader::MessageStartChars& MessageStart() const { return pchMessageStart; }
     const std::vector<unsigned char>& AlertKey() const { return vAlertPubKey; }
+    const std::string CheckpointKey() const { return checkpointPubKey;}
     int GetDefaultPort() const { return nDefaultPort; }
 
     /** Used if GenerateBitcoins is called with a negative number of threads */
@@ -79,6 +80,7 @@ protected:
     CMessageHeader::MessageStartChars pchMessageStart;
     //! Raw pub key bytes for the broadcast alert signing key.
     std::vector<unsigned char> vAlertPubKey;
+    std::string checkpointPubKey;
     int nDefaultPort;
     int nMinerThreads;
     long nMaxTipAge;

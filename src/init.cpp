@@ -23,6 +23,7 @@
 #include "scheduler.h"
 #include "txdb.h"
 #include "ui_interface.h"
+#include "checkpointsync.h"
 #include "util.h"
 #include "utilmoneystr.h"
 #include "validationinterface.h"
@@ -840,6 +841,12 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
             ::minRelayTxFee = CFeeRate(n);
         else
             return InitError(strprintf(_("Invalid amount for -minrelaytxfee=<amount>: '%s'"), mapArgs["-minrelaytxfee"]));
+    }
+
+    if (mapArgs.count("-checkpointkey")) // Checkpoint master priv key
+    {
+        if (!SetCheckpointPrivKey(GetArg("-checkpointkey", "")))
+            return InitError(_("Unable to sign checkpoint, wrong checkpointkey?"));
     }
 
 #ifdef ENABLE_WALLET
