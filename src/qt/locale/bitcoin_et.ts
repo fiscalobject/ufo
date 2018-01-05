@@ -46,8 +46,8 @@
         <translation>V&amp;ali</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Need on sinu Bitcoini aadressid maksete saatmiseks. Müntide saatmisel kontrolli alati summat ning saaja aadressi.</translation>
+        <source>These are your UFO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Need on sinu UFOi aadressid maksete saatmiseks. Müntide saatmisel kontrolli alati summat ning saaja aadressi.</translation>
     </message>
     <message>
         <source>Copy &amp;Label</source>
@@ -247,8 +247,8 @@
         <translation>Kettal olevate blokkide re-indekseerimine...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
-        <translation>Saada münte Bitcoini aadressile</translation>
+        <source>Send coins to a UFO address</source>
+        <translation>Saada münte UFOi aadressile</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -271,8 +271,8 @@
         <translation>&amp;Kontrolli sõnumit...</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>UFO</source>
+        <translation>UFO</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -299,12 +299,12 @@
         <translation>Krüpteeri oma rahakoti privaatvõtmed</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>Omandi tõestamiseks allkirjasta sõnumid oma Bitcoini aadressiga</translation>
+        <source>Sign messages with your UFO addresses to prove you own them</source>
+        <translation>Omandi tõestamiseks allkirjasta sõnumid oma UFOi aadressiga</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>Kinnita sõnumid kindlustamaks et need allkirjastati määratud Bitcoini aadressiga</translation>
+        <source>Verify messages to ensure they were signed with specified UFO addresses</source>
+        <translation>Kinnita sõnumid kindlustamaks et need allkirjastati määratud UFOi aadressiga</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -323,12 +323,12 @@
         <translation>Vahelehe tööriistariba</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoini tuumik</translation>
+        <source>UFO Core</source>
+        <translation>UFO tuumik</translation>
     </message>
     <message>
-        <source>&amp;About Bitcoin Core</source>
-        <translation>Kirjeldus Bitcoini Tuumast</translation>
+        <source>&amp;About UFO Core</source>
+        <translation>Kirjeldus UFOi Tuumast</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -566,8 +566,8 @@
         <translation>Selline aadress on juba olemas: "%1"</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bitcoin address.</source>
-        <translation>Sisestatud aadress "%1" ei ole Bitcoinis kehtiv.</translation>
+        <source>The entered address "%1" is not a valid UFO address.</source>
+        <translation>Sisestatud aadress "%1" ei ole UFOis kehtiv.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -588,16 +588,16 @@
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoini tuumik</translation>
+        <source>UFO Core</source>
+        <translation>UFO tuumik</translation>
     </message>
     <message>
         <source>version</source>
         <translation>versioon</translation>
     </message>
     <message>
-        <source>About Bitcoin Core</source>
-        <translation>Kirjeldus Bitcoini Tuumast</translation>
+        <source>About UFO Core</source>
+        <translation>Kirjeldus UFOi Tuumast</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -619,8 +619,8 @@
         <translation>Teretulemast</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoini tuumik</translation>
+        <source>UFO Core</source>
+        <translation>UFO tuumik</translation>
     </message>
     <message>
         <source>Error</source>
@@ -669,8 +669,8 @@
         <translation>Ekspert</translation>
     </message>
     <message>
-        <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Bitcoini kliendi pordi automaatne avamine ruuteris. Toimib, kui sinu ruuter aktsepteerib UPnP ühendust.</translation>
+        <source>Automatically open the UFO client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>UFO kliendi pordi automaatne avamine ruuteris. Toimib, kui sinu ruuter aktsepteerib UPnP ühendust.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -748,7 +748,7 @@
         <translation>Vorm</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the UFO network after a connection is established, but this process has not completed yet.</source>
         <translation>Kuvatav info ei pruugi olla ajakohane. Ühenduse loomisel süngitakse sinu rahakott automaatselt Bitconi võrgustikuga, kuid see toiming on hetkel lõpetamata.</translation>
     </message>
     <message>
@@ -772,7 +772,7 @@
     </message>
     <message>
         <source>Cannot start ufo: click-to-pay handler</source>
-        <translation>Bitcoin ei käivitu: vajuta-maksa toiming</translation>
+        <translation>UFO ei käivitu: vajuta-maksa toiming</translation>
     </message>
     </context>
 <context>
@@ -1196,8 +1196,8 @@
         <translation>Kopeeri praegune signatuur vahemällu</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bitcoin address</source>
-        <translation>Allkirjasta sõnum Bitcoini aadressi sulle kuulumise tõestamiseks</translation>
+        <source>Sign the message to prove you own this UFO address</source>
+        <translation>Allkirjasta sõnum UFOi aadressi sulle kuulumise tõestamiseks</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1216,8 +1216,8 @@
         <translation>&amp;Kinnita Sõnum</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
-        <translation>Kinnita sõnum tõestamaks selle allkirjastatust määratud Bitcoini aadressiga.</translation>
+        <source>Verify the message to ensure it was signed with the specified UFO address</source>
+        <translation>Kinnita sõnum tõestamaks selle allkirjastatust määratud UFOi aadressiga.</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1283,12 +1283,12 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoini tuumik</translation>
+        <source>UFO Core</source>
+        <translation>UFO tuumik</translation>
     </message>
     <message>
-        <source>The Bitcoin Core developers</source>
-        <translation>Bitcoini Tuuma arendajad</translation>
+        <source>The UFO Core developers</source>
+        <translation>UFO Tuuma arendajad</translation>
     </message>
     <message>
         <source>[testnet]</source>

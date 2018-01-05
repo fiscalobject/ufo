@@ -187,7 +187,7 @@
         <translation>Промени &amp;лозинку...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
+        <source>Send coins to a UFO address</source>
         <translation>Пошаљите новац на bitcoin адресу</translation>
     </message>
     <message>
@@ -219,8 +219,8 @@
         <translation>Трака са картицама</translation>
     </message>
     <message>
-        <source>&amp;About Bitcoin Core</source>
-        <translation>O Bitcoin Coru</translation>
+        <source>&amp;About UFO Core</source>
+        <translation>O UFO Coru</translation>
     </message>
     <message>
         <source>Up to date</source>
@@ -318,8 +318,8 @@
         <translation>верзија</translation>
     </message>
     <message>
-        <source>About Bitcoin Core</source>
-        <translation>O Bitcoin Coru</translation>
+        <source>About UFO Core</source>
+        <translation>O UFO Coru</translation>
     </message>
     <message>
         <source>Usage:</source>

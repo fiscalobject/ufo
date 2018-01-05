@@ -211,8 +211,8 @@
         <translation>Newid y cyfrinymadrodd a ddefnyddiwyd ar gyfer amgryptio'r waled</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>UFO</source>
+        <translation>UFO</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -227,8 +227,8 @@
         <translation>&amp;Derbyn</translation>
     </message>
     <message>
-        <source>Show information about Bitcoin Core</source>
-        <translation>Dangos gwybodaeth am Graidd Bitcoin</translation>
+        <source>Show information about UFO Core</source>
+        <translation>Dangos gwybodaeth am Graidd UFO</translation>
     </message>
     <message>
         <source>&amp;Show / Hide</source>
@@ -251,12 +251,12 @@
         <translation>Bar offer tabiau</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Craidd Bitcoin</translation>
+        <source>UFO Core</source>
+        <translation>Craidd UFO</translation>
     </message>
     <message>
-        <source>&amp;About Bitcoin Core</source>
-        <translation>&amp;Ynghylch Craidd Bitcoin</translation>
+        <source>&amp;About UFO Core</source>
+        <translation>&amp;Ynghylch Craidd UFO</translation>
     </message>
     <message>
         <source>%1 and %2</source>
@@ -406,12 +406,12 @@
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Craidd Bitcoin</translation>
+        <source>UFO Core</source>
+        <translation>Craidd UFO</translation>
     </message>
     <message>
-        <source>About Bitcoin Core</source>
-        <translation>Ynghylch Craidd Bitcoin</translation>
+        <source>About UFO Core</source>
+        <translation>Ynghylch Craidd UFO</translation>
     </message>
     <message>
         <source>Usage:</source>
@@ -425,12 +425,12 @@
         <translation>Croeso</translation>
     </message>
     <message>
-        <source>Welcome to Bitcoin Core.</source>
-        <translation>Croeso i Graidd Bitcoin</translation>
+        <source>Welcome to UFO Core.</source>
+        <translation>Croeso i Graidd UFO</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Craidd Bitcoin</translation>
+        <source>UFO Core</source>
+        <translation>Craidd UFO</translation>
     </message>
     <message>
         <source>Error</source>
@@ -633,12 +633,12 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Craidd Bitcoin</translation>
+        <source>UFO Core</source>
+        <translation>Craidd UFO</translation>
     </message>
     <message>
-        <source>The Bitcoin Core developers</source>
-        <translation>Datblygwyr Graidd Bitcoin</translation>
+        <source>The UFO Core developers</source>
+        <translation>Datblygwyr Graidd UFO</translation>
     </message>
     <message>
         <source>[testnet]</source>

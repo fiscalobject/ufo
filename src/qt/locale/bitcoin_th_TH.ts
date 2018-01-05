@@ -66,12 +66,12 @@
         <translation>กำลังรับที่อยู่</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>ที่อยู่เหล่านี้เป็นที่อยู่ Bitcoin ของคุณ สำหรับใช้เพื่อส่งเงิน กรุณาตรวจสอบจำนวนเงินและที่อยู่สำหรับรับเงินก่อนส่งเหรียญไป</translation>
+        <source>These are your UFO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>ที่อยู่เหล่านี้เป็นที่อยู่ UFO ของคุณ สำหรับใช้เพื่อส่งเงิน กรุณาตรวจสอบจำนวนเงินและที่อยู่สำหรับรับเงินก่อนส่งเหรียญไป</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>มี Bitcoin address/ที่เก็บเงิน หลายที่อยู่ สำหรับรับการชำระเงิน เราแนะนำให้ท่านใช้ receiving address ที่อยูเพื่อรับเงิน ที่ใหม่ทุกครั้ง ในการทำธุรกรรม รับเงิน</translation>
+        <source>These are your UFO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>มี UFO address/ที่เก็บเงิน หลายที่อยู่ สำหรับรับการชำระเงิน เราแนะนำให้ท่านใช้ receiving address ที่อยูเพื่อรับเงิน ที่ใหม่ทุกครั้ง ในการทำธุรกรรม รับเงิน</translation>
     </message>
     <message>
         <source>Copy &amp;Label</source>
@@ -295,8 +295,8 @@
         <translation>กำลังทำดัชนี ที่เก็บบล็อก ใหม่ ในดิสก์...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
-        <translation>ส่ง coins ไปยัง ที่เก็บ Bitcoin</translation>
+        <source>Send coins to a UFO address</source>
+        <translation>ส่ง coins ไปยัง ที่เก็บ UFO</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -319,8 +319,8 @@
         <translation>&amp;ยืนยันข้อความ...</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>UFO</source>
+        <translation>UFO</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -347,12 +347,12 @@
         <translation>เข้ารหัส private keys/ รหัสส่วนตัว สำหรับกระเป๋าเงินของท่าน</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>เซ็นชื่อด้วยข้อความ ที่เก็บ Bitcoin เพื่อแสดงว่าท่านเป็นเจ้าของ bitcoin นี้จริง</translation>
+        <source>Sign messages with your UFO addresses to prove you own them</source>
+        <translation>เซ็นชื่อด้วยข้อความ ที่เก็บ UFO เพื่อแสดงว่าท่านเป็นเจ้าของ bitcoin นี้จริง</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>ตรวจสอบ ข้อความ เพื่อให้แน่ใจว่า การเซ็นต์ชื่อ ด้วยที่เก็บ Bitcoin แล้ว</translation>
+        <source>Verify messages to ensure they were signed with specified UFO addresses</source>
+        <translation>ตรวจสอบ ข้อความ เพื่อให้แน่ใจว่า การเซ็นต์ชื่อ ด้วยที่เก็บ UFO แล้ว</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -375,8 +375,8 @@
         <translation>เรียกเก็บ การชำระเงิน (สร้าง QR codes และ ufo: URIs)</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoin network</source>
-        <translation><numerusform>%n ที่ใช้งานการเชื่อมต่อกับเครือข่าย Bitcoin</numerusform></translation>
+        <source>%n active connection(s) to UFO network</source>
+        <translation><numerusform>%n ที่ใช้งานการเชื่อมต่อกับเครือข่าย UFO</numerusform></translation>
     </message>
     <message>
         <source>Up to date</source>

@@ -66,11 +66,11 @@
         <translation>받은 주소들</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your UFO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>비트코인을 받는 계좌 주소입니다. 코인을 보내기 전에 잔고와 받는 주소를 항상 확인하세요.</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your UFO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>비트코인을 받을 수 있는 계좌 주소입니다. 매 거래마다 새로운 주소 사용을 권장합니다. </translation>
     </message>
     <message>
@@ -168,7 +168,7 @@
         <translation>지갑 암호화를 허용하시겠습니까?</translation>
     </message>
     <message>
-        <source>Bitcoin Core will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
+        <source>UFO Core will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
         <translation>비트코인 코어는 암호화 과정을 마무리 하기 위해 종료됩니다. 당신의 지갑을 암호화하는 것이 여러분의 컴퓨터에 해를 끼치는 프로그램으로부터 여러분의 비트코인을 완전히 보호해주지는 못한다는 사실을 기억하십시오.</translation>
     </message>
     <message>
@@ -295,7 +295,7 @@
         <translation>URI&amp;열기...</translation>
     </message>
     <message>
-        <source>Bitcoin Core client</source>
+        <source>UFO Core client</source>
         <translation>비트코인 코어 클라이언트</translation>
     </message>
     <message>
@@ -307,7 +307,7 @@
         <translation>디스크에서 블록 다시 색인중...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
+        <source>Send coins to a UFO address</source>
         <translation>비트코인 주소로 코인 전송</translation>
     </message>
     <message>
@@ -331,7 +331,7 @@
         <translation>메시지 확인&amp;...</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
+        <source>UFO</source>
         <translation>비트코인</translation>
     </message>
     <message>
@@ -347,7 +347,7 @@
         <translation>받기(&amp;R)</translation>
     </message>
     <message>
-        <source>Show information about Bitcoin Core</source>
+        <source>Show information about UFO Core</source>
         <translation>비트코인 코어에 관한 정보입니다.</translation>
     </message>
     <message>
@@ -363,11 +363,11 @@
         <translation>지갑에 포함된 개인키 암호화하기</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <source>Sign messages with your UFO addresses to prove you own them</source>
         <translation>지갑 주소가 본인 소유인지 증명하기 위해 비트코인 주소에 서명할 수 있습니다.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <source>Verify messages to ensure they were signed with specified UFO addresses</source>
         <translation>비트코인 주소의 전자 서명 확인을 위해 첨부된 메시지가 있을 경우 이를 검증할 수 있습니다.</translation>
     </message>
     <message>
@@ -387,7 +387,7 @@
         <translation>툴바 색인표</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>비트코인 코어</translation>
     </message>
     <message>
@@ -395,11 +395,11 @@
         <translation>지불 요청하기 (QR코드와 비트코인이 생성됩니다: URIs)</translation>
     </message>
     <message>
-        <source>&amp;About Bitcoin Core</source>
+        <source>&amp;About UFO Core</source>
         <translation>&amp;비트코인 코어 소개</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bitcoin Core</source>
+        <source>Modify configuration options for UFO Core</source>
         <translation>비트코인 코어를 위한 설정 옵션을 수정하세요.</translation>
     </message>
     <message>
@@ -419,11 +419,11 @@
         <translation>명령어-라인 옵션</translation>
     </message>
     <message>
-        <source>Show the Bitcoin Core help message to get a list with possible Bitcoin command-line options</source>
-        <translation>사용할 수 있는 비트코인 명령어 옵션 목록을 가져오기 위해 Bitcoin-Qt 도움말 메시지를 표시합니다.</translation>
+        <source>Show the UFO Core help message to get a list with possible UFO command-line options</source>
+        <translation>사용할 수 있는 비트코인 명령어 옵션 목록을 가져오기 위해 UFO-Qt 도움말 메시지를 표시합니다.</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoin network</source>
+        <source>%n active connection(s) to UFO network</source>
         <translation><numerusform>%n 비트코인 네트워크에 대한 연결을 활성화합니다.</numerusform></translation>
     </message>
     <message>
@@ -806,7 +806,7 @@
         <translation>입력된 주소는"%1" 이미 주소록에 있습니다.</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bitcoin address.</source>
+        <source>The entered address "%1" is not a valid UFO address.</source>
         <translation>입력한 "%1" 주소는 올바른 비트코인 주소가 아닙니다.</translation>
     </message>
     <message>
@@ -844,7 +844,7 @@
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>비트코인 코어</translation>
     </message>
     <message>
@@ -856,7 +856,7 @@
         <translation>(%1-비트)</translation>
     </message>
     <message>
-        <source>About Bitcoin Core</source>
+        <source>About UFO Core</source>
         <translation>비트코인 코어 소개</translation>
     </message>
     <message>
@@ -879,15 +879,15 @@
         <translation>환영합니다</translation>
     </message>
     <message>
-        <source>Welcome to Bitcoin Core.</source>
+        <source>Welcome to UFO Core.</source>
         <translation>비트코인 코어에 오신것을 환영합니.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bitcoin Core will store its data.</source>
+        <source>As this is the first time the program is launched, you can choose where UFO Core will store its data.</source>
         <translation>프로그램이 처음으로 실행되고 있습니다. 비트코인 코어가 어디에 데이터를 저장할지 선택할 수 있습니다. </translation>
     </message>
     <message>
-        <source>Bitcoin Core will download and store a copy of the Bitcoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>UFO Core will download and store a copy of the UFO block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation>비트코인 코어가 블럭체인의 복사본을 다운로드 저장합니다. 적어도 %1GB의 데이터가 이 폴더에 저장되며 시간이 경과할수록 점차 증가합니다. 그리고 지갑 또한 이 폴더에 저장됩니다. </translation>
     </message>
     <message>
@@ -899,7 +899,7 @@
         <translation>커스텀 데이터 폴더 사용:</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>비트코인 코어</translation>
     </message>
     <message>
@@ -973,8 +973,8 @@
         <translation>창을 닫으면 종료 대신 트레이로 보내기. 이 옵션을 활성화하면 메뉴에서 종료를 선택한 후에만 어플리케이션이 종료됩니다.</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Bitcoin Core.</source>
-        <translation>사용자 인터페이스 언어를 여기서 설정할 수 있습니다. 이 설정은 Bitcoin Core를 다시 시작할 때 적용됩니다.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting UFO Core.</source>
+        <translation>사용자 인터페이스 언어를 여기서 설정할 수 있습니다. 이 설정은 UFO Core를 다시 시작할 때 적용됩니다.</translation>
     </message>
     <message>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
@@ -1001,12 +1001,12 @@
         <translation>네트워크(&amp;N)</translation>
     </message>
     <message>
-        <source>Automatically start Bitcoin Core after logging in to the system.</source>
-        <translation>시스템 로그인후 자동으로 Bitcoin Core를 실행합니다.</translation>
+        <source>Automatically start UFO Core after logging in to the system.</source>
+        <translation>시스템 로그인후 자동으로 UFO Core를 실행합니다.</translation>
     </message>
     <message>
-        <source>&amp;Start Bitcoin Core on system login</source>
-        <translation>시스템 로그인 후 Bitcoin Core 시작(&amp;S)</translation>
+        <source>&amp;Start UFO Core on system login</source>
+        <translation>시스템 로그인 후 UFO Core 시작(&amp;S)</translation>
     </message>
     <message>
         <source>(0 = auto, &lt;0 = leave that many cores free)</source>
@@ -1034,7 +1034,7 @@
         <translation>&amp;확인되지 않은 돈을 쓰다</translation>
     </message>
     <message>
-        <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the UFO client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>라우터의 비트코인 클라이언트 포트를 자동으로 엽니다. 라우터에서 UPnP를 지원하고 활성화 했을 경우에만 동작합니다.</translation>
     </message>
     <message>
@@ -1042,7 +1042,7 @@
         <translation>사용중인 UPnP 포트 매핑(&amp;U)</translation>
     </message>
     <message>
-        <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
+        <source>Connect to the UFO network through a SOCKS5 proxy.</source>
         <translation>SOCKS5 프록시를 통해 비트코인 네트워크 연결</translation>
     </message>
     <message>
@@ -1141,7 +1141,7 @@
         <translation>유형</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the UFO network after a connection is established, but this process has not completed yet.</source>
         <translation>표시한 정보가 오래된 것 같습니다. 비트코인 네트워크에 연결하고 난 다음에 지갑을 자동으로 동기화 하지만, 아직 과정이 끝나지는 않았습니다.</translation>
     </message>
     <message>
@@ -1248,7 +1248,7 @@
         <translation>대금 청구서의 URL이 올바르지 않습니다: %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid UFO address or malformed URI parameters.</source>
         <translation>URI의 파싱에 문제가 발생했습니다. 잘못된 비트코인 주소나 URI 파라미터 구성에 오류가 존재할 수 있습니다.</translation>
     </message>
     <message>
@@ -1322,7 +1322,7 @@
         <translation>거래량</translation>
     </message>
     <message>
-        <source>Enter a Bitcoin address (e.g. %1)</source>
+        <source>Enter a UFO address (e.g. %1)</source>
         <translation>비트코인 주소를 입력하기 (예. %1)</translation>
     </message>
     <message>
@@ -1424,7 +1424,7 @@
         <translation>현재 블럭 수</translation>
     </message>
     <message>
-        <source>Open the Bitcoin Core debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the UFO Core debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation>현재의 데이터폴더에서 비트코인 디버그 파일을 엽니다. 용량이 큰 로그 파일은 몇 초가 걸릴 수 있습니다.</translation>
     </message>
     <message>
@@ -1528,7 +1528,7 @@
         <translation>콘솔 초기화</translation>
     </message>
     <message>
-        <source>Welcome to the Bitcoin Core RPC console.</source>
+        <source>Welcome to the UFO Core RPC console.</source>
         <translation>비트코인 RPC 콘솔에 오신걸 환영합니다</translation>
     </message>
     <message>
@@ -1583,7 +1583,7 @@
         <translation>현재의 수취용 주소를 재사용합니다만 권장하지는 않습니다. (R&amp;)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the UFO network.</source>
         <translation>지불 요청에 첨부되는 선택가능한 메시지 입니다. 이 메세지는 요청이 열릴 때 표시될 것 입니다. 메모: 이 메시지는 비트코인 네트워크로 전송되지 않습니다.</translation>
     </message>
     <message>
@@ -1964,7 +1964,7 @@
         <translation>두개 이상의 주소입니다: 한번에 하나의 주소에만 작업할 수 있습니다.</translation>
     </message>
     <message>
-        <source>Warning: Invalid Bitcoin address</source>
+        <source>Warning: Invalid UFO address</source>
         <translation>경고: 잘못된 비트코인주소입니다</translation>
     </message>
     <message>
@@ -2015,7 +2015,7 @@
         <translation>평균지급입니다</translation>
     </message>
     <message>
-        <source>The Bitcoin address to send the payment to</source>
+        <source>The UFO address to send the payment to</source>
         <translation>이 비트코인 주소로 송금됩니다</translation>
     </message>
     <message>
@@ -2059,7 +2059,7 @@
         <translation>사용된 주소 목록에 새 주소를 추가하기 위해 제목을 입력합니다. </translation>
     </message>
     <message>
-        <source>A message that was attached to the ufo: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
+        <source>A message that was attached to the ufo: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the UFO network.</source>
         <translation>비트코인에 첨부된 메시지: 참고용으로 거래와 함께 저장될 URI. 메모: 이 메시지는 비트코인 네트워크로 전송되지 않습니다.</translation>
     </message>
     <message>
@@ -2074,7 +2074,7 @@
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Bitcoin Core is shutting down...</source>
+        <source>UFO Core is shutting down...</source>
         <translation>비트코인코어가 닫아지고 있습니다</translation>
     </message>
     <message>
@@ -2097,7 +2097,7 @@
         <translation>여러분 자신을 증명하기 위해 주소를 첨가하고 서명할 수 있습니다. 피싱 공격으로 말미암아 여러분의 서명을 통해 속아 넘어가게 할 수 있으므로, 서명하지 않은 모든 모호한 요소를 주의하십시오. 조항들이 완전 무결한지 확인 후 동의하는 경우에만 서명하십시오.</translation>
     </message>
     <message>
-        <source>The Bitcoin address to sign the message with</source>
+        <source>The UFO address to sign the message with</source>
         <translation>메세지가 서명된 비트코인 주소</translation>
     </message>
     <message>
@@ -2129,7 +2129,7 @@
         <translation>현재 서명을 시스템 클립보드에 복사</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bitcoin address</source>
+        <source>Sign the message to prove you own this UFO address</source>
         <translation>여러분의 비트코인 주소를 증명하려면 메시지 서명하십시오</translation>
     </message>
     <message>
@@ -2153,11 +2153,11 @@
         <translation>메시지를 검증하기 위해 아래 칸에 각각 지갑 주소와 메시지, 전자서명을 입력하세요. (메시지 원본의 띄어쓰기, 들여쓰기, 행 나눔 등이 정확하게 입력되어야 하므로 원본을 복사해서 입력하세요) 이 기능은 메시지 검증이 주 목적이며, 네트워크 침입자에 의해 변조되지 않도록 전자서명 해독에 불필요한 시간을 소모하지 마세요. </translation>
     </message>
     <message>
-        <source>The Bitcoin address the message was signed with</source>
+        <source>The UFO address the message was signed with</source>
         <translation>메세지의 서명에 사용된 비트코인 주소</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
+        <source>Verify the message to ensure it was signed with the specified UFO address</source>
         <translation>정확한 비트코인주소가 입력됬는지 메시지를 확인하시오</translation>
     </message>
     <message>
@@ -2224,11 +2224,11 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>비트코인 코어</translation>
     </message>
     <message>
-        <source>The Bitcoin Core developers</source>
+        <source>The UFO Core developers</source>
         <translation>비트코인코어 개발자들</translation>
     </message>
     <message>
@@ -2754,7 +2754,7 @@
         <translation>이 빌드 버전은 정식 출시 전 테스트의 목적이며, 예기치 않은 위험과 오류가 발생할 수 있습니다. 채굴과 상점용 소프트웨어로 사용하는 것을 권하지 않습니다.</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. Bitcoin Core is probably already running.</source>
+        <source>Unable to bind to %s on this computer. UFO Core is probably already running.</source>
         <translation>이 컴퓨터의 %s에 바인딩 할 수 없습니다. 아마도 비트코인이 실행중인 것 같습니다.</translation>
     </message>
     <message>
@@ -2934,7 +2934,7 @@
         <translation>선택된 주소로 고정하여 JSON-RPC 연결을 리슨(Listen)합니다. IPv6 프로토콜인 경우 [host]:port 방식의 명령어 표기법을 사용합니다. 이 옵션은 복수로 지정 할수 있습니다. (기본값: 모든 인터페이스에 고정)</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Bitcoin Core is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. UFO Core is probably already running.</source>
         <translation>데이터 디렉토리 %s에 락을 걸 수 없었습니다. 비트코인 코어가 이미 실행 중인 것으로 보입니다.</translation>
     </message>
     <message>
@@ -3022,12 +3022,12 @@
         <translation>SOCK5 프록시를 통해 연결</translation>
     </message>
     <message>
-        <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
-        <translation>Copyright (C) 2009-%i The Bitcoin Core Developers</translation>
+        <source>Copyright (C) 2009-%i The UFO Core Developers</source>
+        <translation>Copyright (C) 2009-%i The UFO Core Developers</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Bitcoin Core</source>
-        <translation>wallet.dat 불러오기 오류: 최신 버전의 Bitcoin Core이 필요합니다.</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of UFO Core</source>
+        <translation>wallet.dat 불러오기 오류: 최신 버전의 UFO Core이 필요합니다.</translation>
     </message>
     <message>
         <source>Error reading from database, shutting down.</source>
@@ -3042,8 +3042,8 @@
         <translation>정보</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. Bitcoin Core is shutting down.</source>
-        <translation>무결성 확인 초기화가 실패했습니다. Bitcoin Core가 종료됩니다.</translation>
+        <source>Initialization sanity check failed. UFO Core is shutting down.</source>
+        <translation>무결성 확인 초기화가 실패했습니다. UFO Core가 종료됩니다.</translation>
     </message>
     <message>
         <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s'</source>
@@ -3082,7 +3082,7 @@
         <translation>블록 데이터를 축소 중입니다..</translation>
     </message>
     <message>
-        <source>RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
+        <source>RPC SSL options: (see the UFO Wiki for SSL setup instructions)</source>
         <translation>RPC SSL 옵션: (비트코인 위키의 SSL 설정 설명서 참고)</translation>
     </message>
     <message>
@@ -3170,8 +3170,8 @@
         <translation>JSON-RPC 연결에 사용할 사용자 이름</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart Bitcoin Core to complete</source>
-        <translation>지갑을 새로 써야 합니다:  완료하기 위하여 Bitcoin Core을 다시 시작하십시오.</translation>
+        <source>Wallet needed to be rewritten: restart UFO Core to complete</source>
+        <translation>지갑을 새로 써야 합니다:  완료하기 위하여 UFO Core을 다시 시작하십시오.</translation>
     </message>
     <message>
         <source>Warning</source>
