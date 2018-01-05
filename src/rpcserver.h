@@ -211,6 +211,7 @@ extern json_spirit::Value resendwallettransactions(const json_spirit::Array& par
 
 extern json_spirit::Value getcheckpoint(const json_spirit::Array& params, bool fHelp); // in rpcmisc.cpp
 extern json_spirit::Value sendcheckpoint(const json_spirit::Array& params, bool fHelp);
+extern json_spirit::Value sendalert(const json_spirit::Array& params, bool fHelp);
 
 extern json_spirit::Value getrawtransaction(const json_spirit::Array& params, bool fHelp); // in rcprawtransaction.cpp
 extern json_spirit::Value listunspent(const json_spirit::Array& params, bool fHelp);
