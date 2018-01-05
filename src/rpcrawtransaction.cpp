@@ -423,7 +423,7 @@ Value decoderawtransaction(const Array& params, bool fHelp)
             "         \"reqSigs\" : n,            (numeric) The required sigs\n"
             "         \"type\" : \"pubkeyhash\",  (string) The type, eg 'pubkeyhash'\n"
             "         \"addresses\" : [           (json array of string)\n"
-            "           \"12tvKAXCxZjSmdNbao16dKXC8tRWfcF5oc\"   (string) bitcoin address\n"
+            "           \"CAxYwu33FDgJ16ssjfGndWZapnHqMAZ7E8\"   (string) bitcoin address\n"
             "           ,...\n"
             "         ]\n"
             "       }\n"
