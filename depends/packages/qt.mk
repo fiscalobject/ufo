@@ -76,6 +76,8 @@ $(package)_config_opts += -no-libudev
 $(package)_config_opts += -no-use-gold-linker
 $(package)_config_opts += -reduce-exports
 $(package)_config_opts += -optimized-qmake
+$(package)_config_opts += -no-feature-printer
+$(package)_config_opts += -no-feature-printdialog
 
 ifneq ($(build_os),darwin)
 $(package)_config_opts_darwin = -xplatform macx-clang-linux
