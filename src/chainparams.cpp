@@ -135,7 +135,7 @@ public:
         consensus.nHardForkTwoA = 1;
         consensus.nHardForkThree = 1;
         consensus.nHardForkFour = 1100;
-        consensus.nHardForkFourA = 1500;
+        consensus.nHardForkFourA = 1200;
         consensus.nNeoScryptSwitch = 1506816000;
         consensus.nNeoScryptFork = 1506816000;
         consensus.fPowAllowMinDifficultyBlocks = true;
