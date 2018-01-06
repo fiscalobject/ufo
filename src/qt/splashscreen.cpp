@@ -115,7 +115,7 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) 
     pixPaint.end();
 
     // Set window title
-    setWindowTitle(titleText + " " + titleAddText);
+    setWindowTitle(tr("Uniform Fiscal Object") + " " + titleAddText);
 
     // Resize window and move to center of desktop, disallow resizing
     QRect r(QPoint(), QSize(pixmap.size().width()/devicePixelRatio,pixmap.size().height()/devicePixelRatio));
