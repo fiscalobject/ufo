@@ -232,6 +232,10 @@ unsigned int GetNextWorkRequired_V3(const CBlockIndex* pindexLast)
     int longSample = 1000;
     int pindexFirstShortTime = 0;
     int pindexFirstMediumTime = 0;
+    int nActualTimespan = 0;
+    int nActualTimespanShort = 0;
+    int nActualTimespanMedium = 0;
+    int nActualTimespanLong = 0;
 
     // Genesis block or new chain
     if (pindexLast == NULL || nHeight <= longSample + 1)
@@ -247,11 +251,25 @@ unsigned int GetNextWorkRequired_V3(const CBlockIndex* pindexLast)
             pindexFirstMediumTime = pindexFirstLong->GetBlockTime();
     }
 
-    int nActualTimespanShort = (pindexLast->GetBlockTime() - pindexFirstShortTime) / shortSample;
-    int nActualTimespanMedium = (pindexLast->GetBlockTime() - pindexFirstMediumTime)/ mediumSample;
-    int nActualTimespanLong = (pindexLast->GetBlockTime() - pindexFirstLong->GetBlockTime()) / longSample;
+    if (pindexLast->GetBlockTime() - pindexFirstShortTime != 0)
+        nActualTimespanShort = (pindexLast->GetBlockTime() - pindexFirstShortTime) / shortSample;
+    
+    if (pindexLast->GetBlockTime() - pindexFirstMediumTime != 0)
+        nActualTimespanMedium = (pindexLast->GetBlockTime() - pindexFirstMediumTime)/ mediumSample;
+    
+    if (pindexLast->GetBlockTime() - pindexFirstLong->GetBlockTime() != 0)
+        nActualTimespanLong = (pindexLast->GetBlockTime() - pindexFirstLong->GetBlockTime()) / longSample;
 
-    int nActualTimespan = (nActualTimespanShort + nActualTimespanMedium + nActualTimespanLong)/3;
+    int nActualTimespanSum = nActualTimespanShort + nActualTimespanMedium + nActualTimespanLong;
+    
+    if (nActualTimespanSum != 0)
+        nActualTimespan = nActualTimespanSum / 3;
+    
+    if (nHeight >= Params().ForkFourA()) {
+        // Apply .25 damping
+        nActualTimespan = nActualTimespan + (3 * nTargetTimespan);
+        nActualTimespan /= 4;
+    }
 
     // 9% difficulty limiter
     int nActualTimespanMax = nTargetTimespan * 494 / 453;
