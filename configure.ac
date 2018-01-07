@@ -448,7 +448,7 @@ if test x$use_hardening != xno; then
     if test "$use_asm" = "yes"; then
         AX_CHECK_COMPILE_FLAG([-fPIC],[HARDENED_CXXFLAGS="$HARDENED_CXXFLAGS -fPIC" && CFLAGS="$CFLAGS -fPIC"])
     else
-        AX_CHECK_COMPILE_FLAG([-fPIE],[PIE_FLAGS="-fPIE"])
+        AX_CHECK_COMPILE_FLAG([-fPIE],[HARDENED_CXXFLAGS="$HARDENED_CXXFLAGS -fPIE" && CFLAGS="$CFLAGS -fPIE"])
     fi
   fi
 
