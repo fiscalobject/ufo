@@ -34,6 +34,8 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 
     if (DiffMode == 2)
         return GetNextWorkRequired_V2(pindexLast, params);
+    else if (DiffMode == 3)
+        return GetNextWorkRequired_V3(pindexLast, params);
 
     return GetNextWorkRequired_V1(pindexLast, pblock, params);
 }
