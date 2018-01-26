@@ -3533,6 +3533,7 @@ std::vector<unsigned char> GenerateCoinbaseCommitment(CBlock& block, const CBloc
 
 bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& state, const Consensus::Params& consensusParams, CBlockIndex * const pindexPrev, int64_t nAdjustedTime)
 {
+    int nHeight = pindexPrev->nHeight + 1;
     // Check proof of work
     if (block.nBits != GetNextWorkRequired(pindexPrev, &block, consensusParams))
         return state.DoS(100, false, REJECT_INVALID, "bad-diffbits", false, "incorrect proof of work");
@@ -3550,6 +3551,16 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
         if (block.nVersion < version && IsSuperMajority(version, pindexPrev, consensusParams.nMajorityRejectBlockOutdated, consensusParams))
             return state.Invalid(false, REJECT_OBSOLETE, strprintf("bad-version(0x%08x)", version - 1),
                                  strprintf("rejected nVersion=0x%08x block", version - 1));
+
+    // Limit block in future accepted in chain to only a time window of 15 min
+    if (block.GetBlockTime() > GetAdjustedTime() + 15 * 60)
+        return state.Invalid(false, REJECT_INVALID, strprintf("%s: block's timestamp too far in the future", __func__),
+                             "time-too-new");
+
+    // Check timestamp against prev it should not be more then 15 minutes outside blockchain time
+    if ((nHeight >= Params().GetConsensus().nHardForkTwo && block.GetBlockTime() <= pindexPrev->GetBlockTime() - 15 * 60))
+        return state.Invalid(false, REJECT_INVALID, strprintf("%s: block's timestamp is too early compare to last block", __func__),
+                             "wrong-time-between-blocks");
 
     return true;
 }

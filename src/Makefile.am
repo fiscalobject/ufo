@@ -77,6 +77,7 @@ endif
 BITCOIN_CORE_H = \
   addrman.h \
   base58.h \
+  bignum.h \
   bloom.h \
   blockencodings.h \
   chain.h \
