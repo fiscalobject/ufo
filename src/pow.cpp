@@ -12,15 +12,24 @@
 
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
 {
+    int nHeight = pindexLast->nHeight + 1;
     int64_t nReTargetHistoryFact = 4;
+    int64_t nTargetTimespan = params.nPowTargetTimespan;
+    int64_t nInterval = params.DifficultyAdjustmentInterval();
     unsigned int nProofOfWorkLimit = UintToArith256(params.powLimit).GetCompact();
 
     // Genesis block
     if (pindexLast == NULL)
         return nProofOfWorkLimit;
 
+    if (nHeight >= params.nHardForkOne) {
+        nTargetTimespan = 60 * 60; // 1 hours
+        nInterval = nTargetTimespan / params.nPowTargetSpacing;
+        nReTargetHistoryFact = 2;
+    }
+
     // Only change once per difficulty adjustment interval
-    if ((pindexLast->nHeight+1) % params.DifficultyAdjustmentInterval() != 0)
+    if ((pindexLast->nHeight+1) % nInterval  != 0)
     {
         if (params.fPowAllowMinDifficultyBlocks)
         {
@@ -33,7 +42,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
             {
                 // Return the last non-special-min-difficulty-rules-block
                 const CBlockIndex* pindex = pindexLast;
-                while (pindex->pprev && pindex->nHeight % params.DifficultyAdjustmentInterval() != 0 && pindex->nBits == nProofOfWorkLimit)
+                while (pindex->pprev && pindex->nHeight % nInterval  != 0 && pindex->nBits == nProofOfWorkLimit)
                     pindex = pindex->pprev;
                 return pindex->nBits;
             }
@@ -43,11 +52,11 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 
     // This fixes an issue where a 51% attack can change difficulty at will.
     // Go back the full period unless it's the first retarget after genesis. Code courtesy of Art Forz
-    int blockstogoback = params.DifficultyAdjustmentInterval() - 1;
-    if ((pindexLast->nHeight + 1) != params.DifficultyAdjustmentInterval())
-        blockstogoback = params.DifficultyAdjustmentInterval();
+    int blockstogoback = nInterval  - 1;
+    if ((pindexLast->nHeight + 1) != nInterval )
+        blockstogoback = nInterval ;
     if (pindexLast->nHeight > params.nCoinFix)
-        blockstogoback = nReTargetHistoryFact * params.DifficultyAdjustmentInterval();
+        blockstogoback = nReTargetHistoryFact * nInterval ;
 
     const CBlockIndex* pindexFirst = pindexLast;
     for (int i = 0; pindexFirst && i < blockstogoback; i++)
@@ -64,17 +73,17 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     else
         nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
 
-    if (nActualTimespan < params.nPowTargetTimespan/4)
-        nActualTimespan = params.nPowTargetTimespan/4;
-    if (nActualTimespan > params.nPowTargetTimespan*4)
-        nActualTimespan = params.nPowTargetTimespan*4;
+    if (nActualTimespan < nTargetTimespan/4)
+        nActualTimespan = nTargetTimespan/4;
+    if (nActualTimespan > nTargetTimespan*4)
+        nActualTimespan = nTargetTimespan*4;
 
     // Retarget
     const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
     arith_uint256 bnNew;
     bnNew.SetCompact(pindexLast->nBits);
     bnNew *= nActualTimespan;
-    bnNew /= params.nPowTargetTimespan;
+    bnNew /= nTargetTimespan;
 
     if (bnNew > bnPowLimit)
         bnNew = bnPowLimit;
