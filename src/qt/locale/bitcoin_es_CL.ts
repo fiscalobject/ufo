@@ -342,8 +342,8 @@
         <translation>bitcoin core</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation>Pide pagos (genera codigos QR and bitcoin: URls)</translation>
+        <source>Request payments (generates QR codes and ufo: URIs)</source>
+        <translation>Pide pagos (genera codigos QR and ufo: URls)</translation>
     </message>
     <message>
         <source>&amp;About Bitcoin Core</source>

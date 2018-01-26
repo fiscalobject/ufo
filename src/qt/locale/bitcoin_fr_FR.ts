@@ -383,8 +383,8 @@ Réessayez.</translation>
         <translation>Bitcoin Core</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation>Demander des paiements (générer QR codes et bitcoin: URIs)</translation>
+        <source>Request payments (generates QR codes and ufo: URIs)</source>
+        <translation>Demander des paiements (générer QR codes et ufo: URIs)</translation>
     </message>
     <message>
         <source>&amp;About Bitcoin Core</source>
@@ -399,8 +399,8 @@ Réessayez.</translation>
         <translation>Montrer la liste des adresses d'envois utilisées et les étiquettes</translation>
     </message>
     <message>
-        <source>Open a bitcoin: URI or payment request</source>
-        <translation>Ouvrir un bitcoin: URI ou demande de paiement</translation>
+        <source>Open a ufo: URI or payment request</source>
+        <translation>Ouvrir un ufo: URI ou demande de paiement</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>

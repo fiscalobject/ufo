@@ -410,7 +410,7 @@
         <translation>عرض قائمة عناوين الإستقبال المستخدمة والملصقات</translation>
     </message>
     <message>
-        <source>Open a bitcoin: URI or payment request</source>
+        <source>Open a ufo: URI or payment request</source>
         <translation>فتح URI : Bitcoin أو طلب دفع</translation>
     </message>
     <message>
