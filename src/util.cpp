@@ -87,8 +87,8 @@
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char * const BITCOIN_CONF_FILENAME = "bitcoin.conf";
-const char * const BITCOIN_PID_FILENAME = "bitcoind.pid";
+const char * const BITCOIN_CONF_FILENAME = "ufocoin.conf";
+const char * const BITCOIN_PID_FILENAME = "ufocoind.pid";
 
 ArgsManager gArgs;
 bool fPrintToConsole = false;
@@ -531,7 +531,7 @@ fs::path GetDefaultDataDir()
     // Unix: ~/.bitcoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Bitcoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "UFO";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -541,10 +541,10 @@ fs::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/Bitcoin";
+    return pathRet / "Library/Application Support/UFO";
 #else
     // Unix
-    return pathRet / ".bitcoin";
+    return pathRet / ".ufo";
 #endif
 #endif
 }
