@@ -135,6 +135,7 @@ UniValue generate(const UniValue& params, bool fHelp)
     int nHeightStart = 0;
     int nHeightEnd = 0;
     int nHeight = 0;
+    unsigned int profile = 0x0;
     int nGenerate = params[0].get_int();
 
     boost::shared_ptr<CReserveScript> coinbaseScript;
@@ -166,7 +167,9 @@ UniValue generate(const UniValue& params, bool fHelp)
             LOCK(cs_main);
             IncrementExtraNonce(pblock, chainActive.Tip(), nExtraNonce);
         }
-        while (!CheckProofOfWork(pblock->GetPoWHash(), pblock->nBits, Params().GetConsensus())) {
+        if (pblock->GetBlockTime() < Params().GetConsensus().nNeoScryptFork)
+            profile = 0x3;
+        while (!CheckProofOfWork(pblock->GetPoWHash(profile), pblock->nBits, Params().GetConsensus())) {
             // Yes, there is a chance every nonce could fail to satisfy the -regtest
             // target -- 1 in 2^(2^32). That ain't gonna happen.
             ++pblock->nNonce;
