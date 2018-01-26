@@ -274,6 +274,10 @@ static const CRPCCommand vRPCCommands[] =
     { "network",            "clearbanned",            &clearbanned,            true  },
     { "network",            "sendalert",              &sendalert,              true  },
 
+    /* Checkpointing */
+    { "network",            "getcheckpoint",          &getcheckpoint,          true  },
+    { "network",            "sendcheckpoint",         &sendcheckpoint,         true  },
+
     /* Block chain and UTXO */
     { "blockchain",         "getblockchaininfo",      &getblockchaininfo,      true  },
     { "blockchain",         "getbestblockhash",       &getbestblockhash,       true  },

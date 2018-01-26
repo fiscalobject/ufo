@@ -32,6 +32,7 @@
 #include "torcontrol.h"
 #include "ui_interface.h"
 #include "util.h"
+#include "checkpointsync.h"
 #include "utilmoneystr.h"
 #include "utilstrencodings.h"
 #include "validationinterface.h"
@@ -1053,6 +1054,12 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         fEnableReplacement = (std::find(vstrReplacementModes.begin(), vstrReplacementModes.end(), "fee") != vstrReplacementModes.end());
     }
 
+    if (mapArgs.count("-checkpointkey")) // Checkpoint master priv key
+	{
+		if (!SetCheckpointPrivKey(GetArg("-checkpointkey", "")))
+			return InitError(_("Unable to sign checkpoint, wrong checkpointkey?"));
+	}
+    
     // ********************************************************* Step 4: application initialization: dir lock, daemonize, pidfile, debug log
 
     // Initialize elliptic curve code

@@ -65,6 +65,7 @@ struct Params {
     unsigned int nNeoScryptFork;
     /** Proof of work parameters */
     uint256 powLimit;
+    std::string checkpointPubKey;
     bool fPowAllowMinDifficultyBlocks;
     bool fPowNoRetargeting;
     int64_t nPowTargetSpacing;

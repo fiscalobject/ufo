@@ -236,6 +236,8 @@ extern UniValue getnetworkinfo(const UniValue& params, bool fHelp);
 extern UniValue setmocktime(const UniValue& params, bool fHelp);
 extern UniValue resendwallettransactions(const UniValue& params, bool fHelp);
 
+extern UniValue getcheckpoint(const UniValue& params, bool fHelp); // in rpcmisc.cpp
+extern UniValue sendcheckpoint(const UniValue& params, bool fHelp);
 extern UniValue sendalert(const UniValue& params, bool fHelp);
 
 extern UniValue getrawtransaction(const UniValue& params, bool fHelp); // in rcprawtransaction.cpp

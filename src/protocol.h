@@ -218,6 +218,11 @@ extern const char *REJECT;
  * @see https://bitcoin.org/en/developer-reference#sendheaders
  */
 extern const char *SENDHEADERS;
+/**
+ * Contains a checkpoint braodcasted by a central checkpointing node
+ * @since protocol version 61000
+ */
+extern const char *CHECKPOINT;
 
 };
 
