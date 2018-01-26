@@ -10,6 +10,7 @@
 #include "primitives/block.h"
 #include "uint256.h"
 #include "bignum.h"
+#include "util.h"
 
 #include <math.h>
 
@@ -39,6 +40,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 
 unsigned int GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
 {
+    int nHeight = pindexLast->nHeight + 1;
     int64_t nReTargetHistoryFact = 4;
     int64_t nTargetTimespan = params.nPowTargetTimespan;
     int64_t nInterval = params.DifficultyAdjustmentInterval();
