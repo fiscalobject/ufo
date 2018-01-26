@@ -3216,11 +3216,6 @@ bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool f
         return state.DoS(50, error("CheckBlockHeader(): proof of work failed"),
                          REJECT_INVALID, "high-hash");
 
-    // Check timestamp
-    if (block.GetBlockTime() > GetAdjustedTime() + 2 * 60 * 60)
-        return state.Invalid(error("CheckBlockHeader(): block timestamp too far in the future"),
-                             REJECT_INVALID, "time-too-new");
-
     return true;
 }
 
@@ -3309,6 +3304,7 @@ static bool CheckIndexAgainstCheckpoint(const CBlockIndex* pindexPrev, CValidati
 bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& state, CBlockIndex * const pindexPrev)
 {
     const Consensus::Params& consensusParams = Params().GetConsensus();
+    int nHeight = pindexPrev->nHeight + 1;
     // Check proof of work
     if (block.nBits != GetNextWorkRequired(pindexPrev, &block, consensusParams))
         return state.DoS(100, error("%s: incorrect proof of work", __func__),
@@ -3333,6 +3329,16 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
     if (block.nVersion < 4 && IsSuperMajority(4, pindexPrev, consensusParams.nMajorityRejectBlockOutdated, consensusParams))
         return state.Invalid(error("%s : rejected nVersion=3 block", __func__),
                              REJECT_OBSOLETE, "bad-version");
+
+    // Limit block in future accepted in chain to only a time window of 15 min
+    if (block.GetBlockTime() > GetAdjustedTime() + 15 * 60)
+        return state.Invalid(error("%s: block's timestamp too far in the future", __func__),
+                             REJECT_INVALID, "time-too-new");
+
+    // Check timestamp against prev it should not be more then 15 minutes outside blockchain time
+    if ((nHeight >= Params().GetConsensus().nHardForkTwo && block.GetBlockTime() <= pindexPrev->GetBlockTime() - 15 * 60))
+        return state.Invalid(error("%s: block's timestamp is too early compare to last block", __func__),
+                             REJECT_INVALID, "wrong-time-between-blocks");
 
     return true;
 }
