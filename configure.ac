@@ -11,6 +11,7 @@ AC_CONFIG_SRCDIR([src/main.cpp])
 AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
+AM_PROG_AS
 
 AC_CANONICAL_HOST
 
@@ -154,6 +155,18 @@ AC_ARG_ENABLE([glibc-back-compat],
   [enable backwards compatibility with glibc])],
   [use_glibc_compat=$enableval],
   [use_glibc_compat=no])
+
+AC_ARG_ENABLE([sse2],
+  [AC_HELP_STRING([--enable-sse2],
+  [enable SSE2 optimizations (defaults is yes)])],
+  [use_sse2=${enableval}],
+  [use_sse2=yes])
+
+AC_ARG_ENABLE([asm],
+  [AC_HELP_STRING([--enable-asm],
+  [enable assembly compilation (default is no)])],
+  [use_asm=${enableval}],
+  [use_asm=no])
 
 AC_ARG_ENABLE([zmq],
   [AS_HELP_STRING([--disable-zmq],
@@ -386,6 +399,15 @@ if test x$use_lcov = xyes; then
     [AC_MSG_ERROR("lcov testing requested but --coverage flag does not work")])
 fi
 
+if test "$use_sse2" = "yes"; then
+    AX_CHECK_COMPILE_FLAG([-msse2],[CFLAGS="$CFLAGS -msse2" && CXXFLAGS="$CXXFLAGS -msse2"])
+    AC_DEFINE([USE_SSE2],[1],[Define if SSE2 support should be compiled in])
+fi
+
+if test "$use_asm" = "yes"; then
+    AC_DEFINE([ASM],[1],[Assembly code support])
+fi
+
 dnl Check for endianness
 AC_C_BIGENDIAN
 
@@ -462,7 +484,11 @@ if test x$use_hardening != xno; then
   AX_CHECK_LINK_FLAG([[-Wl,-z,now]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,-z,now"])
 
   if test x$TARGET_OS != xwindows; then
-    AX_CHECK_COMPILE_FLAG([-fPIE],[PIE_FLAGS="-fPIE"])
+    if test "$use_asm" = "yes"; then
+        AX_CHECK_COMPILE_FLAG([-fPIC],[HARDENED_CXXFLAGS="$HARDENED_CXXFLAGS -fPIC" && CFLAGS="$CFLAGS -fPIC"])
+    else
+        AX_CHECK_COMPILE_FLAG([-fPIE],[PIE_FLAGS="-fPIE"])
+    fi
     AX_CHECK_LINK_FLAG([[-pie]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -pie"])
   fi
 
@@ -923,6 +949,8 @@ AM_CONDITIONAL([ENABLE_QT],[test x$bitcoin_enable_qt = xyes])
 AM_CONDITIONAL([ENABLE_QT_TESTS],[test x$BUILD_TEST_QT = xyes])
 AM_CONDITIONAL([ENABLE_BENCH],[test x$use_bench = xyes])
 AM_CONDITIONAL([USE_QRCODE], [test x$use_qr = xyes])
+AM_CONDITIONAL([USE_SSE2], [test x$use_sse2 = xyes])
+AM_CONDITIONAL([ASM], [test x$use_asm = xyes])
 AM_CONDITIONAL([USE_LCOV],[test x$use_lcov = xyes])
 AM_CONDITIONAL([USE_COMPARISON_TOOL],[test x$use_comparison_tool != xno])
 AM_CONDITIONAL([USE_COMPARISON_TOOL_REORG_TESTS],[test x$use_comparison_tool_reorg_test != xno])
@@ -951,6 +979,8 @@ AC_SUBST(PIE_FLAGS)
 AC_SUBST(LIBTOOL_APP_LDFLAGS)
 AC_SUBST(USE_UPNP)
 AC_SUBST(USE_QRCODE)
+AC_SUBST(USE_SSE2)
+AC_SUBST(ASM)
 AC_SUBST(BOOST_LIBS)
 AC_SUBST(TESTDEFS)
 AC_SUBST(LEVELDB_TARGET_FLAGS)
