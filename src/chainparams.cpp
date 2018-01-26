@@ -62,6 +62,7 @@ public:
         consensus.nPowTargetTimespan = 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 90;
         consensus.nCoinFix = 15000;
+        consensus.nHardForkOne = 33479;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 10080; // 75% of 13440
