@@ -110,7 +110,7 @@
         <translation>Құпия сөзді өзгерту</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
+        <source>UFO</source>
         <translation>Биткоин</translation>
     </message>
     <message>

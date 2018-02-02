@@ -140,8 +140,8 @@
         <translation>Confirma la codificación de cartera</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation>Atención: ¡Si codificas tu billetera y pierdes la contraseña perderás &lt;b&gt;TODOS TUS BITCOINS&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR UFO&lt;/b&gt;!</source>
+        <translation>Atención: ¡Si codificas tu billetera y pierdes la contraseña perderás &lt;b&gt;TODOS TUS UFO&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -262,16 +262,16 @@
         <translation>Abrir y url...</translation>
     </message>
     <message>
-        <source>Bitcoin Core client</source>
-        <translation>cliente bitcoin core</translation>
+        <source>UFO Core client</source>
+        <translation>cliente UFO core</translation>
     </message>
     <message>
         <source>Reindexing blocks on disk...</source>
         <translation>Cargando el index de bloques...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
-        <translation>Enviar monedas a una dirección bitcoin</translation>
+        <source>Send coins to a UFO address</source>
+        <translation>Enviar monedas a una dirección UFO</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -294,8 +294,8 @@
         <translation>Verificar mensaje....</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>UFO</source>
+        <translation>UFO</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -310,15 +310,15 @@
         <translation>y recibir</translation>
     </message>
     <message>
-        <source>Show information about Bitcoin Core</source>
-        <translation>Mostrar informacion sobre Bitcoin Core</translation>
+        <source>Show information about UFO Core</source>
+        <translation>Mostrar informacion sobre UFO Core</translation>
     </message>
     <message>
         <source>&amp;Show / Hide</source>
         <translation>&amp;Mostrar/Ocultar</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <source>Sign messages with your UFO addresses to prove you own them</source>
         <translation>Firmar un mensaje para provar que usted es dueño de esta dirección</translation>
     </message>
     <message>
@@ -338,19 +338,19 @@
         <translation>Barra de pestañas</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>bitcoin core</translation>
+        <source>UFO Core</source>
+        <translation>UFO core</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and ufo: URIs)</source>
         <translation>Pide pagos (genera codigos QR and ufo: URls)</translation>
     </message>
     <message>
-        <source>&amp;About Bitcoin Core</source>
-        <translation>&amp;Sobre Bitcoin Core</translation>
+        <source>&amp;About UFO Core</source>
+        <translation>&amp;Sobre UFO Core</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bitcoin Core</source>
+        <source>Modify configuration options for UFO Core</source>
         <translation>Modifica las opciones para BitCoin Core</translation>
     </message>
     <message>
@@ -516,8 +516,8 @@
         <translation>La dirección introducida "%1" ya esta guardada en la libreta de direcciones.</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bitcoin address.</source>
-        <translation>La dirección introducida "%1" no es una dirección Bitcoin valida.</translation>
+        <source>The entered address "%1" is not a valid UFO address.</source>
+        <translation>La dirección introducida "%1" no es una dirección UFO valida.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -538,8 +538,8 @@
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>bitcoin core</translation>
+        <source>UFO Core</source>
+        <translation>UFO core</translation>
     </message>
     <message>
         <source>version</source>
@@ -561,8 +561,8 @@
         <translation>bienvenido</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>bitcoin core</translation>
+        <source>UFO Core</source>
+        <translation>UFO core</translation>
     </message>
     <message>
         <source>Error</source>
@@ -603,8 +603,8 @@
         <translation>experto</translation>
     </message>
     <message>
-        <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abre automáticamente el puerto del cliente Bitcoin en el router. Esto funciona solo cuando tu router es compatible con UPnP y está habilitado.</translation>
+        <source>Automatically open the UFO client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abre automáticamente el puerto del cliente UFO en el router. Esto funciona solo cuando tu router es compatible con UPnP y está habilitado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1021,7 +1021,7 @@
         <translation>Firma</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bitcoin address</source>
+        <source>Sign the message to prove you own this UFO address</source>
         <translation>Firmar un mensjage para probar que usted es dueño de esta dirección</translation>
     </message>
     <message>
@@ -1050,7 +1050,7 @@
     </message>
     <message>
         <source>Please check the address and try again.</source>
-        <translation>Por favor, revise la dirección Bitcoin e inténtelo denuevo</translation>
+        <translation>Por favor, revise la dirección UFO e inténtelo denuevo</translation>
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
@@ -1072,8 +1072,8 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>bitcoin core</translation>
+        <source>UFO Core</source>
+        <translation>UFO core</translation>
     </message>
     <message>
         <source>[testnet]</source>

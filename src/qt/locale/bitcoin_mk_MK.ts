@@ -132,7 +132,7 @@
         <translation>Потврдете го криптирањето на паричникот</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR UFO&lt;/b&gt;!</source>
         <translation>Предупредување: Ако го шифрирате вашиот паричник и ја изгубите вашата тајна фраза, ќе &lt;b&gt;ГИ ИЗГУБИТЕ СИТЕ ВАШИ БИТКОИНИ&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -250,7 +250,7 @@
         <translation>Отвори &amp;URI...</translation>
     </message>
     <message>
-        <source>Bitcoin Core client</source>
+        <source>UFO Core client</source>
         <translation>Биткоин Core софтверот</translation>
     </message>
     <message>
@@ -262,7 +262,7 @@
         <translation>Повторно индексирање на блокови од дискот...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
+        <source>Send coins to a UFO address</source>
         <translation>Испрати биткоини на Биткоин адреса</translation>
     </message>
     <message>
@@ -270,7 +270,7 @@
         <translation>&amp;Потврди порака...</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
+        <source>UFO</source>
         <translation>Биткоин</translation>
     </message>
     <message>
@@ -286,7 +286,7 @@
         <translation>&amp;Прими</translation>
     </message>
     <message>
-        <source>Show information about Bitcoin Core</source>
+        <source>Show information about UFO Core</source>
         <translation>Прикажи информации за Биткоин Core</translation>
     </message>
     <message>
@@ -306,11 +306,11 @@
         <translation>&amp;Помош</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>Биткоин Core</translation>
     </message>
     <message>
-        <source>&amp;About Bitcoin Core</source>
+        <source>&amp;About UFO Core</source>
         <translation>&amp;За Биткоин Core</translation>
     </message>
     <message numerus="yes">
@@ -575,7 +575,7 @@
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>Биткоин Core</translation>
     </message>
     <message>
@@ -587,14 +587,14 @@
         <translation>(%1-бит)</translation>
     </message>
     <message>
-        <source>About Bitcoin Core</source>
+        <source>About UFO Core</source>
         <translation>За Биткоин Core</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>Биткоин Core</translation>
     </message>
     <message>
@@ -934,7 +934,7 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bitcoin Core</source>
+        <source>UFO Core</source>
         <translation>Биткоин Core</translation>
     </message>
     </context>

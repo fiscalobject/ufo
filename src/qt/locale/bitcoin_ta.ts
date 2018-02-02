@@ -114,8 +114,8 @@
         <translation>&amp;செய்தியை சரிசெய்...</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>UFO</source>
+        <translation>UFO</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -146,8 +146,8 @@
         <translation>&amp;உதவி</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin மையம்</translation>
+        <source>UFO Core</source>
+        <translation>UFO மையம்</translation>
     </message>
     <message numerus="yes">
         <source>%n hour(s)</source>
@@ -289,12 +289,12 @@
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin மையம்</translation>
+        <source>UFO Core</source>
+        <translation>UFO மையம்</translation>
     </message>
     <message>
-        <source>About Bitcoin Core</source>
-        <translation>Bitcoin மையம் பற்றி</translation>
+        <source>About UFO Core</source>
+        <translation>UFO மையம் பற்றி</translation>
     </message>
     </context>
 <context>
@@ -304,8 +304,8 @@
         <translation>நல்வரவு</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin மையம்</translation>
+        <source>UFO Core</source>
+        <translation>UFO மையம்</translation>
     </message>
     <message>
         <source>Error</source>
@@ -812,8 +812,8 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin மையம்</translation>
+        <source>UFO Core</source>
+        <translation>UFO மையம்</translation>
     </message>
     </context>
 <context>

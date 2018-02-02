@@ -62,13 +62,13 @@
         <translation>Recibiendo direcciones</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your UFO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>
-Estas son las direcciones de Bitcoin para enviar pagos . Siempre verifique la cantidad y la dirección de recepción antes de enviar monedas.</translation>
+Estas son las direcciones de UFO para enviar pagos . Siempre verifique la cantidad y la dirección de recepción antes de enviar monedas.</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Estas son las direcciones de Bitcoin para recibir los pagos . Se recomienda el uso de una nueva dirección de recepción para cada transacción.</translation>
+        <source>These are your UFO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Estas son las direcciones de UFO para recibir los pagos . Se recomienda el uso de una nueva dirección de recepción para cada transacción.</translation>
     </message>
     <message>
         <source>Copy &amp;Label</source>
@@ -157,16 +157,16 @@ Estas son las direcciones de Bitcoin para enviar pagos . Siempre verifique la ca
         <translation>Confirmar encriptación de la billetera</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation>Precaución: Si tú has encriptado tu billetera y has perdido tu contraseña, usted &lt;b&gt;PERDERÁ TODOS TUS BITCOINS&lt;/b&gt;</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR UFO&lt;/b&gt;!</source>
+        <translation>Precaución: Si tú has encriptado tu billetera y has perdido tu contraseña, usted &lt;b&gt;PERDERÁ TODOS TUS UFO&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Estas seguro de que deseas encriptar tu billetera?</translation>
     </message>
     <message>
-        <source>Bitcoin Core will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
-        <translation>Bitcoin Core se cerrará ahora para finalizar el proceso de encriptación. Recuerda que encriptando tu billetera no protegera por completo tus bitcoins desde robos por malware que infectan tu computadora.</translation>
+        <source>UFO Core will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your UFO from being stolen by malware infecting your computer.</source>
+        <translation>UFO Core se cerrará ahora para finalizar el proceso de encriptación. Recuerda que encriptando tu billetera no protegera por completo tus UFO desde robos por malware que infectan tu computadora.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
@@ -279,16 +279,16 @@ Estas son las direcciones de Bitcoin para enviar pagos . Siempre verifique la ca
         <translation>Abrir &amp;URL...</translation>
     </message>
     <message>
-        <source>Bitcoin Core client</source>
-        <translation>Bitcoin Core cliente</translation>
+        <source>UFO Core client</source>
+        <translation>UFO Core cliente</translation>
     </message>
     <message>
         <source>Importing blocks from disk...</source>
         <translation>Importando bloques desde el disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
-        <translation>Enviando monedas a una dirección de Bitcoin</translation>
+        <source>Send coins to a UFO address</source>
+        <translation>Enviando monedas a una dirección de UFO</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
@@ -307,8 +307,8 @@ Estas son las direcciones de Bitcoin para enviar pagos . Siempre verifique la ca
         <translation>&amp;Verificar Mensaje...</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>UFO</source>
+        <translation>UFO</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -323,8 +323,8 @@ Estas son las direcciones de Bitcoin para enviar pagos . Siempre verifique la ca
         <translation>&amp;Recibir</translation>
     </message>
     <message>
-        <source>Show information about Bitcoin Core</source>
-        <translation>Mostrar información sobre Bitcoin Core</translation>
+        <source>Show information about UFO Core</source>
+        <translation>Mostrar información sobre UFO Core</translation>
     </message>
     <message>
         <source>&amp;Show / Hide</source>
@@ -347,8 +347,8 @@ Estas son las direcciones de Bitcoin para enviar pagos . Siempre verifique la ca
         <translation>&amp;Ayuda</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>UFO Core</source>
+        <translation>UFO Core</translation>
     </message>
     <message>
         <source>Error</source>
@@ -374,15 +374,15 @@ Estas son las direcciones de Bitcoin para enviar pagos . Siempre verifique la ca
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>UFO Core</source>
+        <translation>UFO Core</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>UFO Core</source>
+        <translation>UFO Core</translation>
     </message>
     <message>
         <source>Error</source>
@@ -457,8 +457,8 @@ Estas son las direcciones de Bitcoin para enviar pagos . Siempre verifique la ca
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>UFO Core</source>
+        <translation>UFO Core</translation>
     </message>
     </context>
 <context>
