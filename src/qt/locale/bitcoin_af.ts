@@ -158,8 +158,8 @@
         <translation>Besig met herindeksering van blokke op hardeskyf...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
-        <translation>Stuur munte na 'n Bitcoin adres</translation>
+        <source>Send coins to a UFO address</source>
+        <translation>Stuur munte na 'n UFO adres</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -170,8 +170,8 @@
         <translation>Verander die wagwoord wat ek vir kodifikasie van my beursie gebruik</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>UFO</source>
+        <translation>UFO</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -194,12 +194,12 @@
         <translation>Kodifiseer die private sleutes wat aan jou beursie gekoppel is.</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>Onderteken boodskappe met u Bitcoin adresse om u eienaarskap te bewys</translation>
+        <source>Sign messages with your UFO addresses to prove you own them</source>
+        <translation>Onderteken boodskappe met u UFO adresse om u eienaarskap te bewys</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>Verifieër boodskappe om seker te maak dat dit met die gespesifiseerde Bitcoin adresse</translation>
+        <source>Verify messages to ensure they were signed with specified UFO addresses</source>
+        <translation>Verifieër boodskappe om seker te maak dat dit met die gespesifiseerde UFO adresse</translation>
     </message>
     <message>
         <source>&amp;Help</source>
@@ -710,8 +710,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Kern</translation>
+        <source>UFO Core</source>
+        <translation>UFO Kern</translation>
     </message>
     <message>
         <source>Information</source>
