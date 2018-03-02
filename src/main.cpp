@@ -3531,8 +3531,7 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
 
     // Reject block.nVersion=1 blocks when 95% (75% on testnet) of the network has upgraded:
     if (block.nVersion < 2 && IsSuperMajority(2, pindexPrev, consensusParams.nMajorityRejectBlockOutdated, consensusParams) && block.GetBlockTime() > consensusParams.nNeoScryptSwitch)
-        return state.Invalid(false, REJECT_OBSOLETE, strprintf("bad-version"),
-                             "bad-version");
+        return state.Invalid(false, REJECT_OBSOLETE, "bad-version", "rejected nVersion=1");
 
     // Reject outdated version blocks when 95% (75% on testnet) of the network has upgraded:
     for (int32_t version = 3; version < 5; ++version) // check for version 3 and 4 upgrades
