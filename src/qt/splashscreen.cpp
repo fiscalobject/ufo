@@ -30,9 +30,9 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) 
     QWidget(0, f), curAlignment(0)
 {
     // set reference point, paddings
-    int paddingRight            = 30;
+    int paddingRight            = 80;
     int paddingTop              = 50;
-    int titleVersionVSpace      = 17;
+    int titleVersionVSpace      = 20;
     int titleCopyrightVSpace    = 40;
 
     float fontFactor            = 1.0;
@@ -42,7 +42,7 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) 
 #endif
 
     // define text to place
-    QString titleText       = tr(PACKAGE_NAME);
+    QString titleText       = tr("UFO Core");
     QString versionText     = QString("Version %1").arg(QString::fromStdString(FormatFullVersion()));
     QString copyrightText   = QString::fromUtf8(CopyrightHolders(strprintf("\xc2\xA9 %u-%u ", 2014, COPYRIGHT_YEAR)).c_str());
     QString titleAddText    = networkStyle->getTitleAddText();
@@ -80,8 +80,8 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) 
     pixPaint.setFont(QFont(font, 33*fontFactor));
     QFontMetrics fm = pixPaint.fontMetrics();
     int titleTextWidth = fm.width(titleText);
-    if (titleTextWidth > 176) {
-        fontFactor = fontFactor * 176 / titleTextWidth;
+    if (titleTextWidth > 106) {
+        fontFactor = fontFactor * 106 / titleTextWidth;
     }
 
     pixPaint.setFont(QFont(font, 33*fontFactor));
@@ -102,7 +102,6 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) 
 
     // draw copyright stuff
     {
-        pixPaint.setFont(QFont(font, 10*fontFactor));
         const int x = pixmap.width()/devicePixelRatio-titleTextWidth-paddingRight;
         const int y = paddingTop+titleCopyrightVSpace;
         QRect copyrightRect(x, y, pixmap.width() - x - paddingRight, pixmap.height() - y);
@@ -122,7 +121,7 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) 
     pixPaint.end();
 
     // Set window title
-    setWindowTitle(titleText + " " + titleAddText);
+    setWindowTitle("Uniform Fiscal Object " + titleAddText);
 
     // Resize window and move to center of desktop, disallow resizing
     QRect r(QPoint(), QSize(pixmap.size().width()/devicePixelRatio,pixmap.size().height()/devicePixelRatio));
