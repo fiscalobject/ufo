@@ -3397,7 +3397,7 @@ bool FindUndoPos(CValidationState &state, int nFile, CDiskBlockPos &pos, unsigne
 bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, const Consensus::Params& consensusParams, bool fCheckPOW)
 {
     unsigned int profile = 0x0;
-    if (block.GetBlockTime() < consensusParams.nNeoScryptFork)
+    if (block.GetBlockTime() < Params().GetConsensus().nNeoScryptFork)
         profile = 0x3;
 
     // Check proof of work matches claimed amount
