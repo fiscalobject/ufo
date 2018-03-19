@@ -74,6 +74,7 @@ struct Params {
     int nHardForkFourA;
     unsigned int nNeoScryptSwitch;
     unsigned int nNeoScryptFork;
+    std::string checkpointPubKey;
     /** Proof of work parameters */
     uint256 powLimit;
     unsigned int powNeoScryptLimit;
