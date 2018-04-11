@@ -3,12 +3,14 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include "alert.h"
 #include "arith_uint256.h"
 #include "sync.h"
 #include "clientversion.h"
 #include "checkpointsync.h"
 #include "util.h"
 #include "warnings.h"
+#include "utilstrencodings.h"
 
 CCriticalSection cs_warnings;
 std::string strMiscWarning;
@@ -47,6 +49,7 @@ bool GetfLargeWorkInvalidChainFound()
 
 std::string GetWarnings(const std::string& strFor)
 {
+    int nPriority = 0;
     std::string strStatusBar;
     std::string strRPC;
     std::string strGUI;
@@ -78,11 +81,13 @@ std::string GetWarnings(const std::string& strFor)
 
     if (fLargeWorkForkFound)
     {
+        nPriority = 2000;
         strStatusBar = strRPC = "Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.";
         strGUI += (strGUI.empty() ? "" : uiAlertSeperator) + _("Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.");
     }
     else if (fLargeWorkInvalidChainFound)
     {
+        nPriority = 2000;
         strStatusBar = strRPC = "Warning: We do not appear to fully agree with our peers! You may need to upgrade, or other nodes may need to upgrade.";
         strGUI += (strGUI.empty() ? "" : uiAlertSeperator) + _("Warning: We do not appear to fully agree with our peers! You may need to upgrade, or other nodes may need to upgrade.");
     }
@@ -92,6 +97,20 @@ std::string GetWarnings(const std::string& strFor)
     {
         strStatusBar = strRPC = "WARNING: Inconsistent checkpoint found! Stop enforcing checkpoints and notify developers to resolve the issue.";
         strGUI += (strGUI.empty() ? "" : uiAlertSeperator) + _("WARNING: Inconsistent checkpoint found! Stop enforcing checkpoints and notify developers to resolve the issue.");
+    }
+
+    // Alerts
+    {
+        LOCK(cs_mapAlerts);
+        for (auto& item : mapAlerts)
+        {
+            const CAlert& alert = item.second;
+            if (alert.AppliesToMe() && alert.nPriority > nPriority)
+            {
+                nPriority = alert.nPriority;
+                strStatusBar = strGUI = alert.strStatusBar;
+            }
+        }
     }
 
     if (strFor == "gui")

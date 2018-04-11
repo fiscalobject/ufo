@@ -16,6 +16,7 @@ class CBasicKeyStore;
 class CWallet;
 class uint256;
 class CBlockIndex;
+class uint256;
 
 /** General change type (added, updated, removed). */
 enum ChangeType
@@ -91,7 +92,7 @@ public:
     /**
      * Status bar alerts changed.
      */
-    boost::signals2::signal<void ()> NotifyAlertChanged;
+    boost::signals2::signal<void (const uint256 &hash, ChangeType status)> NotifyAlertChanged;
 
     /** A wallet has been loaded. */
     boost::signals2::signal<void (CWallet* wallet)> LoadWallet;
