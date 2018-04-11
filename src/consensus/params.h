@@ -67,6 +67,8 @@ struct Params {
     /** Hard fork parameters */
     int nCoinFix;
     int nHardForkOne;
+    int nHardForkTwo;
+    int nHardForkTwoA;
     /** Proof of work parameters */
     uint256 powLimit;
     bool fPowAllowMinDifficultyBlocks;
