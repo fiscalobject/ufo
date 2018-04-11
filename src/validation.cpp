@@ -8,6 +8,7 @@
 #include "arith_uint256.h"
 #include "chainparams.h"
 #include "checkpoints.h"
+#include "checkpointsync.h"
 #include "checkqueue.h"
 #include "consensus/consensus.h"
 #include "consensus/merkle.h"
@@ -2176,6 +2177,8 @@ void static UpdateTip(CBlockIndex *pindexNew, const CChainParams& chainParams) {
         LogPrintf(" warning='%s'", boost::algorithm::join(warningMessages, ", "));
     LogPrintf("\n");
 
+    if (pindexBestHeader->pprev)
+        CheckSyncCheckpoint(pindexBestHeader->GetBlockHash(), pindexBestHeader->pprev);
 }
 
 /** Disconnect chainActive's tip. You probably want to call mempool.removeForReorg and manually re-limit mempool size after this, with cs_main held. */
@@ -3020,6 +3023,11 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
         return state.Invalid(false, REJECT_INVALID, strprintf("%s: block's timestamp is too early compare to last block", __func__),
                              "wrong-time-between-blocks");
 
+    // Check that the block satisfies synchronized checkpoint
+    if (!IsInitialBlockDownload() && !CheckSyncCheckpoint(block.GetHash(), pindexPrev))
+        return state.Invalid(false, REJECT_INVALID, strprintf("%s : rejected by synchronized checkpoint", __func__),
+                             "rejected-checkpoint");
+
     return true;
 }
 
@@ -3248,6 +3256,8 @@ static bool AcceptBlock(const std::shared_ptr<const CBlock>& pblock, CValidation
     if (fCheckForPruning)
         FlushStateToDisk(state, FLUSH_STATE_NONE); // we just allocated more disk space for block files
 
+    AcceptPendingSyncCheckpoint();
+
     return true;
 }
 
@@ -3279,6 +3289,10 @@ bool ProcessNewBlock(const CChainParams& chainparams, const std::shared_ptr<cons
     CValidationState state; // Only used to report errors, not invalidity - ignore it
     if (!ActivateBestChain(state, chainparams, pblock))
         return error("%s: ActivateBestChain failed", __func__);
+
+    // If responsible for sync-checkpoint send it
+    if (!CSyncCheckpoint::strMasterPrivKey.empty() && (int)GetArg("-checkpointdepth", -1) >= 0)
+        SendSyncCheckpoint(AutoSelectSyncCheckpoint());
 
     return true;
 }
@@ -3571,6 +3585,12 @@ bool static LoadBlockIndexDB(const CChainParams& chainparams)
             break;
         }
     }
+
+    // Load hashSyncCheckpoint
+    if (!pblocktree->ReadSyncCheckpoint(hashSyncCheckpoint))
+         LogPrintf("LoadBlockIndexDB(): synchronized checkpoint not read\n");
+    else
+         LogPrintf("LoadBlockIndexDB(): synchronized checkpoint %s\n", hashSyncCheckpoint.ToString().c_str());
 
     // Check presence of blk files
     LogPrintf("Checking all blk files are present...\n");

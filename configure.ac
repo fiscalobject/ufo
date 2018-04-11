@@ -173,10 +173,14 @@ AC_ARG_ENABLE([sse2],
   [use_sse2=yes])
 
 AC_ARG_ENABLE([asm],
-  [AC_HELP_STRING([--enable-asm],
-  [enable assembly compilation (default is no)])],
+  [AS_HELP_STRING([--enable-asm],
+  [Enable assembly routines (default is yes)])],
   [use_asm=${enableval}],
-  [use_asm=no])
+  [use_asm=yes])
+
+if test "x$use_asm" = xyes; then
+  AC_DEFINE(ASM, 1, [Define this symbol to build in assembly routines])
+fi
 
 AC_ARG_WITH([system-univalue],
   [AS_HELP_STRING([--with-system-univalue],
@@ -454,10 +458,6 @@ if test "$use_sse2" = "yes"; then
     AC_DEFINE([USE_SSE2],[1],[Define if SSE2 support should be compiled in])
 fi
 
-if test "$use_asm" = "yes"; then
-    AC_DEFINE([ASM],[1],[Assembly code support])
-fi
-
 dnl Check for endianness
 AC_C_BIGENDIAN
 
@@ -536,7 +536,7 @@ if test x$use_hardening != xno; then
 
   if test x$TARGET_OS != xwindows; then
     if test "$use_asm" = "yes"; then
-        AX_CHECK_COMPILE_FLAG([-fPIC],[HARDENED_CXXFLAGS="$HARDENED_CXXFLAGS -fPIC" && CFLAGS="$CFLAGS -fPIC"])
+        AX_CHECK_COMPILE_FLAG([-fPIC],[CXXFLAGS="$CXXFLAGS -fPIC" && CPPFLAGS="$CPPFLAGS -fPIC" && CFLAGS="$CFLAGS -fPIC"])
     else
         AX_CHECK_COMPILE_FLAG([-fPIE],[PIE_FLAGS="-fPIE"])
     fi
@@ -1208,6 +1208,7 @@ echo "  with zmq      = $use_zmq"
 echo "  with test     = $use_tests"
 echo "  with bench    = $use_bench"
 echo "  with upnp     = $use_upnp"
+echo "  use asm       = $use_asm"
 echo "  debug enabled = $enable_debug"
 echo "  werror        = $enable_werror"
 echo 
