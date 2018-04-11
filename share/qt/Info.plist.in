@@ -38,7 +38,7 @@
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>com.uniformfiscalobject.UFO-Qt</string>
+  <string>com.ufobject.UFO-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,7 +46,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>com.uniformfiscalobject.UFOPayment</string>
+      <string>com.ufobject.UFOPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>ufo</string>
@@ -58,7 +58,7 @@
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>com.uniformfiscalobject.paymentrequest</string>
+      <string>com.ufobject.paymentrequest</string>
       <key>UTTypeDescription</key>
       <string>UFO payment request</string>
       <key>UTTypeConformsTo</key>
@@ -84,7 +84,7 @@
       <string>Editor</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>com.uniformfiscalobject.paymentrequest</string>
+        <string>com.ufobject.paymentrequest</string>
       </array>
       <key>LSHandlerRank</key>
       <string>Owner</string>
