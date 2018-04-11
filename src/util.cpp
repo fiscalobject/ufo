@@ -113,6 +113,7 @@ const map<string, vector<string> >& mapMultiArgs = _mapMultiArgs;
 bool fDebug = false;
 bool fPrintToConsole = false;
 bool fPrintToDebugLog = true;
+unsigned int nNeoScryptOptions = 0;
 
 bool fLogTimestamps = DEFAULT_LOGTIMESTAMPS;
 bool fLogTimeMicros = DEFAULT_LOGTIMEMICROS;
