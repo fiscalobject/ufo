@@ -23,10 +23,18 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     if (pindexLast->nHeight >= params.nHardForkTwo)
         DiffMode = 2;
 
-    if (DiffMode == 1)
-        return GetNextWorkRequired_V1(pindexLast, pblock, params);
+    // Difficulty reset after the switch
+    if(nHeight == params.nHardForkThree)
+        return UintToArith256(params.powLimit).GetCompact();
 
-    return GetNextWorkRequired_V2(pindexLast, params);
+    // Use normal difficulty adjust following fork for 10 blocks
+    if (nHeight >= params.nHardForkThree && nHeight <= params.nHardForkThree + 10)
+        DiffMode = 1;
+
+    if (DiffMode == 2)
+        return GetNextWorkRequired_V2(pindexLast, params);
+
+    return GetNextWorkRequired_V1(pindexLast, pblock, params);
 }
 
 unsigned int GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
@@ -94,11 +102,16 @@ unsigned int GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockH
         nActualTimespan = nTargetTimespan*4;
 
     // Retarget
-    const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
     arith_uint256 bnNew;
     bnNew.SetCompact(pindexLast->nBits);
+    const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
+    bool fShift = bnNew.bits() > bnPowLimit.bits() - 1;
+    if (fShift)
+        bnNew >>= 1;
     bnNew *= nActualTimespan;
     bnNew /= nTargetTimespan;
+    if (fShift)
+        bnNew <<= 1;
 
     if (bnNew > bnPowLimit)
         bnNew = bnPowLimit;
