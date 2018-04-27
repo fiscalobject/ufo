@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"com.uniformfiscalobject.UFO-Qt";
+        return @"com.ufobject.UFO-Qt";
     } else {
         return [self __bundleIdentifier];
     }
