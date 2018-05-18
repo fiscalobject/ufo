@@ -414,8 +414,8 @@
         <translation>Alatke za tabove</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation>Zatražite plaćanje (generiše QR kodove i bitcoin: URI-e)</translation>
+        <source>Request payments (generates QR codes and ufo: URIs)</source>
+        <translation>Zatražite plaćanje (generiše QR kodove i ufo: URI-e)</translation>
     </message>
     <message>
         <source>Error</source>

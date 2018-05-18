@@ -414,8 +414,8 @@
         <translation>Pasek zakładek</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation>Zażądaj płatności (generuje kod QR oraz bitcoin: URls)</translation>
+        <source>Request payments (generates QR codes and ufo: URIs)</source>
+        <translation>Zażądaj płatności (generuje kod QR oraz ufo: URls)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -426,8 +426,8 @@
         <translation>Pokaż liste użytych adresów do odbioru oraz ich etykiety</translation>
     </message>
     <message>
-        <source>Open a bitcoin: URI or payment request</source>
-        <translation>Otwórz bitcoin: URl lub żądanie płatności</translation>
+        <source>Open a ufo: URI or payment request</source>
+        <translation>Otwórz ufo: URl lub żądanie płatności</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>

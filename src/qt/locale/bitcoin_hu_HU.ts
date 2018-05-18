@@ -418,8 +418,8 @@
         <translation>Ablak fülek eszköztára</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation>Kérjen fizetéseket (QR kódokat generál és bitcoin: URLeket)</translation>
+        <source>Request payments (generates QR codes and ufo: URIs)</source>
+        <translation>Kérjen fizetéseket (QR kódokat generál és ufo: URLeket)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -430,8 +430,8 @@
         <translation>Mutassa a használt fogadó címek és cimkék listáját</translation>
     </message>
     <message>
-        <source>Open a bitcoin: URI or payment request</source>
-        <translation>Nyisson meg egy bitcoin: URI-t vagy fizetési kérelmet</translation>
+        <source>Open a ufo: URI or payment request</source>
+        <translation>Nyisson meg egy ufo: URI-t vagy fizetési kérelmet</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1310,7 +1310,7 @@
         <translation>Hiba történt a fizetési kérelem során</translation>
     </message>
     <message>
-        <source>Cannot start bitcoin: click-to-pay handler</source>
+        <source>Cannot start ufo: click-to-pay handler</source>
         <translation>A bitcoin nem tud elindulni: click-to-pay kezelő</translation>
     </message>
     <message>
