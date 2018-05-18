@@ -73,7 +73,6 @@ struct Params {
     int nHardForkThree;
     int nHardForkFour;
     int nHardForkFourA;
-    unsigned int nNeoScryptSwitch;
     unsigned int nNeoScryptFork;
     std::string checkpointPubKey;
     std::vector<unsigned char> vAlertPubKey;

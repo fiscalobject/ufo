@@ -80,7 +80,6 @@ public:
         consensus.nHardForkThree = 266000;
         consensus.nHardForkFour = 1182000;
         consensus.nHardForkFourA = 1220000;
-        consensus.nNeoScryptSwitch = 1414195200;
         consensus.nNeoScryptFork = 1414446393;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
@@ -193,7 +192,6 @@ public:
         consensus.nHardForkThree = 1;
         consensus.nHardForkFour = 1100;
         consensus.nHardForkFourA = 1500;
-        consensus.nNeoScryptSwitch = 1506816000;
         consensus.nNeoScryptFork = 1506816000;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
@@ -285,7 +283,6 @@ public:
         consensus.checkpointPubKey = "04d0dd87fbb6ac3483f57c9cd010c8fa804219ec641fad97a9cbb31605327b15fa9c40232fa214f02b80883955f7b14e49dbd03e44d45123f06ee08b911a08be33";
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 10 * 60;
-        consensus.nNeoScryptSwitch = 1524473955;
         consensus.nNeoScryptFork = 1524473955;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
