@@ -10,6 +10,7 @@
 #include <limits>
 #include <map>
 #include <string>
+#include <vector>
 
 namespace Consensus {
 
@@ -75,6 +76,7 @@ struct Params {
     unsigned int nNeoScryptSwitch;
     unsigned int nNeoScryptFork;
     std::string checkpointPubKey;
+    std::vector<unsigned char> vAlertPubKey;
     /** Proof of work parameters */
     uint256 powLimit;
     unsigned int powNeoScryptLimit;
