@@ -283,6 +283,11 @@ public:
         consensus.checkpointPubKey = "04d0dd87fbb6ac3483f57c9cd010c8fa804219ec641fad97a9cbb31605327b15fa9c40232fa214f02b80883955f7b14e49dbd03e44d45123f06ee08b911a08be33";
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 10 * 60;
+        consensus.nHardForkTwo = 1;
+        consensus.nHardForkTwoA = 1;
+        consensus.nHardForkThree = 1;
+        consensus.nHardForkFour = 1;
+        consensus.nHardForkFourA = 1;
         consensus.nNeoScryptFork = 1524473955;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;

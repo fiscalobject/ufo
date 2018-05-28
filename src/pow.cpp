@@ -30,7 +30,8 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     // Use normal difficulty adjust following fork for 10 blocks
     if (nHeight >= params.nHardForkThree && nHeight <= params.nHardForkThree + 10)
         DiffMode = 1;
-    else if (nHeight >= params.nHardForkFour)
+
+    if (nHeight >= params.nHardForkFour)
         DiffMode = 3;
 
     if (DiffMode == 2)
