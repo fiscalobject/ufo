@@ -522,7 +522,7 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/UFOCoins/ufo>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/fiscalobject/ufo>";
     const std::string URL_WEBSITE = "<https://ufobject.com>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2014, COPYRIGHT_YEAR) + " ") + "\n" +
