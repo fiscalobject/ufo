@@ -28,7 +28,7 @@
 #include "bitcoin-config.h"
 #endif
 
-#if defined(ASM) && defined(__x86_64__)
+#if defined(USE_ASM) && defined(__x86_64__)
 
 /* MOVQ_FIX addresses incorrect behaviour of old GNU assembler when transferring
  * data between a 64-bit general purpose register and an MMX/SSE register:
@@ -4035,10 +4035,10 @@ _cpu_vec_exts:
 	popq	%rbx
 	ret
 
-#endif /* (ASM) && (__x86_64__) */
+#endif /* (USE_ASM) && (__x86_64__) */
 
 
-#if defined(ASM) && defined(__i386__)
+#if defined(USE_ASM) && defined(__i386__)
 
 /* blake2s_compress(mem)
  * i386 BLAKE2s block compression */
@@ -9140,4 +9140,4 @@ _cpu_vec_exts:
 	popl	%ebx
 	ret
 
-#endif /* (ASM) && (__i386__) */
+#endif /* (USE_ASM) && (__i386__) */

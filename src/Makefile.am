@@ -284,11 +284,9 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sha512.h
 
 if USE_ASM
-crypto_libbitcoin_crypto_a_SOURCES += crypto/sha256_sse4.cpp
-endif
-
-if ASM
-crypto_libbitcoin_crypto_a_SOURCES += crypto/neoscrypt_asm.S
+crypto_libbitcoin_crypto_a_SOURCES += \
+  crypto/sha256_sse4.cpp \
+  crypto/neoscrypt_asm.S
 endif
 
 # consensus: shared between all executables that validate any consensus rules.
