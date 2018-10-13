@@ -1921,7 +1921,9 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
     // future consensus change to do a new and improved version of BIP34 that
     // will actually prevent ever creating any duplicate coinbases in the
     // future.
-    static constexpr int BIP34_IMPLIES_BIP30_LIMIT = 1983702;
+
+    // UFO has never had an incorrectly reported height in the coinbase
+    static constexpr int BIP34_IMPLIES_BIP30_LIMIT = 0;
 
     // There is no potential to create a duplicate coinbase at block 209,921
     // because this is still before the BIP34 height and so explicit BIP30
