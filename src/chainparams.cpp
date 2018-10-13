@@ -63,6 +63,8 @@ public:
         consensus.nPowTargetSpacing = 90;
         consensus.nCoinFix = 15000;
         consensus.nHardForkOne = 33479;
+        consensus.nHardForkTwo = 160997;
+        consensus.nHardForkTwoA = 171900;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 10080; // 75% of 13440
@@ -171,6 +173,8 @@ public:
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 90;
+        consensus.nHardForkTwo = 1;
+        consensus.nHardForkTwoA = 1;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 375; // 75% for 500
@@ -264,6 +268,8 @@ public:
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 90;
+        consensus.nHardForkTwoA = 1;
+        consensus.nHardForkTwo = 1;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nRuleChangeActivationThreshold = 108; // 75% for testchains
