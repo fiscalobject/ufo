@@ -65,6 +65,7 @@ public:
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 400000;
         consensus.BIP34Height = 146557;
+        consensus.BIP34v2Height = 160054;
         consensus.BIP34Hash = uint256S("0xee9812510f877abf44332294a0b72673cabcd8f479fa678abd126099533a6c96 ");
         consensus.BIP65Height = 1205150;
         consensus.BIP66Height = 1205150;
@@ -181,6 +182,7 @@ public:
         strNetworkID = "test";
         consensus.nSubsidyHalvingInterval = 400000;
         consensus.BIP34Height = 0;
+        consensus.BIP34v2Height = 0;
         consensus.BIP34Hash = uint256S("0x45b4e55bddf20dfeb69ef2a35dd36f58dd45d5f4582c1a4ca1c1b78eef8f8c37");
         consensus.BIP65Height = 0;
         consensus.BIP66Height = 0;
@@ -279,6 +281,7 @@ public:
         strNetworkID = "regtest";
         consensus.nSubsidyHalvingInterval = 150;
         consensus.BIP34Height = 100000000; // BIP34 has not activated on regtest (far in the future so block v1 are not rejected in tests)
+        consensus.BIP34v2Height = 100000000; // BIP34 has not activated on regtest (far in the future so block v1 are not rejected in tests)
         consensus.BIP34Hash = uint256();
         consensus.BIP65Height = 1351; // BIP65 activated on regtest (Used in rpc activation tests)
         consensus.BIP66Height = 1251; // BIP66 activated on regtest (Used in rpc activation tests)

@@ -52,6 +52,7 @@ struct Params {
     int nSubsidyHalvingInterval;
     /** Block height and hash at which BIP34 becomes active */
     int BIP34Height;
+    int BIP34v2Height;
     uint256 BIP34Hash;
     /** Block height at which BIP65 becomes active */
     int BIP65Height;
