@@ -3265,6 +3265,16 @@ static bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationSta
             return state.Invalid(false, REJECT_OBSOLETE, strprintf("bad-version(0x%08x)", block.nVersion),
                                  strprintf("rejected nVersion=0x%08x block", block.nVersion));
 
+    // Limit block in future accepted in chain to only a time window of 15 min
+    if (block.GetBlockTime() > GetAdjustedTime() + 15 * 60)
+        return state.Invalid(false, REJECT_INVALID, strprintf("%s: block's timestamp too far in the future", __func__),
+                             "time-too-new");
+
+    // Check timestamp against prev it should not be more then 15 minutes outside blockchain time
+    if ((nHeight >= Params().GetConsensus().nHardForkTwo && block.GetBlockTime() <= pindexPrev->GetBlockTime() - 15 * 60))
+        return state.Invalid(false, REJECT_INVALID, strprintf("%s: block's timestamp is too early compare to last block", __func__),
+                             "wrong-time-between-blocks");
+
     return true;
 }
 
