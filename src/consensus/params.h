@@ -70,6 +70,8 @@ struct Params {
     int nHardForkOne;
     int nHardForkTwo;
     int nHardForkTwoA;
+    int nHardForkThree;
+    unsigned int nNeoScryptFork;
     /** Proof of work parameters */
     uint256 powLimit;
     bool fPowAllowMinDifficultyBlocks;
