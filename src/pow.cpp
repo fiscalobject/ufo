@@ -31,8 +31,13 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     if (nHeight >= params.nHardForkThree && nHeight <= params.nHardForkThree + 10)
         DiffMode = 1;
 
+    if (nHeight >= params.nHardForkFour)
+        DiffMode = 3;
+
     if (DiffMode == 2)
         return GetNextWorkRequired_V2(pindexLast, params);
+    else if (DiffMode == 3)
+        return GetNextWorkRequired_V3(pindexLast, params);
 
      return GetNextWorkRequired_V1(pindexLast, pblock, params);
 }
@@ -207,6 +212,81 @@ unsigned int GetNextWorkRequired_V2(const CBlockIndex* pindexLast, const Consens
 
     if (bnNew > bnProofOfWorkLimit)
         bnNew = bnProofOfWorkLimit;
+
+    return bnNew.GetCompact();
+}
+
+/**
+ * eHRC designed by Wrapper and Wellenreiter
+ * Short, medium and long samples averaged together and compared against the target time span.
+ * Adjust every block but limted to 9% change maximum.
+*/
+unsigned int GetNextWorkRequired_V3(const CBlockIndex* pindexLast, const Consensus::Params& params)
+{
+    int nHeight = pindexLast->nHeight + 1;
+    int nTargetTimespan = 90;
+    int shortSample = 15;
+    int mediumSample = 200;
+    int longSample = 1000;
+    int pindexFirstShortTime = 0;
+    int pindexFirstMediumTime = 0;
+    int nActualTimespan = 0;
+    int nActualTimespanShort = 0;
+    int nActualTimespanMedium = 0;
+    int nActualTimespanLong = 0;
+
+    // Genesis block or new chain
+    if (pindexLast == NULL || nHeight <= longSample + 1)
+        return UintToArith256(params.powLimit).GetCompact();
+
+    const CBlockIndex* pindexFirstLong = pindexLast;
+    for(int i = 0; pindexFirstLong && i < longSample; i++) {
+        pindexFirstLong = pindexFirstLong->pprev;
+        if (i == shortSample - 1)
+            pindexFirstShortTime = pindexFirstLong->GetBlockTime();
+
+        if (i == mediumSample - 1)
+            pindexFirstMediumTime = pindexFirstLong->GetBlockTime();
+    }
+
+    if (pindexLast->GetBlockTime() - pindexFirstShortTime != 0)
+        nActualTimespanShort = (pindexLast->GetBlockTime() - pindexFirstShortTime) / shortSample;
+
+    if (pindexLast->GetBlockTime() - pindexFirstMediumTime != 0)
+        nActualTimespanMedium = (pindexLast->GetBlockTime() - pindexFirstMediumTime)/ mediumSample;
+
+    if (pindexLast->GetBlockTime() - pindexFirstLong->GetBlockTime() != 0)
+        nActualTimespanLong = (pindexLast->GetBlockTime() - pindexFirstLong->GetBlockTime()) / longSample;
+
+    int nActualTimespanSum = nActualTimespanShort + nActualTimespanMedium + nActualTimespanLong;
+
+    if (nActualTimespanSum != 0)
+        nActualTimespan = nActualTimespanSum / 3;
+
+    if (nHeight >= params.nHardForkFourA) {
+        // Apply .25 damping
+        nActualTimespan = nActualTimespan + (3 * nTargetTimespan);
+        nActualTimespan /= 4;
+    }
+
+    // 9% difficulty limiter
+    int nActualTimespanMax = nTargetTimespan * 494 / 453;
+    int nActualTimespanMin = nTargetTimespan * 453 / 494;
+
+    if(nActualTimespan < nActualTimespanMin)
+        nActualTimespan = nActualTimespanMin;
+
+    if(nActualTimespan > nActualTimespanMax)
+        nActualTimespan = nActualTimespanMax;
+
+    // Retarget
+    arith_uint256 bnNew;
+    bnNew.SetCompact(pindexLast->nBits);
+    bnNew *= nActualTimespan;
+    bnNew /= nTargetTimespan;
+
+    if (bnNew > UintToArith256(params.powLimit))
+        bnNew = UintToArith256(params.powLimit);
 
     return bnNew.GetCompact();
 }

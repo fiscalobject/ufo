@@ -71,6 +71,8 @@ struct Params {
     int nHardForkTwo;
     int nHardForkTwoA;
     int nHardForkThree;
+    int nHardForkFour;
+    int nHardForkFourA;
     unsigned int nNeoScryptFork;
     /** Proof of work parameters */
     uint256 powLimit;
