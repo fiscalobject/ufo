@@ -75,6 +75,8 @@ public:
         consensus.nHardForkOne = 33479;
         consensus.nHardForkTwo = 160997;
         consensus.nHardForkTwoA = 171900;
+        consensus.nHardForkThree = 266000;
+        consensus.nNeoScryptFork = 1414446393;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 10080; // 75% of 13440
@@ -182,6 +184,8 @@ public:
         consensus.nPowTargetSpacing = 90;
         consensus.nHardForkTwo = 1;
         consensus.nHardForkTwoA = 1;
+        consensus.nHardForkThree = 1;
+        consensus.nNeoScryptFork = 1506816000;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 375; // 75% of 500
@@ -273,6 +277,8 @@ public:
         consensus.nPowTargetSpacing = 10 * 60;
         consensus.nHardForkTwo = 1;
         consensus.nHardForkTwoA = 1;
+        consensus.nHardForkThree = 1;
+        consensus.nNeoScryptFork = 1524473955;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nRuleChangeActivationThreshold = 108; // 75% for testchains
