@@ -73,6 +73,7 @@ struct Params {
     int nHardForkFour;
     int nHardForkFourA;
     unsigned int nNeoScryptFork;
+    std::string checkpointPubKey;
     /** Proof of work parameters */
     uint256 powLimit;
     bool fPowAllowMinDifficultyBlocks;
