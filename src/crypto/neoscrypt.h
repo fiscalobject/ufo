@@ -2,10 +2,6 @@
 extern "C" {
 #endif
 
-#if defined(HAVE_CONFIG_H)
-#include "bitcoin-config.h"
-#endif
-
 void neoscrypt(const unsigned char *password, unsigned char *output,
   unsigned int profile);
 
