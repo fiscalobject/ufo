@@ -59,6 +59,7 @@ public:
         consensus.BIP65Height = 1205150;
         consensus.BIP66Height = 1205150;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.checkpointPubKey = "044318157bd82b6e17926c8804eecf73140f416c34ccc2237c56614d081dce88a98293b40891d801d16a2899defe7869706d7ec55118ef8f06c683cfdc6b6a8c58";
         consensus.nPowTargetTimespan = 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 90;
         consensus.nCoinFix = 15000;
@@ -175,6 +176,7 @@ public:
         consensus.BIP65Height = 0;
         consensus.BIP66Height = 0;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.checkpointPubKey = "04d0dd87fbb6ac3483f57c9cd010c8fa804219ec641fad97a9cbb31605327b15fa9c40232fa214f02b80883955f7b14e49dbd03e44d45123f06ee08b911a08be33";
         consensus.nPowTargetTimespan = 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 90;
         consensus.nHardForkTwo = 1;
@@ -274,6 +276,7 @@ public:
         consensus.BIP65Height = 1351; // BIP65 activated on regtest (Used in functional tests)
         consensus.BIP66Height = 1251; // BIP66 activated on regtest (Used in functional tests)
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.checkpointPubKey = "04d0dd87fbb6ac3483f57c9cd010c8fa804219ec641fad97a9cbb31605327b15fa9c40232fa214f02b80883955f7b14e49dbd03e44d45123f06ee08b911a08be33";
         consensus.nPowTargetTimespan = 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 90;
         consensus.nHardForkTwoA = 1;
