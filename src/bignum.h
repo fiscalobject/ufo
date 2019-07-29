@@ -394,11 +394,6 @@ public:
         return ToString(16);
     }
 
-    unsigned int GetSerializeSize(int nType=0, int nVersion=PROTOCOL_VERSION) const
-    {
-        return ::GetSerializeSize(getvch(), nType, nVersion);
-    }
-
     template<typename Stream>
     void Serialize(Stream& s, int nType=0, int nVersion=PROTOCOL_VERSION) const
     {
