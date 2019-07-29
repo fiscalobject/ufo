@@ -50,9 +50,9 @@ Var StartMenuGroup
 # Installer attributes
 OutFile @abs_top_srcdir@/@PACKAGE_TARNAME@-@PACKAGE_VERSION@-win@WINDOWS_BITS@-setup.exe
 !if "@WINDOWS_BITS@" == "64"
-InstallDir $PROGRAMFILES64\UFO
+InstallDir "$PROGRAMFILES64\UFO Coin"
 !else
-InstallDir $PROGRAMFILES\UFO
+InstallDir "$PROGRAMFILES\UFO Coin"
 !endif
 CRCCheck on
 XPStyle on
