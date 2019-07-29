@@ -1,14 +1,14 @@
 *.tar.gz
 
 *.exe
-src/bitcoin
-src/bitcoind
-src/bitcoin-cli
-src/bitcoin-tx
-src/bitcoin-wallet
-src/test/test_bitcoin
-src/test/test_bitcoin_fuzzy
-src/qt/test/test_bitcoin-qt
+src/ufo
+src/ufod
+src/ufo-cli
+src/ufo-tx
+src/ufo-wallet
+src/test/test_ufo
+src/test/test_ufo_fuzzy
+src/qt/test/test_ufo-qt
 
 # autoreconf
 Makefile.in
@@ -82,13 +82,13 @@ src/qt/bitcoin-qt.includes
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-bitcoin-qt
-Bitcoin-Qt.app
+ufo-qt
+UFO-Qt.app
 background.tiff*
 
 # Unit-tests
 Makefile.test
-bitcoin-qt_test
+ufo-qt_test
 
 # Resources cpp
 qrc_*.cpp
