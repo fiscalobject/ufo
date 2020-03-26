@@ -235,6 +235,9 @@ unsigned int GetNextWorkRequired_V3(const CBlockIndex* pindexLast, const Consens
     int nActualTimespanMedium = 0;
     int nActualTimespanLong = 0;
 
+    if (params.fPowNoRetargeting)
+        return pindexLast->nBits;
+
     // Genesis block or new chain
     if (pindexLast == NULL || nHeight <= longSample + 1)
         return UintToArith256(params.powLimit).GetCompact();
