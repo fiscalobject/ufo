@@ -4,9 +4,10 @@
 // Distributed under conditional MIT/X11 open source software license
 // see the accompanying file COPYING
 #ifndef BITCOIN_CHECKPOINTSYNC_H
-#define  BITCOIN_CHECKPOINTSYNC_H
+#define BITCOIN_CHECKPOINTSYNC_H
 
 #include <serialize.h>
+#include <sync.h>
 #include <uint256.h>
 
 #include <string>
@@ -19,13 +20,11 @@ class uint256;
 
 extern uint256 hashSyncCheckpoint;
 extern CSyncCheckpoint checkpointMessage;
+extern CCriticalSection cs_hashSyncCheckpoint;
 
-bool WriteSyncCheckpoint(const uint256& hashCheckpoint);
 bool AcceptPendingSyncCheckpoint();
 uint256 AutoSelectSyncCheckpoint();
-bool CheckSyncCheckpoint(const CBlockIndex* pindexNew);
-bool ResetSyncCheckpoint();
-void AskForPendingSyncCheckpoint(CNode* pfrom);
+bool CheckSyncCheckpoint(const uint256 hashBlock, const int nHeight, const CBlockIndex* pindexPrev = nullptr);
 bool CheckCheckpointPubKey();
 bool SetCheckpointPrivKey(std::string strPrivKey);
 bool SendSyncCheckpoint(uint256 hashCheckpoint);
@@ -46,7 +45,6 @@ public:
 
     void SetNull();
     std::string ToString() const;
-    void print() const;
 };
 
 class CSyncCheckpoint : public CUnsignedSyncCheckpoint
@@ -59,7 +57,7 @@ public:
     CSyncCheckpoint();
 
     ADD_SERIALIZE_METHODS
-    
+
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action) {
         READWRITE(vchMsg);
@@ -69,9 +67,9 @@ public:
     void SetNull();
     bool IsNull() const;
     uint256 GetHash() const;
-    bool RelayTo(CNode* pfrom) const;
+    void RelayTo(CNode* pfrom) const;
     bool CheckSignature();
-    bool ProcessSyncCheckpoint(CNode* pfrom = nullptr);
+    bool ProcessSyncCheckpoint();
 };
 
 #endif

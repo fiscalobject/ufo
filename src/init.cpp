@@ -1171,12 +1171,6 @@ bool AppInitParameterInteraction()
         fEnableReplacement = (std::find(vstrReplacementModes.begin(), vstrReplacementModes.end(), "fee") != vstrReplacementModes.end());
     }
 
-    if (gArgs.IsArgSet("-checkpointkey")) // Checkpoint master priv key
-    {
-        if (!SetCheckpointPrivKey(gArgs.GetArg("-checkpointkey", "")))
-            return InitError(_("Unable to sign checkpoint, wrong checkpointkey?"));
-    }
-
     // Include NODE_ACP in services. Currently no arg to toggle this behaviour.
     nLocalServices = ServiceFlags(nLocalServices | NODE_ACP);
 
@@ -1210,6 +1204,13 @@ bool AppInitSanityChecks()
     // Sanity check
     if (!InitSanityCheck())
         return InitError(strprintf(_("Initialization sanity check failed. %s is shutting down."), _(PACKAGE_NAME)));
+
+    // Run after ECC_Start for mock key signing
+    if (gArgs.IsArgSet("-checkpointkey")) // Checkpoint master priv key
+    {
+        if (!SetCheckpointPrivKey(gArgs.GetArg("-checkpointkey", "")))
+            return InitError("Unable to sign checkpoint, wrong checkpointkey?");
+    }
 
     // Probe the data directory lock to give an early error message, if possible
     // We cannot hold the data directory lock here, as the forking for daemon() hasn't yet happened,
@@ -1575,6 +1576,15 @@ bool AppInitMain(InitInterfaces& interfaces)
                 uiInterface.InitMessage(_("Rewinding blocks..."));
                 if (!RewindBlockIndex(chainparams)) {
                     strLoadError = _("Unable to rewind the database to a pre-fork state. You will need to redownload the blockchain");
+                    break;
+                }
+            }
+
+            {
+                LOCK(cs_main);
+                uiInterface.InitMessage(_("Checking ACP ..."));
+                if (!CheckCheckpointPubKey()) {
+                    strLoadError = _("Checking ACP pubkey failed");
                     break;
                 }
             }
